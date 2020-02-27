@@ -1,0 +1,143 @@
+---
+title: "*dfoliatR*: An R package for identification and analyses of insect defoliation and growth suppression signals in tree rings"
+author:
+  - Christopher H. Guiterman:
+      email: chguiterman@email.arizona.edu
+      affiliation: [LTRR]
+      correspondence: true
+    # footnote: 1
+  - Ann M. Lynch:
+      email: lyncha@email.arizona.edu
+      affiliation: [RMRS, LTRR]
+      correspondence: false
+  - Jodi Axelson:
+      email: jodi.axelson@berkeley.edu 
+      affiliation: [UCB]
+      correspondence: false
+    # footnote: 2
+# address:
+#   - code: LTRR
+#     address: Laboratory of Tree-Ring Research, University of Arizona, 1215 E Lowell St. Box 210045, Tucson, AZ, 85721
+#   - code: RMRS
+#     address: U.S. Forest Service, Rocky Mountain Research Station, 1215 E Lowell St. Box 210045, Tucson, AZ, 85721
+#   - code: UCB
+#     address: Department of Environmental Science, Policy & Management, 120 Mulford Hall, University of California, Berkeley
+# Berkeley, CA 94720
+institute:
+  - LTRR: Laboratory of Tree-Ring Research, University of Arizona, 1215 E Lowell St. Box 210045, Tucson, AZ, 85721
+  - RMRS: U.S. Forest Service, Rocky Mountain Research Station, 1215 E Lowell St. Box 210045, Tucson, AZ, 85721
+  - UCB: Department of Environmental Science, Policy & Management, University of California, Berkeley, 120 Mulford Hall, Berkeley, CA 94720
+# footnote:
+#   - code: 1
+#     text: "Corresponding Author (chguiterman@email.arizona.edu)"
+#   # - code: 2
+#   #   text: "Equal contribution"
+abstract: |
+  This is the abstract.
+
+  It consists of two paragraphs.
+keywords: "Defoliation, Insect outbreak"
+journal: "Tree-Ring Research"
+date: "`r Sys.Date()`"
+# bibliography: mybibfile.bib
+# linenumbers: true
+#numbersections: true
+# csl: elsevier-harvard.csl
+# output: rticles::elsevier_article
+# output: 
+#     word_document:
+#       toc: no
+#       pandoc_args:
+#         - '--lua-filter=scholarly-metadata.lua'
+#         - '--lua-filter=author-info-blocks.lua'
+#     pdf_document:
+#       rticles::elsevier_article
+#       pandoc_args:
+#         - '--lua-filter=scholarly-metadata.lua'
+#         - '--lua-filter=author-info-blocks.lua'
+# output: rticles::elsevier_article
+output:
+ bookdown::word_document2:
+   # reference_docx: "../extras/word-styles-reference-01.docx"
+   # toc: false
+   # toc_depth: 2
+   # fig_caption: yes
+   # df_print: kable
+    pandoc_args:
+      - --csl=Extras/clinical-mass-spectrometry.csl
+      - --citation-abbreviations=Extras/abbreviations.json
+      # - --filter=pandoc-crossref
+      - --lua-filter=Extras/scholarly-metadata.lua
+      - --lua-filter=Extras/author-info-blocks.lua
+      - --reference-doc=Extras/Reference_Document.docx 
+bibliography: "Extras/mybibfile.bib"
+toc: false
+---
+
+_Text based on elsarticle sample manuscript, see [http://www.elsevier.com/author-schemas/latex-instructions#elsarticle](http://www.elsevier.com/author-schemas/latex-instructions#elsarticle)_
+
+
+The Elsevier article class
+==========================
+
+#### Installation
+
+If the document class *elsarticle* is not available on your computer,
+you can download and install the system package *texlive-publishers*
+(Linux) or install the LaTeX package *elsarticle* using the package
+manager of your TeX installation, which is typically TeX Live or MikTeX.
+
+#### Usage
+
+Once the package is properly installed, you can use the document class
+*elsarticle* to create a manuscript. Please make sure that your
+manuscript follows the guidelines in the Guide for Authors of the
+relevant journal. It is not necessary to typeset your manuscript in
+exactly the same way as an article, unless you are submitting to a
+camera-ready copy (CRC) journal.
+
+#### Functionality
+
+The Elsevier article class is based on the standard article class and
+supports almost all of the functionality of that class. In addition, it
+features commands and options to format the
+
+-   document style
+
+-   baselineskip
+
+-   front matter
+
+-   keywords and MSC codes
+
+-   theorems, definitions and proofs
+
+-   lables of enumerations
+
+-   citation style and labeling.
+
+Front matter
+============
+
+The author names and affiliations could be formatted in two ways:
+
+(1) Group the authors per affiliation.
+
+(2) Use footnotes to indicate the affiliations.
+
+See the front matter of this document for examples. You are recommended
+to conform your choice to the journal you are submitting to.
+
+Bibliography styles
+===================
+
+There are various bibliography styles available. You can select the
+style of your choice in the preamble of this document. These styles are
+Elsevier styles based on standard styles like Harvard and Vancouver.
+Please use BibTeX to generate your bibliography and include DOIs
+whenever available.
+
+Here are two sample references: @Feynman1963118 [@Dirac1953888].
+
+References {#references .unnumbered}
+==========

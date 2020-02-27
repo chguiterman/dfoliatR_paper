@@ -1,0 +1,50 @@
+---
+title: "*dfoliatR*: An R package for identification and analyses of insect defoliation and growth suppression signals in tree rings"
+authors:
+  - Christopher H. Guiterman:
+      email: chguiterman@email.arizona.edu
+      affiliation: [LTRR]
+      correspondence: true
+    # footnote: 1
+  - Ann M. Lynch:
+      email: lyncha@email.arizona.edu
+      affiliation: [RMRS, LTRR]
+      correspondence: false
+  - Jodi Axelson:
+      email: jodi.axelson@berkeley.edu 
+      affiliation: [UCB]
+      correspondence: false
+institute:
+  - LTRR: Laboratory of Tree-Ring Research, University of Arizona, 1215 E Lowell St. Box 210045, Tucson, AZ, 85721
+  - RMRS: U.S. Forest Service, Rocky Mountain Research Station, 1215 E Lowell St. Box 210045, Tucson, AZ, 85721
+  - UCB: Department of Environmental Science, Policy & Management, University of California, Berkeley, 120 Mulford Hall, Berkeley, CA
+abstract: For author review only. **Please do not share**
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: 
+  bookdown::word_document2:
+    reference_docx: "../common/word-styles-reference-01.docx"
+    toc: false
+    toc_depth: 2
+    fig_caption: yes
+    df_print: kable
+bibliography: "../common/Report.bib"
+csl: "../common/ecology.csl"
+keep_md: false
+link-citations: false
+---
+```{r setup, comment=FALSE, message = FALSE, echo=FALSE, warning=FALSE}
+rm(list=ls())           # Clean the environment
+options(scipen=6)       # display digits proberly!! not the scientific version
+options(digits.secs=6)  # use milliseconds in Date/Time data types
+options(warning=FALSE)  # don't show warnings
+options(figure_counter = TRUE)
+library(knitr)          # set global knitr options of the document
+library(dplyr)
+# Here we set the R code invisible to not show when the document is rendered
+opts_chunk$set(comment="", message = FALSE, echo=FALSE, error=FALSE, warning=FALSE,
+               fig.show='asis', dev='pdf')
+```
+
+# Introduction
+
+Some text.
