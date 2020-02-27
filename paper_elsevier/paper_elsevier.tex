@@ -1,0 +1,252 @@
+\documentclass[review]{elsarticle} %review=doublespace preprint=single 5p=2 column
+%%% Begin My package additions %%%%%%%%%%%%%%%%%%%
+\usepackage[hyphens]{url}
+
+  \journal{Tree-Ring Research} % Sets Journal name
+
+
+\usepackage{lineno} % add
+  \linenumbers % turns line numbering on
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{graphicx}
+\usepackage{booktabs} % book-quality tables
+%%%%%%%%%%%%%%%% end my additions to header
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \usepackage{fontspec}
+  \ifxetex
+    \usepackage{xltxtra,xunicode}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\bibliographystyle{elsarticle-harv}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={},
+            pdftitle={dfoliatR: An R package for detection and analysis of insect defoliation signals in tree rings},
+            colorlinks=false,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+
+\setcounter{secnumdepth}{0}
+% Pandoc toggle for numbering sections (defaults to be off)
+\setcounter{secnumdepth}{0}
+
+
+% Pandoc header
+
+
+
+\begin{document}
+\begin{frontmatter}
+
+  \title{\emph{dfoliatR}: An R package for detection and analysis of insect
+defoliation signals in tree rings}
+    \author[a,b]{Christopher H. Guiterman\corref{1}}
+   \ead{chguiterman@email.arizona.edu} 
+    \author[a,c]{Ann M. Lynch}
+   \ead{lyncha@email.arizona.edu} 
+    \author[c]{Jodi N. Axelson}
+   \ead{jodi.axelson@berkeley.edu} 
+      \address[a]{Laboratory of Tree-Ring Research, University of Arizona, 1215 E Lowell
+St.~Box 210045, Tucson, AZ, 85721}
+    \address[b]{Three Pines Forest Research, LLC, PO Box 225, Etna, NH, 03750}
+    \address[c]{U.S. Forest Service, Rocky Mountain Research Station, 1215 E Lowell
+St.~Box 210045, Tucson, AZ, 85721}
+    \address[d]{Dept of Environmental Science, Policy \& Management, University of
+California, Berkeley, Berkeley, CA 94720}
+      \cortext[1]{Corresponding Author}
+  
+  \begin{abstract}
+  We present a new R package to provide dendroecologists with tools to
+  identify, quantify, analyze, and visualize growth suppression events in
+  tree rings produced by insect defoliation. The `dfoliatR' library is
+  based on the Fortran V program OUTBREAK, and builds on existing
+  resources in the R computing environment. `dfoliatR' expands on OUTBREAK
+  to provide greater control of supression thresholds, additional output
+  tables, and high-quality graphics. To use `dfoliatR' requires
+  standardized ring-width measurements from insect host trees and an
+  indexed tree-ring chronology from local non-host trees. It performs an
+  indexing procedure to remove the climatic signal represented in the
+  non-host chronology from the host-tree series. It then infers
+  defoliation events in individual trees. Site-level analyses identify
+  outbreak events that synchronously affect a user-defined number or
+  proportion of the host trees. Functions are available for summary
+  statistics and graphics of tree- and site-level series.
+  
+  \hfill\break
+  \end{abstract}
+   \begin{keyword} Dendroecology, spruce budworm, Choristoneura, pandora moth, Coloradia
+pandora Blake, larch-bud-moth \newpage\end{keyword}
+ \end{frontmatter}
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+\hypertarget{overview-of-the-software}{%
+\section{Overview of the software}\label{overview-of-the-software}}
+
+The \texttt{dfoliatR} library requires two sets of tree-ring data to
+identify defoliation and outbreak events:
+
+\begin{itemize}
+\tightlist
+\item
+  Standardized ring-width series for individual trees of the host
+  species
+\item
+  Standardized tree-ring chronology from a local non-host species
+\end{itemize}
+
+Users can develop these data sets in software of their choosing, such as
+in \texttt{dplR} or ARSTAN. It is important that the host-tree data
+include only one tree-ring series per tree. Both \texttt{dplR} and
+ARSTAN have options for averaging mutliple sample series into a
+tree-level series. The tree-ring series and chronology can be read into
+R via several available \texttt{dplR} functions.
+
+\texttt{dfoliatR} begins to identify defoliation events in individual
+trees by removing the climatic signal as represented by the non-host
+chronology from the host tree series. This indexing procedure creates a
+series -- the ``growth suppression index'' -- in which disturbance is
+the predominant signal. Negative departures in the growth suppression
+index that surpass user-defined thresholds in duration, and magnitude
+will be defined as \emph{defoliation events}. The individual tree
+defoliation series are composited in an additional step to identify
+\emph{outbreak events} that synchronously affect mutliple trees. Users
+have options to define the number and/or the proportion of trees
+required for a defoliation event to be considered an outbreak.
+
+Note that these methods of separating tree- vs site-level disturbance
+categories is a major departure from the OUTBREAK program. In OUTBREAK
+the two levels of analysis are combined and users have more limited
+control of thresholds to define defoliation events versus outbreaks.
+
+\hypertarget{availability-and-installation}{%
+\section{Availability and
+installation}\label{availability-and-installation}}
+
+The \texttt{dfoliatR} is provided free and open source (Guiterman,
+2020). It is provided to R users via the Comprehensive R Archive Network
+(CRAN; \url{https://cran.r-project.org/}). To install \texttt{dfoliatR}
+into R from CRAN use
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"dfoliatR"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+In each R session, \texttt{dfoliatR} can be loaded via
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(dfoliatR)}
+\end{Highlighting}
+\end{Shaded}
+
+Development versions of \texttt{dfoliatR} are available on Github and
+installed using the \texttt{devtools} library in R,
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{devtools}\OperatorTok{::}\KeywordTok{install_github}\NormalTok{(}\StringTok{"chguiterman/dfoliatR"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Support documentation is provided within the package via help menus
+(accessed by typing \texttt{?} before a function name), this paper, and
+on the package website (\url{https://chguiterman.github.io/dfoliatR/})
+which includes updated vignettes. Code to execute a preprint of this
+manuscript and the code included below is available at (\emph{insert
+later}).
+
+\hypertarget{tree-level-defoliation-events}{%
+\section{Tree-level defoliation
+events}\label{tree-level-defoliation-events}}
+
+\hypertarget{site-level-events}{%
+\section{Site-level events}\label{site-level-events}}
+
+\hypertarget{evaluation}{%
+\section{Evaluation}\label{evaluation}}
+
+\hypertarget{extensions}{%
+\section{Extensions}\label{extensions}}
+
+\hypertarget{references}{%
+\section*{References}\label{references}}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\leavevmode\hypertarget{ref-chris_guiterman_2020_3626136}{}%
+Guiterman, C., 2020. Chguiterman/dfoliatR: First release. Zenodo.
+doi:\href{https://doi.org/10.5281/zenodo.3626136}{10.5281/zenodo.3626136}
+
+
+\end{document}
+
+

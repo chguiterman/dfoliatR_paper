@@ -1,0 +1,128 @@
+---
+title: "*dfoliatR*: An R package for detection and analysis of insect defoliation signals in tree rings"
+author:
+  - name: Christopher H. Guiterman
+    email: chguiterman@email.arizona.edu
+    affiliation: a,b
+    footnote: 1
+  - name: Ann M. Lynch
+    email: lyncha@email.arizona.edu
+    affiliation: a,c
+    # footnote: [2, 3]
+  - name: Jodi N. Axelson
+    email: jodi.axelson@berkeley.edu
+    affiliation: c
+    # footnote: 4
+address:
+  - code: a
+    address: "Laboratory of Tree-Ring Research, University of Arizona, 1215 E Lowell St. Box 210045, Tucson, AZ, 85721"
+  - code: b
+    address: "Three Pines Forest Research, LLC, PO Box 225, Etna, NH, 03750"
+  - code: c
+    address: "U.S. Forest Service, Rocky Mountain Research Station, 1215 E Lowell St. Box 210045, Tucson, AZ, 85721"
+  - code: d
+    address: "Dept of Environmental Science, Policy & Management, University of California, Berkeley, Berkeley, CA 94720"
+footnote:
+  - code: 1
+    text: "Corresponding Author"
+#   - code: 2
+#     text: "Laboratory of Tree-Ring Research, University of Arizona, 1215 E Lowell St. Box 210045, Tucson, AZ, 85721"
+#   - code: 3
+#     text: "U.S. Forest Service, Rocky Mountain Research Station, 1215 E Lowell St. Box 210045, Tucson, AZ, 85721"
+#   - code: 4
+#     text: "Dept of Environmental Science, Policy & Management, University of California, Berkeley, Berkeley, CA 94720"
+abstract: |
+    We present a new R package to provide dendroecologists with tools to identify, quantify, analyze, and visualize growth
+    suppression events in tree rings produced by insect defoliation. The 'dfoliatR' library is based on the Fortran V program 
+    OUTBREAK, and builds on existing resources in the R computing environment. 'dfoliatR' expands on OUTBREAK to provide greater
+    control of supression thresholds, additional output tables, and high-quality graphics. To use 'dfoliatR' requires 
+    standardized ring-width measurements from insect host trees and an indexed tree-ring chronology from local non-host trees. 
+    It performs an indexing procedure to remove the climatic signal represented in the non-host chronology from the host-tree
+    series. It then infers defoliation events in individual trees. Site-level analyses identify outbreak events
+    that synchronously affect a user-defined number or proportion of the host trees. Functions are available for
+    summary statistics and graphics of tree- and site-level series. 
+    
+    \hfill\break
+keywords: |
+  Dendroecology, spruce budworm, Choristoneura, pandora moth, Coloradia pandora Blake, larch-bud-moth
+  \newpage
+journal: "Tree-Ring Research"
+date: "`r Sys.Date()`"
+bibliography: mybibfile.bib
+linenumbers: true
+#numbersections: true
+csl: elsevier-harvard.csl
+output: rticles::elsevier_article
+# output:
+#   bookdown::pdf_book:
+#     base_format: rticles::elsevier_article
+#   bookdown::word_document2:
+#     reference_docx: "../common/word-styles-reference-01.docx"
+#     toc: false
+#     toc_depth: 2
+#     fig_caption: yes
+#     df_print: kable
+layout: review
+---
+
+
+Introduction
+==========================
+
+
+Overview of the software
+==========================
+
+The `dfoliatR` library requires two sets of tree-ring data to identify defoliation and outbreak events:
+
+* Standardized ring-width series for individual trees of the host species
+*	Standardized tree-ring chronology from a local non-host species
+
+Users can develop these data sets in software of their choosing, such as in `dplR` or ARSTAN. It is important that the host-tree data include only one tree-ring series per tree. Both `dplR` and ARSTAN have options for averaging mutliple sample series into a tree-level series. The tree-ring series and chronology can be read into R via several available `dplR` functions. 
+
+`dfoliatR` begins to identify defoliation events in individual trees by removing the climatic signal as represented by the non-host chronology from the host tree series. This indexing procedure creates a series -- the "growth suppression index" -- in which disturbance is the predominant signal. Negative departures in the growth suppression index that surpass user-defined thresholds in duration, and magnitude are defined as *defoliation events*. The individual tree defoliation series are composited in an additional step to identify *outbreak events* that synchronously affect mutliple trees. Users have options to define the number and/or the proportion of trees required for a defoliation event to be considered an outbreak. 
+
+Note that these methods of separating tree- vs site-level disturbance categories is a major departure from the OUTBREAK program. In OUTBREAK the two levels of analysis are combined and users have more limited control of thresholds to define defoliation events versus outbreaks. 
+ 
+
+Availability and installation
+==========================
+
+The `dfoliatR` is provided free and open source [@chris_guiterman_2020_3626136]. It is provided to R users via the Comprehensive R Archive Network (CRAN; [https://cran.r-project.org/](https://cran.r-project.org/)). To install `dfoliatR` into R from CRAN use
+
+```{r, echo=TRUE, eval=FALSE}
+install.packages("dfoliatR")
+```
+
+In each R session, `dfoliatR` can be loaded via
+
+```{r, echo=TRUE, eval=FALSE}
+library(dfoliatR)
+```
+
+Development versions of `dfoliatR` are available on Github and installed using the `devtools` library in R,
+
+```{r, echo=TRUE, eval=FALSE}
+devtools::install_github("chguiterman/dfoliatR")
+```
+
+Support documentation in addition to this paper is provided within the package via help menus (accessed by typing `?` before a function name) and on the package website ([https://chguiterman.github.io/dfoliatR/](https://chguiterman.github.io/dfoliatR/)) which includes up-to-date vignettes. Code to execute a preprint of this manuscript and the code included below is available at (*insert later*).
+
+
+Tree-level defoliation events
+==========================
+
+
+Site-level events
+==========================
+
+Evaluation
+==========================
+
+Extensions
+==========================
+
+
+
+References {#references .unnumbered}
+==========================
