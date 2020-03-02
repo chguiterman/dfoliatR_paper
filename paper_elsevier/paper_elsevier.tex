@@ -98,7 +98,7 @@
 
 % Pandoc header
 
-
+\usepackage{amsmath}
 
 \begin{document}
 \begin{frontmatter}
@@ -146,6 +146,49 @@ pandora Blake, larch-bud-moth \newpage\end{keyword}
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
+The \texttt{dfoliatR} library is unique among a growing suite \texttt{R}
+packages designed for dendrochronology. Stemming from the \texttt{dplR}
+library (Bunn 2008) that provides \texttt{R} the ability to read and
+write an array of tree-ring data formats, standaridize ring widths,
+build and evaluate chronologies, perform qaulity control (to name a
+few), one can now also measure, perform and check crossdating, and
+perform many analytical tests (Bunn 2010, Lara et al. 2015, Zang and
+Biondi 2015, Jevšenak and Levanič 2018). Tools for assessing stand
+dynamics and disturbance analyses are under rapid development, with new
+packages for assessing growth and release events (\texttt{TRADER}:
+Altman et al. 2014), metrics of growth resilience (\texttt{pointRes}:
+Maaten-Theunissen et al. 2015), and fire history (\texttt{burnr}:
+Malevich et al. 2018). The key objective of \texttt{dfoliatR} is to
+provide tools to identify and analyse insect defoliation and outbreak
+events by building on the methods employed the FORTRAN program OUTBREAK
+(Swetnam and Lynch 1989). What sets \texttt{dfoliatR} apart from
+packages such as \texttt{TRADER} is that it explicitly performs an
+indexing procedue on host-tree series to remove climatic and other
+non-defoliation related signals represented by non-host tree species.
+Insect defoliation signals are identified in the disturbance index by
+the duration and magnitude of negative departures.
+
+\texttt{dfoliatR} draws upon data formats in \texttt{dplR} that are
+commonly employed by other tree-ring libraries. It uses and outputs a
+data formats that faciliate the use packages embodied by
+\texttt{tidyverse} (Wickham et al. 2019) that include efficient data
+wrangling (\texttt{dplyr}: Wickham et al. 2020) and graphics
+(\texttt{ggplot2}: Wickham 2016).
+
+In this paper, we describe the statistical methods employed by
+\texttt{dfoliatR}, its availability, and run through analyses for a
+signle site in New Mexico. Users need not have much experience in
+\texttt{R} to replicate the analyses and graphics below. All \texttt{R}
+code presented below is executatable in an \texttt{R} session once the
+required libraries are installed and loaded. Support documentation in
+addition to this paper is provided within the package via standard help
+menus (accessed by typing \texttt{?} before a function name) and on the
+package website (\url{https://chguiterman.github.io/dfoliatR/}), which
+includes up-to-date vignettes that describe in detail the functionality
+of the software. Code to create a preprint of this manuscript including
+the \texttt{R} scripts is available from
+\url{https://github.com/chguiterman/dfoliatR_paper}.
+
 \hypertarget{overview-of-the-software}{%
 \section{Overview of the software}\label{overview-of-the-software}}
 
@@ -166,19 +209,34 @@ in \texttt{dplR} or ARSTAN. It is important that the host-tree data
 include only one tree-ring series per tree. Both \texttt{dplR} and
 ARSTAN have options for averaging mutliple sample series into a
 tree-level series. The tree-ring series and chronology can be read into
-R via several available \texttt{dplR} functions.
+\texttt{R} via several available \texttt{dplR} functions.
 
 \texttt{dfoliatR} begins to identify defoliation events in individual
 trees by removing the climatic signal as represented by the non-host
 chronology from the host tree series. This indexing procedure creates a
-series -- the ``growth suppression index'' -- in which disturbance is
-the predominant signal. Negative departures in the growth suppression
-index that surpass user-defined thresholds in duration, and magnitude
-will be defined as \emph{defoliation events}. The individual tree
-defoliation series are composited in an additional step to identify
-\emph{outbreak events} that synchronously affect mutliple trees. Users
-have options to define the number and/or the proportion of trees
-required for a defoliation event to be considered an outbreak.
+series -- the ``growth suppression index'' (GSI) -- in which disturbance
+is the predominant signal. The GSI is caluclated as \begin{align}
+\textrm{GSI}_{i} = \textrm{H}_{i} - \left( \textrm{NH}_{i} - \overline{\textrm{NH}} \right) \frac{\sigma_{\textrm{H}}}{\sigma_{\textrm{NH}}} \
+\end{align} where H and NH are the host tree series and the non-host
+chronology, in year i, respectively (Swetnam et al. 1985, Swetnam and
+Lynch 1989). Only years in which the individual host-tree series and the
+non-host chronology overlap are used in Equation 1. The non-host
+chronology is scaled by its mean
+(\(\overline{\textrm{NH}} \approx 1.0\)) and multiplied by the ratio of
+host and non-host standard deviations
+(\(\frac{\sigma_{\textrm{H}}}{\sigma_{\textrm{NH}}}\)), which
+approximates the variance of the host tree series. This ``corrected''
+non-host chronology is subtracted from the host-tree series.
+
+Negative departures in the normalized growth suppression index that
+surpass user-defined thresholds in duration and magnitude will be
+defined as \emph{defoliation events}.
+
+The individual tree defoliation series are composited in an additional
+step to identify \emph{outbreak events} that synchronously affect
+mutliple trees. Users have options to define the number and/or the
+proportion of trees required for a defoliation event to be considered an
+outbreak.
 
 Note that these methods of separating tree- vs site-level disturbance
 categories is a major departure from the OUTBREAK program. In OUTBREAK
@@ -189,10 +247,10 @@ control of thresholds to define defoliation events versus outbreaks.
 \section{Availability and
 installation}\label{availability-and-installation}}
 
-The \texttt{dfoliatR} is provided free and open source (Guiterman,
-2020). It is provided to R users via the Comprehensive R Archive Network
-(CRAN; \url{https://cran.r-project.org/}). To install \texttt{dfoliatR}
-into R from CRAN use
+The \texttt{dfoliatR} is provided free and open source (Guiterman 2020).
+It is provided to \texttt{R} users via the Comprehensive R Archive
+Network (CRAN; \url{https://cran.r-project.org/}). To install
+\texttt{dfoliatR} from CRAN use
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -200,7 +258,7 @@ into R from CRAN use
 \end{Highlighting}
 \end{Shaded}
 
-In each R session, \texttt{dfoliatR} can be loaded via
+In each \texttt{R} session, \texttt{dfoliatR} can be loaded via
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -209,7 +267,7 @@ In each R session, \texttt{dfoliatR} can be loaded via
 \end{Shaded}
 
 Development versions of \texttt{dfoliatR} are available on Github and
-installed using the \texttt{devtools} library in R,
+installed using the \texttt{devtools} library,
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -217,19 +275,20 @@ installed using the \texttt{devtools} library in R,
 \end{Highlighting}
 \end{Shaded}
 
-Support documentation is provided within the package via help menus
-(accessed by typing \texttt{?} before a function name), this paper, and
-on the package website (\url{https://chguiterman.github.io/dfoliatR/})
-which includes updated vignettes. Code to execute a preprint of this
-manuscript and the code included below is available at (\emph{insert
-later}).
+Issues, bug reports, and ideas for improving \texttt{dfoliatR} can be
+posted to \url{https://github.com/chguiterman/dfoliatR/issues}. As an
+Open Source library, we welcome and encourage community involvement in
+future development. The best ways to contribute to \texttt{dfoliatR} are
+through standard Github procedures or by contacting the first author.
+
+\hypertarget{usage}{%
+\section{Usage}\label{usage}}
 
 \hypertarget{tree-level-defoliation-events}{%
-\section{Tree-level defoliation
+\subsection{Tree-level defoliation
 events}\label{tree-level-defoliation-events}}
 
-\hypertarget{site-level-events}{%
-\section{Site-level events}\label{site-level-events}}
+\#\#Site-level events
 
 \hypertarget{evaluation}{%
 \section{Evaluation}\label{evaluation}}
@@ -242,9 +301,67 @@ events}\label{tree-level-defoliation-events}}
 \addcontentsline{toc}{section}{References}
 
 \hypertarget{refs}{}
+\leavevmode\hypertarget{ref-Altman2014}{}%
+Altman, J., P. Fibich, J. Dolezal, and T. Aakala. 2014. TRADER: A
+package for Tree Ring Analysis of Disturbance Events in R.
+Dendrochronologia 32:107--112.
+
+\leavevmode\hypertarget{ref-Bunn2008}{}%
+Bunn, A. G. 2008. A dendrochronology program library in R (dplR).
+Dendrochronologia 26:115--124.
+
+\leavevmode\hypertarget{ref-Bunn2010}{}%
+Bunn, A. G. 2010. Statistical and visual crossdating in R using the dplR
+library. Dendrochronologia 28:251--258.
+
 \leavevmode\hypertarget{ref-chris_guiterman_2020_3626136}{}%
-Guiterman, C., 2020. Chguiterman/dfoliatR: First release. Zenodo.
-doi:\href{https://doi.org/10.5281/zenodo.3626136}{10.5281/zenodo.3626136}
+Guiterman, C. 2020. Chguiterman/dfoliatR: First release. Zenodo.
+
+\leavevmode\hypertarget{ref-Jevsenak2018}{}%
+Jevšenak, J., and T. Levanič. 2018. dendroTools: R package for studying
+linear and nonlinear responses between tree-rings and daily
+environmental data. Dendrochronologia 48:32--39.
+
+\leavevmode\hypertarget{ref-Lara2015}{}%
+Lara, W., F. Bravo, and C. A. Sierra. 2015. MeasuRing: An R package to
+measure tree-ring widths from scanned images. Dendrochronologia
+34:43--50.
+
+\leavevmode\hypertarget{ref-VanderMaaten-Theunissen2015}{}%
+Maaten-Theunissen, M. van der, E. van der Maaten, and O. Bouriaud. 2015.
+PointRes: An R package to analyze pointer years and components of
+resilience. Dendrochronologia 35:34--38.
+
+\leavevmode\hypertarget{ref-Malevich2018}{}%
+Malevich, S. B., C. H. Guiterman, and E. Q. Margolis. 2018. burnr: Fire
+history analysis and graphics in R. Dendrochronologia 49:9--15.
+
+\leavevmode\hypertarget{ref-Swetnam1989}{}%
+Swetnam, T. W., and A. M. Lynch. 1989. A tree-ring reconstruction of
+western spruce budworm history in the southern Rocky Mountains. Forest
+Science 35:962--986.
+
+\leavevmode\hypertarget{ref-Swetnam1985}{}%
+Swetnam, T. W., M. A. Thompson, and E. K. Sutherland. 1985. Using
+dendrochronology to measure radial growth of defoliated trees. Page 39p.
+
+\leavevmode\hypertarget{ref-wickham2016ggplot2}{}%
+Wickham, H. 2016. Ggplot2: Elegant graphics for data analysis. Springer.
+
+\leavevmode\hypertarget{ref-Wickham2019}{}%
+Wickham, H., M. Averick, J. Bryan, W. Chang, L. McGowan, R. François, G.
+Grolemund, A. Hayes, L. Henry, J. Hester, M. Kuhn, T. Pedersen, E.
+Miller, S. Bache, K. Müller, J. Ooms, D. Robinson, D. Seidel, V. Spinu,
+K. Takahashi, D. Vaughan, C. Wilke, K. Woo, and H. Yutani. 2019. Welcome
+to the tidyverse. Journal of Open Source Software 4:1686.
+
+\leavevmode\hypertarget{ref-Wickham2020dplyr}{}%
+Wickham, H., R. François, L. Henry, and K. Müller. 2020. Dplyr: A
+grammar of data manipulation.
+
+\leavevmode\hypertarget{ref-Zang2015}{}%
+Zang, C., and F. Biondi. 2015. Treeclim: An R package for the numerical
+calibration of proxy-climate relationships. Ecography 38:431--436.
 
 
 \end{document}

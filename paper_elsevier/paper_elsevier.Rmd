@@ -51,7 +51,7 @@ date: "`r Sys.Date()`"
 bibliography: mybibfile.bib
 linenumbers: true
 #numbersections: true
-csl: elsevier-harvard.csl
+csl: ecology.csl
 output: rticles::elsevier_article
 # output:
 #   bookdown::pdf_book:
@@ -63,12 +63,20 @@ output: rticles::elsevier_article
 #     fig_caption: yes
 #     df_print: kable
 layout: review
+preamble: |
+  \usepackage{amsmath}
 ---
 
 
 Introduction
 ==========================
 
+
+The `dfoliatR` library is unique among a growing suite `R` packages designed for dendrochronology. Stemming from the `dplR` library [@Bunn2008] that provides `R` the ability to read and write an array of tree-ring data formats, standaridize ring widths, build and evaluate chronologies, perform qaulity control (to name a few), one can now also measure, perform and check crossdating, and perform many analytical tests [@Bunn2010; @Jevsenak2018; @Lara2015; @Zang2015]. Tools for assessing stand dynamics and disturbance analyses are under rapid development, with new packages for assessing growth and release events [`TRADER`: @Altman2014], metrics of growth resilience [`pointRes`: @VanderMaaten-Theunissen2015], and fire history [`burnr`: @Malevich2018]. The key objective of `dfoliatR` is to provide tools to identify and analyse insect defoliation and outbreak events by building on the methods employed the FORTRAN program OUTBREAK [@Swetnam1989]. What sets `dfoliatR` apart from packages such as `TRADER` is that it explicitly performs an indexing procedue on host-tree series to remove climatic and other non-defoliation related signals represented by non-host tree species. Insect defoliation signals are identified in the disturbance index by the duration and magnitude of negative departures.  
+
+`dfoliatR` draws upon data formats in `dplR` that are commonly employed by other tree-ring libraries. It uses and outputs data formats that faciliate the use packages embodied by `tidyverse` [@Wickham2019] that include efficient manipulation of data [`dplyr`: @Wickham2020dplyr] and graphics [`ggplot2`: @wickham2016ggplot2]. 
+
+In this paper, we describe the statistical methods employed by `dfoliatR`, its availability, and run through analyses for a signle site in New Mexico. Users need not have much experience in `R` to replicate the analyses and graphics below. All `R` code presented below is executatable in an `R` session once the required libraries are installed and loaded. Support documentation in addition to this paper is provided within the package via standard help menus (accessed by typing `?` before a function name) and on the package website ([https://chguiterman.github.io/dfoliatR/](https://chguiterman.github.io/dfoliatR/)), which includes up-to-date vignettes that describe in detail the functionality of the software. Code to create a preprint of this manuscript including the `R` scripts is available from [https://github.com/chguiterman/dfoliatR_paper](https://github.com/chguiterman/dfoliatR_paper).
 
 Overview of the software
 ==========================
@@ -78,9 +86,17 @@ The `dfoliatR` library requires two sets of tree-ring data to identify defoliati
 * Standardized ring-width series for individual trees of the host species
 *	Standardized tree-ring chronology from a local non-host species
 
-Users can develop these data sets in software of their choosing, such as in `dplR` or ARSTAN. It is important that the host-tree data include only one tree-ring series per tree. Both `dplR` and ARSTAN have options for averaging mutliple sample series into a tree-level series. The tree-ring series and chronology can be read into R via several available `dplR` functions. 
+Users can develop these data sets in software of their choosing, such as in `dplR` or ARSTAN. It is important that the host-tree data include only one tree-ring series per tree. Both `dplR` and ARSTAN have options for averaging mutliple sample series into a tree-level series. The tree-ring series and chronology can be read into `R` via several available `dplR` functions. 
 
-`dfoliatR` begins to identify defoliation events in individual trees by removing the climatic signal as represented by the non-host chronology from the host tree series. This indexing procedure creates a series -- the "growth suppression index" -- in which disturbance is the predominant signal. Negative departures in the growth suppression index that surpass user-defined thresholds in duration, and magnitude are defined as *defoliation events*. The individual tree defoliation series are composited in an additional step to identify *outbreak events* that synchronously affect mutliple trees. Users have options to define the number and/or the proportion of trees required for a defoliation event to be considered an outbreak. 
+`dfoliatR` begins to identify defoliation events in individual trees by removing the climatic signal as represented by the non-host chronology from the host tree series. This indexing procedure creates a series -- the "growth suppression index" (GSI) -- in which disturbance is the predominant signal. The GSI is caluclated as 
+\begin{align}
+\textrm{GSI}_{i} = \textrm{H}_{i} - \left( \textrm{NH}_{i} - \overline{\textrm{NH}} \right) \frac{\sigma_{\textrm{H}}}{\sigma_{\textrm{NH}}} \
+\end{align}
+where H and NH are the host tree series and the non-host chronology, in year i, respectively [@Swetnam1985; @Swetnam1989]. Only years in which the individual host-tree series and the non-host chronology overlap are used in Equation 1. The non-host chronology is scaled by its mean ($\overline{\textrm{NH}} \approx 1.0$) and multiplied by the ratio of host and non-host standard deviations ($\frac{\sigma_{\textrm{H}}}{\sigma_{\textrm{NH}}}$), which approximates the variance of the host tree series. This "corrected" non-host chronology is subtracted from the host-tree series.
+
+Negative departures in the normalized growth suppression index that surpass user-defined thresholds in duration and magnitude will be defined as *defoliation events*. 
+
+The individual tree defoliation series are composited in an additional step to identify *outbreak events* that synchronously affect mutliple trees. Users have options to define the number and/or the proportion of trees required for a defoliation event to be considered an outbreak. 
 
 Note that these methods of separating tree- vs site-level disturbance categories is a major departure from the OUTBREAK program. In OUTBREAK the two levels of analysis are combined and users have more limited control of thresholds to define defoliation events versus outbreaks. 
  
@@ -88,33 +104,36 @@ Note that these methods of separating tree- vs site-level disturbance categories
 Availability and installation
 ==========================
 
-The `dfoliatR` is provided free and open source [@chris_guiterman_2020_3626136]. It is provided to R users via the Comprehensive R Archive Network (CRAN; [https://cran.r-project.org/](https://cran.r-project.org/)). To install `dfoliatR` into R from CRAN use
+The `dfoliatR` is provided free and open source [@chris_guiterman_2020_3626136]. It is provided to `R` users via the Comprehensive R Archive Network (CRAN; [https://cran.r-project.org/](https://cran.r-project.org/)). To install `dfoliatR` from CRAN use
 
 ```{r, echo=TRUE, eval=FALSE}
 install.packages("dfoliatR")
 ```
 
-In each R session, `dfoliatR` can be loaded via
+In each `R` session, `dfoliatR` can be loaded via
 
 ```{r, echo=TRUE, eval=FALSE}
 library(dfoliatR)
 ```
 
-Development versions of `dfoliatR` are available on Github and installed using the `devtools` library in R,
+Development versions of `dfoliatR` are available on Github and installed using the `devtools` library,
 
 ```{r, echo=TRUE, eval=FALSE}
 devtools::install_github("chguiterman/dfoliatR")
 ```
 
-Support documentation in addition to this paper is provided within the package via help menus (accessed by typing `?` before a function name) and on the package website ([https://chguiterman.github.io/dfoliatR/](https://chguiterman.github.io/dfoliatR/)) which includes up-to-date vignettes. Code to execute a preprint of this manuscript and the code included below is available at (*insert later*).
+Issues, bug reports, and ideas for improving `dfoliatR` can be posted to [https://github.com/chguiterman/dfoliatR/issues](https://github.com/chguiterman/dfoliatR/issues). As an Open Source library, we welcome and encourage community involvement in future development. The best ways to contribute to `dfoliatR` are through standard Github procedures or by contacting the first author.
 
 
-Tree-level defoliation events
+Usage
 ==========================
 
+## Tree-level defoliation events
 
-Site-level events
-==========================
+
+
+##Site-level events
+
 
 Evaluation
 ==========================
