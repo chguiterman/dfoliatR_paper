@@ -2,7 +2,7 @@
 %%% Begin My package additions %%%%%%%%%%%%%%%%%%%
 \usepackage[hyphens]{url}
 
-  \journal{Tree-Ring Research} % Sets Journal name
+  \journal{Dendrochronologia} % Sets Journal name
 
 
 \usepackage{lineno} % add
@@ -131,9 +131,9 @@
 
   \title{\emph{dfoliatR}: An R package for detection and analysis of insect defoliation signals in tree rings}
     \author[a,b]{Christopher H. Guiterman\corref{1}}
-   \ead{chguiterman@email.arizona.edu} 
+   \ead{chguiterman@arizona.edu} 
     \author[a,c]{Ann M. Lynch}
-   \ead{lyncha@email.arizona.edu} 
+   \ead{ann.m.lynch@usda.gov} 
     \author[c]{Jodi N. Axelson}
    \ead{jodi.axelson@berkeley.edu} 
       \address[a]{Laboratory of Tree-Ring Research, University of Arizona, 1215 E Lowell St.~Box 210045, Tucson, AZ, 85721}
@@ -143,7 +143,7 @@
       \cortext[1]{Corresponding Author}
   
   \begin{abstract}
-  We present a new R package to provide dendroecologists with tools to infer, quantify, analyze, and visualize growth suppression events in tree rings caused by insect defoliation. The `dfoliatR' library is based on the FORTRAN V program OUTBREAK, and builds on existing resources in the R computing environment. `dfoliatR' expands on OUTBREAK to provide greater control of suppression thresholds, additional output tables, and high-quality graphics. To use `dfoliatR' requires standardized ring-width measurements from insect host trees and an indexed tree-ring chronology from local non-host trees. It performs an indexing procedure to remove the climatic signal represented in the non-host chronology from the host-tree series. It then infers defoliation events in individual trees. Site-level analyses identify outbreak events that synchronously affect a user-defined number or proportion of the host trees. Functions are available for summary statistics and graphics of tree- and site-level series.
+  We present a new R package to provide dendroecologists with tools to infer, quantify, analyze, and visualize growth suppression events in tree rings caused by insect defoliation, and to reconstruct defoliator outbreak chronologies. `dfoliatR' is based on the OUTBREAK program and builds on existing resources in the R and dplR computing environments. It performs an indexing procedure to remove climatic signals, represented in non-host chronologies or other reconstructed climate series, from the host-tree series. It then infers defoliation events in individual trees based on user-specified thresholds. Site-level analyses identify outbreak events that synchronously affect user-defined numbers or proportions of involved host trees. Functions are provided for summary statistics and graphics of tree- and site-level series. `dfoliatR' expands on OUTBREAK to provide greater control of suppression thresholds, additional output tables, and high-quality graphics. We provide two example data sets and script to enable users to gain familiarity with the package and its capabilities. The source code is available in the Comprehensive R Archive Network (CRAN) and on GitHub.
   
   \hfill\break
   \end{abstract}
@@ -154,15 +154,15 @@
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-Variation in the width and morphology of annual radial growth rings in trees permits dating and quantification of past forest insect defoliator outbreaks. Defoliation can be distinguished from climate- and other disturbance-related influences by comparing ring-width or other annually-resolved features in the wood of host species to non-host species or to climate records. The effect of defoliation on radial growth of trees has been recognized since the mid-1800s, but it was not until the 1980s that dendrochronology techniques were applied to identify and quantify defoliation events (Lynch, 2012; Speer, 2010; Swetnam et al., 1985). The first studies (Swetnam and Lynch, 1993, 1989; Swetnam et al., 1985) focused on developing historical reconstructions of western spruce budworm (WSBW; \emph{Choristoneura freemani}). The methodology has since been successfully applied to a wide range of defoliator species, most of which are conifer herbivores, and has evolved in sophistication and application to a wide range of ecosystem situations (Lynch, 2012).
+Variation in the width and morphology of annual radial growth rings in trees permits dating and quantification of past forest insect defoliator outbreaks. Defoliation can be distinguished from climate- and other disturbance-related influences by comparing ring-width or other annually-resolved features in the wood of host species to that of non-host species or annually-resolved climate records. The effect of defoliation on radial growth of trees has been recognized since the 1860s, and used to reconstruct outbreak regimes since the 1950s (Blais 1954; Lynch 2012). It was not until the 1980s, however, that precise dendrochronological techniques were applied for inferring defoliation events and reconstructing defoliator outbreak regimes (Swetnam, Thompson, and Sutherland 1985; Speer 2010; Lynch 2012). The first studies (Swetnam, Thompson, and Sutherland 1985; Swetnam and Lynch 1989, 1993) focused on developing historical reconstructions of western spruce budworm (WSBW; \emph{Choristoneura freemani} (Lepidoptera: Tortricidae); previously known as \emph{C. occidentalis}) outbreak regimes. The methodology has since been successfully applied to a wide range of defoliator species, most of which are conifer herbivores, and has evolved in sophistication for a wide range of ecosystem situations (Lynch 2012).
 
-The main dendrochronological tool for inferring, dating, and quantifying defoliator outbreaks from tree-ring records has been the software routine OUTBREAK (Holmes and Swetnam, 1986; Swetnam and Lynch, 1989; Swetnam et al., 1985). OUTBREAK computes indices (described later in detail) of suppressed growth by subtracting a detrended and standardized climate series (a ``control'' chronology) from host individual-tree detrended and standardized radial growth series after the host and non-host series have been brought to a common variance. The non-host chronology often consisted of a site chronology developed from non-host tree species, but a gridded climate data point series, like the North American Drought Atlas (Cook and Krusic, 2004) also suffices. If the host and non-host species respond similarly to climate (which can be tested), the derived series retains variability that the host and non-host series do not have in common, generally the insect signal, along with some unexplained variability (noise). The user defines a rule base specifying the magnitude and duration that a period of indexed growth suppression must meet or surpass for a period of suppressed growth to be inferred as a defoliation event at the tree level.
+The main dendrochronological tool for inferring, dating, and characterizing defoliator outbreaks from tree-ring records has been the software routine OUTBREAK (Swetnam, Thompson, and Sutherland 1985; Holmes and Swetnam 1986; Swetnam and Lynch 1989). OUTBREAK computes indices (described later in detail) of suppressed growth by subtracting a detrended and standardized climate series (a ``control'' chronology) from individual host-tree detrended and standardized radial growth series after the host and non-host series have been brought to a common variance. The non-host chronology usually consists of a site chronology developed from non-host tree species growing on a climate-sensitive site, but a gridded climate data point series, like the North American Drought Atlas (Cook and Krusic 2004) also suffices. If the host and non-host species respond similarly to climate (which can and should be tested), the derived series retains variability that the host and non-host series do not have in common, generally the insect signal and some unexplained variability (noise). The user defines a rule base specifying the magnitude and duration that a period of indexed growth suppression must meet or surpass for a period of suppressed growth to be inferred as a defoliation event at the tree level.
 
-Though powerful, OUTBREAK is outdated and increasingly difficult to use in modern computing environments. It was written in FORTRAN V with inherently severe restrictions, as RAM and disk space were limited at that time (256 kb and 10 MB, respectively) and FORTRAN conventions imposed very strict formatting, file naming, and output conventions. The program provides no graphical interface or capabilities, forcing users to import generated text files into spreadsheet or other software for assessing results and performing analyses. Furthermore, OUTBREAK can only handle one test at a time, creating barriers to batch operation and a large burden for researchers with a datasets including multiple sites. We developed the software library \texttt{dfoliaR} as an \texttt{R}- and \texttt{dplR}-based routine to overcome these issues.
+Though powerful, OUTBREAK is outdated and increasingly difficult to use in modern computing environments. It was written in FORTRAN V with inherently severe restrictions, as RAM and disk space were limited at that time (256 kb and 10 MB, respectively) and FORTRAN conventions imposed very strict formatting, file naming, and output conventions. The program lacks a graphical interface or capabilities, forcing users to import generated text files into spreadsheets or other software to assess results and performing analyses. Furthermore, OUTBREAK can only handle one test at a time, creating barriers to batch operation and a large burden for researchers with a datasets including multiple sites. We developed \texttt{dfoliatR} as an \texttt{R}- and \texttt{dplR}-based library to overcome these issues.
 
-\texttt{dfoliatR} adds to a growing suite of dendrochronology packages the \texttt{R} computing environment (R Core Team, 2019). Stemming from the \texttt{dplR} library (Bunn, 2008) that enables \texttt{R} users to read and write an array of tree-ring data formats, standardize ring width series, build and evaluate chronologies, and perform quality control (to name a few), one can now also measure ring widths from scanned images of prepared samples (Lara et al., 2015; Shi and Xiang, 2019), perform and check crossdating (Bunn, 2010), and perform many analytical tests (Jevšenak and Levanič, 2018; Zang and Biondi, 2015). Tools for assessing stand dynamics and disturbance analyses are under rapid development, with new packages for assessing growth and release events (\texttt{TRADER}: Altman et al., 2014), metrics of growth resilience (\texttt{pointRes}: Maaten-Theunissen et al., 2015), and fire history (\texttt{burnr}: Malevich et al., 2018). The key objective of \texttt{dfoliatR} is to provide tools to identify and analyze insect defoliation and outbreak events by building on the methods employed by OUTBREAK. It capitalizes on the robust software already available in \texttt{R} by using \texttt{dplR} data formats for incoming tree-ring series and providing output data formats embodied by the \texttt{tidyverse} (Wickham et al., 2019) that include efficient data manipulation (Wickham et al., 2020) and graphics (Wickham, 2016).
+\texttt{dfoliatR} adds to a growing suite of dendrochronology packages in the \texttt{R} computing environment (R Core Team 2019). Stemming from the \texttt{dplR} library (Bunn 2008) that enables \texttt{R} users to read and write an array of tree-ring data formats, standardize ring width series, build and evaluate chronologies, and perform quality control (to name a few), one can now also measure ring widths from scanned images of prepared samples (Shi et al. 2019; Lara, Bravo, and Sierra 2015), conduct and check crossdating (Bunn 2010), analyze sub-annual anotomical features (Campelo et al. 2016; Rathgeber et al. 2011), and perform many analytical tests (Jevšenak and Levanič 2018; Zang and Biondi 2015). Tools for assessing stand dynamics and disturbance analyses are under rapid development, with new packages for assessing growth and release events (\texttt{TRADER}: Altman et al. 2014), metrics of growth resilience (\texttt{pointRes}: van der Maaten-Theunissen, van der Maaten, and Bouriaud 2015), and fire history (\texttt{burnr}: Malevich, Guiterman, and Margolis 2018). The key objective of \texttt{dfoliatR} is to provide tools to identify and analyze insect defoliation and outbreak events by building on the methods employed by OUTBREAK. It capitalizes on the robust software already available in \texttt{R} by using \texttt{dplR} data formats for incoming tree-ring series and providing output data formats embodied by the \texttt{tidyverse} (Wickham et al. 2019) that include efficient data manipulation (Wickham et al. 2020) and graphics (Wickham 2016).
 
-In this paper, we describe the statistical methods employed by \texttt{dfoliatR}, compare results to those produced by OUTBREAK, and present an example analysis. Users need not have much experience in \texttt{R} to replicate the analyses and graphics as presented. The \texttt{R} code below is executable in an \texttt{R} session once the required libraries are installed and loaded. Support documentation in addition to this paper is provided within the package via standard help menus (accessed by typing \texttt{?} before a function name) and on the package website (\url{https://chguiterman.github.io/dfoliatR/}), which includes up-to-date vignettes that describe various software routines. Code to generate a preprint of this manuscript including the \texttt{R} scripts, and tubular and graphical output is available from \url{https://github.com/chguiterman/dfoliatR_paper}.
+In this paper, we describe the statistical methods employed by \texttt{dfoliatR}, compare results to those produced by OUTBREAK, and present an example analysis inlcuding test data sets and script. Users need not have much experience in \texttt{R} to replicate the analyses and graphics as presented. The \texttt{R} code below is executable in an \texttt{R} session once the required libraries are installed and loaded. Support documentation in addition to this paper is provided within the package via standard help menus and on the package website (\url{https://chguiterman.github.io/dfoliatR/}), which includes up-to-date vignettes that describe various routines. Code to generate a preprint of this manuscript, including the \texttt{R} scripts and tubular and graphical output is available from \url{https://github.com/chguiterman/dfoliatR_paper}.
 
 \hypertarget{overview-of-the-software}{%
 \section{Overview of the software}\label{overview-of-the-software}}
@@ -174,30 +174,34 @@ The \texttt{dfoliatR} library requires two sets of tree-ring data to infer defol
 \item
   Standardized ring-width series for individual trees of the host species
 \item
-  Standardized tree-ring chronology from a local non-host species
+  A standardized tree-ring chronology from a local non-host species, or a climate reconstruction
 \end{itemize}
 
-Users can develop these data sets in software of their choosing, such as \texttt{dplR} (Bunn, 2008) or ARSTAN (Cook and Holmes, 1996). It is important that the host-tree data include only one tree-ring series per tree. Both \texttt{dplR} and ARSTAN have options for averaging multiple sample series into a tree-level series.
+Users can develop these data sets in the software of their choosing, such as \texttt{dplR} or ARSTAN (Cook and Holmes 1996). It is important that the host-tree data include only one tree-ring series per tree. Both \texttt{dplR} and ARSTAN have options for averaging multiple sample series into a tree-level series.
 
 At the heart of \texttt{dfoliatR} lies two functions: \texttt{defoliate\_trees()} and \texttt{outbreak()}. These identify defoliation events on individual trees (Figure \ref{fig:fig-defol}) and then composite across multiple trees to identify outbreak events (Figure \ref{fig:fig-obr}).
 
 \hypertarget{identifying-defoliation-of-trees}{%
 \subsection{Identifying Defoliation of Trees}\label{identifying-defoliation-of-trees}}
 
-The \texttt{defoliate\_trees()} function is the point of entry to the \texttt{dfoliatR} library. It performs two processes, removing climate-related growth signals from the host-tree series and identifying tree-level defoliation events. The climatic or non-defoliation signals in each host-tree series are characterized by a non-host chronology or climate reconstruction. \texttt{dfoiatR} removes that non-defoliation signal by subtracting the non-host series from each host-tree series, which generates a residual index. In OUTBREAK, this residual index was termed the ``corrected'' index. We call it the ``growth suppression index'' (GSI). The GSI is calculated the same as in OUTBREAK for each host tree as
+The \texttt{defoliate\_trees()} function is the point of entry to the \texttt{dfoliatR} library. It performs two processes, removing climate-related growth signals from the host-tree series and identifying tree-level defoliation events. The climatic or non-defoliation signals in each host-tree series are characterized by a non-host chronology or climate reconstruction. \texttt{dfoliatR} removes the non-defoliation signal by subtracting the non-host series from each host-tree series, which generates a residual index. In OUTBREAK, this residual index was termed the ``corrected index.'' We call it the ``growth suppression index'' (GSI). The GSI is calculated the same as in OUTBREAK for each host tree as
 \begin{align}
 \textrm{GSI}_{i} = \textrm{H}_{i} - \left( \textrm{NH}_{i} - \overline{\textrm{NH}} \right) \frac{\sigma_{\textrm{H}}}{\sigma_{\textrm{NH}}} \
 \end{align}
-where H and NH are the host-tree series and the non-host chronology, in year i, respectively. Only the common period between the host-tree series and the non-host chronology are used in Equation 1. The host and non-host chronologies are brought to common variance by scaling the non-host chronology by its mean (\(\overline{\textrm{NH}} \approx 1.0\)) and multiplying by the ratio of host and non-host standard deviations (\(\frac{\sigma_{\textrm{H}}}{\sigma_{\textrm{NH}}}\)), which approximates the variance of the host tree series.
+where H and NH are the host-tree series and the non-host chronology, in year i, respectively. Only the common period between the host-tree series and the non-host chronology are used in Equation 1. The host and non-host chronologies are brought to common variance by scaling the non-host chronology by its mean (\(\overline{\textrm{NH}}\)) and multiplying by the ratio of host and non-host standard deviations (\(\frac{\sigma_{\textrm{H}}}{\sigma_{\textrm{NH}}}\)), which approximates the variance of the host tree series.
 
-Negative departures in the normalized GSI (NGSI) that surpass user-defined thresholds in duration and magnitude are defined as \emph{defoliation events}. As in OUTBREAK, magnitude is assessed on a single year within the departure sequence. The default setting is -1.28 (in units of standard deviation), which was previously determined to be representative of WSBW effects (Swetnam and Lynch, 1989). Duration is assessed by examining sequences of negative NGSI before and after the year of maximum departure. Each defoliation event is allowed one positive excursion on each side of the maximum departure year. Duration is assessed across the entire sequence that includes up to two positive excursions. The default duration is eight years, as is commonly used in WSBW studies (Swetnam and Lynch, 1989). Different species of defoliation insects vary in the length of defoliation and the degree to which they can suppress tree growth. Researchers can, and should, adjust the duration and magnitude parameters accordingly and critically evaluate the results.
+Negative departures in the normalized GSI (NGSI; GSI converted to z-scores) that surpass user-specified thresholds in duration and magnitude are defined as \emph{defoliation events}. As in OUTBREAK, NGSI must reach the magnitude threshold, assessed for each year within the departure sequence. The default setting is -1.28 (NGSI is in units of standard deviation), which was previously determined to be representative of WSBW effects (Swetnam and Lynch, 1989) and is commonly used for other species. Failure to reach the specified threshold results in sequences not being inferred as defoliation events.
 
-Diverging from OUTBREAK, \texttt{dfoliatR} allows users to extend defoliation events by bridging successive events and also by allowing potentially short-duration events that occur at the end of the series. In cases where two defoliation events are separated by a single year, bridging will link them into a single event (\textbf{Show figure?}). We urge careful use of this option because there is no setting to limit the number or length of potentially bridged events. The series end option can be used in cases when the host trees were actively being defoliated at the time of sampling. This option eliminates the duration parameter for an event at the recent end of the series, but all other thresholds apply. The advantage of this parameter is that it can aid in identifying the start-year for the current defoliation event or outbreak, which is both useful in management and allows the current event to be included in return-interval estimates.
+Event duration is assessed by examining sequences of negative NGSI (that exceed the magnitude threshold) before and after the year of maximum departure. Each defoliation event is allowed one single-year positive excursion on each side of the year of maximum departure. Duration is computed across the entire negative sequence that allows these two positive excursions. As in OUTBREAK, the user specifies a duration threshold (minimum number of years) for a departure sequence to be inferred as a defoliation event. The default threshold is eight years, as is commonly used in WSBW studies (Swetnam and Lynch, 1989). Failure to reach the specified duration threshold results in sequences not being inferred as defoliation events, regardless of NGSI values (i.e., both thresholds must be met). Researchers can, and should, adjust the duration and magnitude parameters accordingly and critically evaluate the results, as insect species vary in the length of their outbreaks and the degree to which they can suppress tree growth.
+
+Like OUTBREAK, users are provided an option to suspend the duration threshold at the recent end of the series in cases where an outbreak event is known to be ongoing. This should be used if the user has direct knowledge of defoliation at the site during the sampling campaign. The advantage of allowing potentially short, series-end events is that it allows the current event to be included in return-interval estimates, and can aid in identifying the start-year for the current defoliation event or outbreak.
+
+Diverging from OUTBREAK, \texttt{dfoliatR} allows users to extend defoliation events on individual trees by bridging between sequential events. In cases where two defoliation events are separated by a single year, bridging will link them into a single event. This option was added to \texttt{dfoliatR} during the testing phase of development, when we realized that OUTBREAK deliberately omits sequential, or back-to-back events, even when these events surpass thresholds in duration and magnitude. Instead, OUTBREAK will select the one sequential event with the greatest negative departure year. In every case we assessed (described below) we felt that the OUTBREAK-omitted defoliation events should have been maintained and recorded. Due in large part to reconstructions using OUTBREAK (see papers cited by Lynch 2012), we now know considerably more about forest defoliator outbreak regimes than we did in the 1980s when OUTBREAK was written. We think that two or more prolonged events separated by a single year should in some situations be considered a single event. This is particularly relevant to WSBW and spruce budworm (\emph{C. fumiferana}), for which regimes have been reconstructed for several geographic areas and for which researchers and forest health experts have gained considerable knowledge (Schmitt, Grimble, and Searcy 1984; Sanders et al. 1985; Brookes et al. 1982, and many later publications). In many cases, the greatest growth suppression often occurs late in the outbreak due to cumulative effects accrued on a tree's resources (Swetnam and Lynch 1989, 1993). We urge caution in using the bridging option, however, because it may not be appropriate for all studied insects, such as in situations where impacted stands barely recover from one outbreak before another begins, as with pine processionary caterpillars (\emph{Thaumetopoea pityocampa} (Lepidoptera: Thaumetopoeidae)) (Carus 2004, 2009).
 
 \hypertarget{inferring-outbreak-events}{%
 \subsection{Inferring Outbreak Events}\label{inferring-outbreak-events}}
 
-Defoliation of one or a few trees does not constitute an outbreak. To determine when defoliation becomes an \emph{outbreak event}, \texttt{dfoliatR} composites the individual tree defoliation series into a site-level chronology with the \texttt{outbreak()} function. Users have options to define the number and/or the proportion of trees required for an event to be considered an outbreak. Three parameters control whether a defoliation event constitutes an outbreak: the minimum number of trees available, the minimum number of trees recording defoliation, and the percent of trees recording defoliation. The first allows the researcher to make a judgement call as to the confidence ascribed to reduced sample depth toward the ends of their chronologies, thus compensating for the ``fading record problem'' (Swetnam et al., 1999). The second two parameters adjust the scale of defoliation considered to be an outbreak. Absolute numbers of trees and percentages can be applied separately or in conjunction, following filtering conventions in tree ring fire history studies (Malevich et al., 2018). We urge users to carefully consider the choice of absolute numbers in situations where the number of trees represented in the series varies with time, or the choice of percentages when sample size is small.
+Defoliation of one or a few trees does not constitute an outbreak. To determine when defoliation becomes an \emph{outbreak event}, \texttt{dfoliatR} composites the individual tree defoliation series into a site-level chronology with the \texttt{outbreak()} function. Users have options to define the number and/or the proportion of trees required for an event to be considered an outbreak. Three parameters control whether a defoliation event constitutes an outbreak: the minimum number of trees available, the minimum number of trees recording defoliation, and the percent of trees recording defoliation. The first allows the researcher to make a judgement call as to the confidence ascribed to reduced sample depth toward the ends of their chronologies, thus compensating for the ``fading record problem'' (Swetnam, Allen, and Betancourt 1999). The second two parameters adjust the scale of defoliation considered to be an outbreak. Absolute numbers of trees and percentages can be applied separately or in conjunction, following filtering conventions in tree-ring fire history studies (Malevich, Guiterman, and Margolis 2018). We urge users to carefully consider the choice of absolute numbers in situations where the number of trees represented in the series varies with time, or the choice of percentages when sample size is small.
 
 \hypertarget{evaluation}{%
 \section{Evaluation}\label{evaluation}}
@@ -205,47 +209,38 @@ Defoliation of one or a few trees does not constitute an outbreak. To determine 
 \hypertarget{approach}{%
 \subsection{Approach}\label{approach}}
 
-We tested \texttt{dfoliatR} against OUTBREAK by comparing NGSI to corrected indices for individual trees and years, defoliation status for individual trees and years, and percentage of trees recording outbreaks at the site level, using standardized ring-width data from eight sites in British Columbia, Colorado, and New Mexico, and author-provided non-host site chronologies.
+We tested \texttt{dfoliatR} against OUTBREAK by comparing NGSI to OUTBREAK's normalized corrected indices for individual trees and years, defoliation status for individual trees and years, and percentage of trees recording outbreaks at the site level, using standardized ring-width data from eight sites in British Columbia, Colorado, and New Mexico, and author-provided non-host site chronologies.
 
-We detrended host data for both \texttt{dfoliatR} and OUTBREAK using ARSTAN v6.1 (Cook and Holmes, 1996) with default double detrending (128 year wavelength and a 50\% smoothing spline). In both \texttt{dfoliatR} and OUTBREAK we used event thresholds of -1.28 normalized index, 8 years duration, and allowed for events at the end of series in seven of eight sites. These seven sites were sampled during ongoing outbreak events (Swetnam and Lynch, 1993). We found it necessary to be consistent in how we detrended and in what software (e.g., ARSTAN vs \texttt{dplR}) we employed because subtle differences in standardized ring-width indices created between the programs exacerbated differences between \texttt{dfoliatR} and OUTBREAK. In the end, we chose to only use the standardization output files from ARSTAN, which are easily read into \texttt{R} (and then \texttt{dfoliatR}) using the \texttt{dplR} package.
+We detrended host data for both \texttt{dfoliatR} and OUTBREAK using ARSTAN (v6.1, Cook and Holmes 1996) with default double detrending (128 year wavelength and a 50\% smoothing spline). In both \texttt{dfoliatR} and OUTBREAK we used event thresholds of -1.28 normalized indices, 8 years duration, and allowed for events at the end of series in seven of eight sites. These seven sites were sampled during ongoing outbreak events (Swetnam and Lynch 1993). We found it necessary to be consistent in how we detrended and in what software (e.g., ARSTAN vs \texttt{dplR}) we employed because subtle differences in standardized ring-width indices generated between the programs transferred into differences between \texttt{dfoliatR} and OUTBREAK. In the end, we chose to only use the standardization output files from ARSTAN, which are easily read into \texttt{R} (and then \texttt{dfoliatR}) using the \texttt{dplR} package.
 
 The \texttt{R} code to replicate our comparisons is available from \url{https://github.com/chguiterman/dfoliatR_paper}.
 
 \hypertarget{findings}{%
 \subsection{Findings}\label{findings}}
 
-Since both programs employ Equation 1, \texttt{dfoliatR} and OUTBREAK compute identical growth suppression indices at 0.000 precision (Figure \ref{fig:df-obr-1-1}). In all there are 43,280 ring-width indices from 222 trees included in our test. Of these, the programs identified 11,530 years of defoliation. The programs agreed on 92\% of the years, leaving 927 ``difference'' years in which only one program identified defoliation on an individual tree. The differences included 102 events on 85 trees. We carefully inspected each of these events in the full context of each tree's ring series, and categorized the differences as follows
+Across the 43,280 ring-width indices from 222 trees included in our evaluation, we found that \texttt{dfoliatR} and OUTBREAK compute identical growth suppression indices at 0.000 precision. We expected this outcome because both programs employ Equation 1. At the tree-level, the programs identified 11,530 years of defoliation. The programs agreed on 97.9\% of the years, leaving 927 ``difference'' years in which only one program identified defoliation on an individual tree. The differences included 102 events on 85 trees. We carefully inspected each of these events in the full context of each tree's ring-series, and categorized the differences as follows
 
 \begin{itemize}
 \item
-  \emph{Series-end events} (40\% of the total) in which we allowed OUTBREAK to include ``truncated outbreaks'' (for seven sites) at the end of each series. In \texttt{dfoliatR}, this option is controlled by the ``series\_end\_events'' parameter to \texttt{defoliate\_trees()}. In OUTBREAK, the option appears while changing the duration parameter (option 3). When selected, OUTBREAK will include any sequences of negative indices at the either the beginning or the end of each tree series. No thresholds are applied in identifying these as defoliation events. In \texttt{dfoliatR}, the negative sequences are evaluated as with any other possible defoliation, but the duration threshold is omitted. Each of the 13 events included in these differences did not meet the ``max\_reduction'' parameter (-1.28 NGSI) in \texttt{dfoliatR} and were excluded. In two cases, OUTBREAK included events at the beginning of the series where \texttt{dfoliatR} does not allow truncated events. In four cases, OUTBREAK omitted the last year of the series because it was positive. In two cases, \texttt{dfoliatR} omitted possible events because it had already included a positive NGSI excursion after the ``max\_reduction'' year, and since it will only allow one excursion on either side of the max year, the events were omitted due to short duration.
+  \emph{Series-end events} (40\% of the total) in which OUTBREAK included ``truncated outbreaks'' (for seven sites) at the end of each series. In \texttt{dfoliatR}, this option is controlled by the ``series\_end\_events'' parameter to \texttt{defoliate\_trees()}. In OUTBREAK, the option appears while changing the duration parameter (option 3). When selected, OUTBREAK will include any sequences of negative indices at the either the beginning or the end of each tree series as a defoliation event, without consideration of either duration or magnitude thresholds. In \texttt{dfoliatR}, the duration threshold is omitted and the magnitude threshold is retained in series-end-events. Each of the 13 events included in these differences did not meet the ``max\_reduction'' parameter (-1.28 NGSI) in \texttt{dfoliatR} and were excluded. In two cases, OUTBREAK included events at the beginning of the series where \texttt{dfoliatR} does not allow truncated events. In four cases, OUTBREAK omitted only the last year of the series because the index was positive. In two cases, \texttt{dfoliatR} omitted possible events because it had already included a positive NGSI excursion after the ``max\_reduction'' year, and since it will only allow one excursion on either side of the max year, the events were omitted due to short duration.
 \item
-  \emph{Sequential events} (36\%) in which OUTBREAK omitted events that occur one year prior or one year following an identified event. OUTBREAK selects the event with the greatest negative index year. On two trees, OUTBREAK omitted two of three sequential events. \texttt{dfoliatR} allows all such events. While inspecting these differences, we added an option to \texttt{defoiate\_trees()} that would ``bridge'' between sequential events, making them into single, long events. We felt that this was ecologically justified, especially for studies of WSBW, because the insect will occasionally maintain minor defoliation f individuals for decades even while not in an outbreak phase.
+  \emph{Sequential events} (36\%) in which OUTBREAK omitted events that occur one year prior or one year following an identified event. When this occurs, OUTBREAK selects the event with the greatest negative index year. On two trees, OUTBREAK omitted two of three sequential events. While inspecting these differences, we added an option to \texttt{defoliate\_trees()} that would ``bridge'' between sequential events (that surpass magnitude and duration thresholds)into single, long events. We felt that this was ecologically justified, especially for studies of WSBW, because the insect will occasionally defoliate individual trees for decades and reconstructed chronologies show outbreaks as long as \textbf{xxx (ANN CHECK)}.
 \item
-  \emph{Undetermined differences} (22\%) occurred in cases where OUTBREAK omitted events without clear cause.
+  \emph{Undetermined differences} (22\%) occurred in cases where OUTBREAK omitted events without clear cause that \texttt{dfoliatR} correctly identified as defoliations.
 \item
-  \emph{Rounding} (2\%) differences in the indices either omitted or cut short events on two trees. In both cases the indices were very close to zero.
+  \emph{Rounding differences} (2\%) in the indices either omitted or cut short events on two trees. In both cases the indices were very close to zero, and the difference was less than the precision of the raw data measurement.
 \end{itemize}
 
-Our inspections revealed what we believe are short-comings in how OUTBREAK identifies defoliation events on individual trees. In every one of the 102 cases we inspected, we felt that \texttt{dfoliatR} provided a more biologically and statistically appropriate assessment of defoliation.
+\textbf{(Bridging paragraph?)}
 
-and use them to infer identical tree-level outbreak events, including onset and termination dates and date and magnitude of the maximum growth suppression when \texttt{dfoliatR} bridging matches the OUTBREAK protocols. Once the issues with ARSTAN (described earlier) were resolved, dfoliatR and OUTBREAK produced identical indices at 0.000 precision.
+At the site level, OUTBREAK and \texttt{dfoliatR} produce similar time series of percent trees defoliated (Figure \ref{fig:df-obr-site}), which forms the basis for inferring outbreak occurrence, intensity, and duration. Nearly all of the differences between the programs include either more trees or a longer duration of inferred outbreak by \texttt{dfoliatR}. These arise from the inclusion of events omitted by OUTBREAK. These differences translate to greater numbers of trees in defoliation during certain events, or events recorded by single trees during periods of low sample depth.
 
-When inferring outbreak events at the tree level, our initial results did not always match OUTBREAK, leading to development of the bridging option. Identifying a minimum within a period while allowing for positive excursions is a tricky computation. OUTBREAK deliberately disallows back-to-back events -- after a minimum value within a period of negative values, a second positive index terminates an event. OUTBREAK does not allow a period of highly negative values to be appended to an earlier outbreak if the intervening period is 1 year, even if those negative values fall below the minimum in the earlier period. Due in large part to reconstructions using OUTBREAK (see papers cited by Lynch, 2012), we now know considerably more about forest defoliator outbreak regimes than we did in the 1980s when OUTBREAK was written. We think that two prolonged events separated by a single year should in some situations be considered a single outbreak at both the tree and site levels. This is particularly relevant to western spruce budworm and spruce budworm (\emph{C. fumiferana}), for which regimes have been reconstructed for several geographic areas and for which researchers and forest health experts have gained considerable knowledge (\textbf{Sanders et al.~1985, Brookes et al.~1987 and many later publications}). We now know that the greatest growth suppression often occurs late in the outbreak due to cumulative effects (\textbf{rrr}). We developed the bridging option to permit these periods to be linked to preceding events separated by a single year.
-
-Bridging operates at the tree level in \texttt{dfoliatR}, and these effects generally have minor effects on site-level reconstructions (\textbf{Fig.Bridging}). Occasionally site-level events are inferred differently (\textbf{Table.Bridging}), and this can affect return interval and duration statistics.
-
-\hypertarget{best-practice-recommendations}{%
-\subsection{Best Practice Recommendations}\label{best-practice-recommendations}}
-
-We encourage authors to report software and library version numbers and download dates where applicable. This is standard practice for statistical packages, but has often been ignored for R- and dplR-based analyses. R-based software evolves over time, and results cannot always be replicated if the software versions are unknown. Similarly, significant changes (especially fixes) imply that re-analysis of data might differ from earlier published results and interpretations. Wherever possible, refereed publications supporting the software should be cited. Our experience with ARSTAN demonstrates the importance of adopting this practice. In the United States, analytic methods not documented thusly and supported by the literature might be questioned if the results are used in a National Environmental Protection Act (NEPA) process.
-
-We recommend that researchers compare dfoliatR results with and without bridging, and see which option agrees best with known insect biology and ecology. Bridging may be a logical choice for insects with prolonged non-outbreak periods, such as western spruce budworm, but not for situations where impacted stands barely recover from one outbreak before another begins, such as occurs with pine processionary caterpillars (\emph{Thaumetopoea pityocampa} (Lepidoptera: Thaumetopoeidae)) (\textbf{Carus 2004, 2009}).
+This evaluation revealed what we believe are short-comings in how OUTBREAK identifies defoliation events on individual trees. In every one of the 102 cases we inspected, we felt that \texttt{dfoliatR} provided a more biologically and statistically appropriate assessment of defoliation. Therefore, \texttt{dfoliatR} also did a better job inferring OUTBREAK events and associated statistics at the site level.
 
 \hypertarget{availability-and-installation}{%
 \section{Availability and installation}\label{availability-and-installation}}
 
-The \texttt{dfoliatR} library (Guiterman et al., 2020) is provided free and open source from the Comprehensive R Archive Network (CRAN; \url{https://cran.r-project.org/}). To install \texttt{dfoliatR} from CRAN use
+The \texttt{dfoliatR} library (Guiterman, Lynch, and Axelson 2020) is provided free and open source from the Comprehensive R Archive Network (CRAN; \url{https://cran.r-project.org/}). To install \texttt{dfoliatR} from CRAN use
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -274,12 +269,16 @@ Issues, bug reports, and ideas for improving \texttt{dfoliatR} can be posted to 
 \hypertarget{example-usage}{%
 \section{Example Usage}\label{example-usage}}
 
-In \texttt{dfoliatR} we provide two sets of tree-ring data to aid users in exploring the functions, graphics, and outputs. Each set consists of individual host-tree series, standardized using 50-year splines with a 50\% frequency response, and a local non-host chronology. The non-host ring-width data were standardized using 150-year splines with a 50\% frequency response. The non-host chronologies were averaged following standard procedures (Speer, 2010). Host trees from Demijohn Peak (DMJ; 2902 m asl) in the San Juan Mountains of southern Colorado include Douglas-fir (\emph{Pseudotsuga menziesii}) compared against a local non-host ponderosa pine (\emph{Pinus ponderosa}) chronology (Ryerson et al., 2003). The East Fork site (EF; 2580 m asl) in the Jemez Mountains of northcentral New Mexico include Douglas-fir and white fire (\emph{Abies concolor}) host trees and a ponderosa pine non-host chronology (Swetnam and Lynch, 1993).
+Once \texttt{dfoliatR} is loaded into an \texttt{R} session (via \texttt{library(dfoliatR)}) users can access two sets of tree-ring data to aid in exploring the functions, graphics, and outputs. Each data set consists of individual host-tree series and a local non-host chronology. The host-tree series were standardized using 50-year splines with a 50\% frequency response, while the non-host ring-width data were standardized using 150-year splines with a 50\% frequency response and then averaged via Tukey's biweight robust mean procedure. Host trees from Demijohn Peak (DMJ; 2902 m asl) in the San Juan Mountains of southern Colorado include Douglas-fir (\emph{Pseudotsuga menziesii}) compared against a local non-host ponderosa pine (\emph{Pinus ponderosa}) chronology (Ryerson, Swetnam, and Lynch 2003). The East Fork site (EFK; 2580 m asl) in the Jemez Mountains of northcentral New Mexico includes Douglas-fir and white fir (\emph{Abies concolor}) host trees and a ponderosa pine non-host chronology (Swetnam and Lynch 1993).
+
+With \texttt{dfoliatR} loaded, the datasets are accessible using the \texttt{data()} function. The data object names are prefixed by their site codes. For instance, the \texttt{dmj\_*} objects come from the DMJ site and include the host-tree series (\texttt{dmj\_h}), the non-host chronology (\texttt{dmj\_nh}), the defoliation series (\texttt{dmj\_defol}), and the outbreak series (\texttt{dmj\_obr}). The same suite of data are available for EFK using the \texttt{efk\_*} prefix.
+
+In our example scripts below, \texttt{\#\#} and \texttt{\#} denote user comments, per standard \texttt{R} coding, which are colored in brown. Text in blue denote functions; black are loaded objects, and green are quoted variables and links.
 
 \hypertarget{tree-level-defoliation-events}{%
 \subsection{Tree-Level Defoliation Events}\label{tree-level-defoliation-events}}
 
-To assess defoliation of trees, we begin with a set of standardized host-tree series and a local non-host chronology or climate reconstruction. First, the \texttt{dfoliatR} library needs to be loaded (after installation as above) and the included datasets can be loaded. The function \texttt{defoliate\_trees()} performs the GSI indexing procedure on each host-tree series and then identifies defoliation events.
+The function \texttt{defoliate\_trees()} performs the GSI indexing procedure on each host-tree series and then identifies defoliation events.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -303,9 +302,11 @@ To assess defoliation of trees, we begin with a set of standardized host-tree se
 \end{Highlighting}
 \end{Shaded}
 
-The result of running \texttt{defoliate\_trees()} is long-format (stacked) data frame with five variables: ``year'', ``series'', ``gsi'', ``ngsi'', and ``defol\_status.'' The ``gsi'' variable is the ``corrected'' tree-level growth suppression index. It was normalized or scaled into z-scores to produce ``ngsi'', which is used to identify defoliation events. The ``defol\_status'' column provides a set of character strings, ``nd'' for non-defoliation year, ``defol'' for a defoliation year, ``max\_defol'' for the year of maximum suppression (that acts as the basis for individual events), ``bridge\_defol'' to identify years that link subsequent events (only one is present at DMJ), and ``series\_end\_defol'' to identify defoliation at the present-end of the series. Selecting \texttt{list\_output\ =\ TRUE} provides a list-object of data frames, each with the \texttt{rwl} object that combines the host tree and non-host chronology and the columns created in \texttt{defoliate\_trees()}. This option is not used by subsequent functions in \texttt{dfoliatR}, but researchers can examine it to check the results of the GSI calculation (Equation 1).
+The result is long-format (stacked) data frame with five variables: ``year'', ``series'', ``gsi'', ``ngsi'', and ``defol\_status.'' The ``defol\_status'' column indicates whether that year has defoliation or not, with a set of factors that include ``nd'' for non-defoliation year, ``defol'' for a defoliation year, ``max\_defol'' for the year of maximum suppression (that acts as the basis for individual events), ``bridge\_defol'' to identify years that link subsequent events (only one is present at DMJ), and ``series\_end\_defol'' to identify defoliation at the present-end of the series.
 
-We can assess the results of running \texttt{defoliate\_trees()} through graphical and table outputs. The function \texttt{get\_defol\_events()} will provide a list of every defoliation event for every tree, with the corresponding mean ``ngsi'' value. A summary table of the results for each tree is produced by \texttt{defol\_stats()} (Table \ref{tab:tbl-defol}).
+Selecting \texttt{list\_output\ =\ TRUE} in \texttt{defoliate\_trees()} provides a list-object of data frames, each with an \texttt{rwl} object that combines the host tree and non-host series and the other columns created by \texttt{defoliate\_trees()}. This option is not used by subsequent functions in \texttt{dfoliatR}, but researchers can examine it to check the results of the GSI calculation (Equation 1), such as the non-host series after scaling to a common variance with a particular host-tree series.
+
+The results of running \texttt{defoliate\_trees()} can be assessed through graphical and table outputs. The function \texttt{get\_defol\_events()} will provide a list of every defoliation event for every tree, with the corresponding mean ``ngsi'' value. A summary table of the results for each tree is produced by \texttt{defol\_stats()} (Table \ref{tab:tbl-defol}).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -314,28 +315,32 @@ We can assess the results of running \texttt{defoliate\_trees()} through graphic
 \end{Highlighting}
 \end{Shaded}
 
-The \texttt{plot\_defol()} function produces a ``ggplot'' graphics object with line segments showing the measured sequence of each series and a filled segment for each identified defoliation event (Figure \ref{fig:fig-defol}). The defoliation segments are colored by their relative severity based on their average NGSI value. The default cut-off values between ``Severe'' and ``Moderate'' is the overall mean across all events and between ``Moderate'' and ``Minor'' is the first quartile. Users can define these breaks to suit their needs.
+The \texttt{plot\_defol()} function produces a ``ggplot'' graphics object with line segments showing the measured sequence of each series and a filled segment for each identified defoliation event (Figure \ref{fig:fig-defol}). The defoliation segments are colored by their relative severity based on their average NGSI value. The default cut-off values between ``Severe'' and ``Moderate'' is the overall mean across all events. The cut-off between ``Moderate'' and ``Minor'' is the first quartile by default. Users can re-define the breaks to suit their needs via the ``breaks'' parameter in \texttt{plot\_defol()}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{plot_defol}\NormalTok{(dmj_defol)}
-\CommentTok{## This creates a ggplot object, so additions can }
+\CommentTok{## This creates a ggplot object. Additions can }
 \CommentTok{## be made to adjust plotting themes and}
 \CommentTok{## aesthetics, like color.   }
-\CommentTok{## For more on the features of ggplot:}
+\CommentTok{## For more on the features of ggplot see}
 \CommentTok{## https://ggplot2.tidyverse.org/}
+\CommentTok{## Adding 'scale_color_manual()' will}
+\CommentTok{## change the colors that denote }
+\CommentTok{## the average NGSI value for each defoliation}
+\CommentTok{## event.}
 \KeywordTok{library}\NormalTok{(ggplot2)}
 \KeywordTok{plot_defol}\NormalTok{(dmj_defol) }\OperatorTok{+}
 \StringTok{  }\KeywordTok{scale_color_manual}\NormalTok{(}\DataTypeTok{values =} \KeywordTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{, }\StringTok{"orange"}\NormalTok{, }\StringTok{"purple"}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
-These basic output functions aid in assessing the sensitivity of input parameters to \texttt{defoliate\_trees()} including the duration and magnitude thresholds for identifying defoliation events. Using \texttt{plot\_defol()} also provides a direct assessment of the between-tree variability in deflation. For further analyses, we composite the host-tree defoliation series to the site level using \texttt{outbreak()}.
+These output functions aid in assessing the sensitivity of input parameters to \texttt{defoliate\_trees()}, including the duration and magnitude thresholds for identifying defoliation events. Using \texttt{plot\_defol()} also provides a direct assessment of the between-tree variability in defoliation.
 
 \hypertarget{site-level-events}{%
 \subsection{Site-Level Events}\label{site-level-events}}
 
-Once we have identified defoliation events on individual trees, we can infer outbreak events at the site level. The function \texttt{outbreak()} acts to composite tree-level defoliation series into a single chronology, with input parameters that control thresholds in the number and proportions of trees recording a defoliation event.
+To infer outbreak events at the site level, the function \texttt{outbreak()} composites tree-level defoliation series into a single chronology, with input parameters that control thresholds in the number and proportions of trees recording a defoliation event.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -347,9 +352,9 @@ Once we have identified defoliation events on individual trees, we can infer out
 \end{Highlighting}
 \end{Shaded}
 
-Input parameters to \texttt{outbreak()} include ``filter\_min\_series'' to control the chronology cut-off points with regard to sample depth, ``filter\_min\_defol'' and ``filter\_perc'' to control the minimum number and percent of trees, respectively, recording a defoliation event in a given year. \texttt{Outbreak()} produces a new data frame with eight variables: ``year'', ``num\_defol'', ``percent\_defol'', ``num\_max\_defol'', ``mean\_gsi'', ``mean\_ngsi'', and ``outbreak\_status.'' All of these variables are populated regardless of an inferred outbreak event, providing a continuous disturbance chronology. The ``num\_max\_defol'' variable counts the number of trees recording their maximum defoliation in a given year. The ``mean\_gsi'' and ``mean\_ngsi'' variables provide averages of these indices across all available trees. Finally, the ``outbreak\_status'' column shows whether an outbreak event is inferred (``outbreak'') or not (``not\_obr'').
+Input parameters to \texttt{outbreak()} include ``filter\_min\_series'' to control the chronology cut-off points with regard to sample depth, ``filter\_min\_defol'' and ``filter\_perc'' to control the minimum number and percent of trees recording a defoliation event in a given year. \texttt{Outbreak()} produces a new data frame with eight variables: ``year'', ``num\_defol'', ``percent\_defol'', ``num\_max\_defol'', ``mean\_gsi'', ``mean\_ngsi'', and ``outbreak\_status.'' All of these variables are populated regardless of an inferred outbreak event, providing a continuous disturbance chronology. The ``num\_max\_defol'' variable counts the number of trees recording their maximum defoliation in a given year. The ``mean\_gsi'' and ``mean\_ngsi'' variables provide averages of these indices across all available trees. Finally, the ``outbreak\_status'' column shows whether an outbreak event is inferred (``outbreak'') or not (``not\_obr'').
 
-The default plotting function to visualize results form \texttt{outbreak()} creates a three-panel graph showing the mean site-level chronology, the percent of trees recording a defoliation, and the sample depth over time (Figure \ref{fig:fig-obr}).
+The default plotting function to visualize results from \texttt{outbreak()} creates a three-panel graph showing the mean site-level chronology, the percent of trees recording a defoliation, and the sample depth over time (Figure \ref{fig:fig-obr}).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -364,37 +369,36 @@ A summary table of the inferred outbreak events is generated by the \texttt{outb
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{dmj_obr_stats <-}\StringTok{ }\KeywordTok{outbreak_stats}\NormalTok{(dmj_obr)}
+\KeywordTok{View}\NormalTok{(dmj_obr_stats)}
 \end{Highlighting}
 \end{Shaded}
 
-The output table from \texttt{outbreak\_stats()} shows the start and end years of each event, along with their corresponding duration, the number and percent of trees in defoliation at the start of the event, the the number of trees recording the outbreak event (in part or full), the minimums of the mean GSI and NGSI indices, and two points of ``peak defoliation.'' The first, ``peak\_outbreak\_year,'' is the year in which the greatest number of trees is recording the outbreak, and the second, ``peak\_defol\_year,'' is the year in with the lowest average NGSI. These output variables provide a array of options for assessing basic metrics of the insect defoliation regime, including interval analyses:
+The output table from \texttt{outbreak\_stats()} shows the start and end years of each event, along with their corresponding duration, the number and percent of trees in defoliation at the start of the event, the the number of trees recording the outbreak event (in part or full), the minimums of the mean GSI and NGSI indices, and two points of ``peak defoliation.'' The first, ``peak\_outbreak\_year'' is the year in which the greatest number of trees are recording the outbreak, and the second, ``peak\_defol\_year'' is the year with the lowest average NGSI. These output variables provide a array of options for assessing metrics of the insect defoliation regime, including interval analyses:
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{## calculate mean return interval for outbreak start years}
 \NormalTok{intervals <-}\StringTok{ }\KeywordTok{diff}\NormalTok{(dmj_obr_stats}\OperatorTok{$}\NormalTok{start)}
-\KeywordTok{mean}\NormalTok{(intervals) }\CommentTok{## 51.2}
+\KeywordTok{mean}\NormalTok{(intervals) }\CommentTok{## 51.2 year mean return interval}
 \end{Highlighting}
 \end{Shaded}
 
 \hypertarget{conclusions}{%
 \section{Conclusions}\label{conclusions}}
 
-\begin{itemize}
-\tightlist
-\item
-  Encourage use of \texttt{dfoliatR} over OUTBREAK -- more acruate, greater user control, more easily conduct sensitivity tests to evaluate paramters, data, and ecological patterns
-\item
-  Facilitates high-levelr statistical analyses by easily transfering to other libraries (MASS, etc.)
-\item
-  A community resource that can be easily maintained and updated into the future.
-\end{itemize}
+The \texttt{dfoliatR} package provides dendroecologists with tools to infer, quantify, analyze, and visualize tree-ring growth suppression events and to reconstruct forest insect defoliator outbreak regimes. It is built on the long-accepted host to nonhost comparison methodology used in the 1980s FORTRAN program OUTBREAK (Swetnam, Thompson, and Sutherland 1985; Swetnam and Lynch 1989, 1993). Key benefits are that \texttt{dfoliatR} provides easier control of suppression thresholds, provides additional output tables and high-quality graphics, defines defoliation events more consistently, and operates in the open-source \texttt{R} environment.
+
+Using \texttt{dfoliatR} requires standardized ring-width measurements from insect host trees and either an indexed tree-ring chronology from local non-host trees or suitable climate chronology. It performs an indexing procedure to remove the climatic signal represented in the non-host chronology from the host-tree series. It then infers defoliation events in individual trees. Site-level analyses identify outbreak events that synchronously affect a user-defined number or proportion of the host trees. Functions are provided for summary statistics and graphics of tree- and site-level series. The package produces publication-quality plots, and tabulates growth suppression indices and tree- and site-level outbreak event statistics for user-defined post-processing needs, including those suitable for charting and tabulating landscape- and regional-level results.
+
+\texttt{dfoliatR} adds a new option for dendroentimology to combine, or ``bridge,'' sequential tree-level defoliation events into single events. In practice, we suggest that researchers carefully evaluate if bridging is ecologically applicable to study situations and insect ecology, and to carefully explore the data before deciding whether or not to use this option. It is probably not appropriate for insects with high-frequency, high--severity outbreaks, such as processionary caterpillars. Outbreak reconstructions of insects for which the interval is notably longer than typical outbreak duration, such as Douglas-fir tussock moth (\emph{Orgyia pseudotsugata} (Lepidoptera: Erebidae)), are unlikely to be significantly affected. Species for which outbreak duration varies considerably, for which individual tree resilience to defoliation varies considerably, or which may chronically infest trees or sites, or alternate between chronic, outbreak, and minimal activity states, such as conifer-feeding \emph{Choristoneura}, present more complicated challenges, and the researcher should use discretion with the bridge option.
+
+\texttt{dfoliatR} adds to the on-going open-source software development for dendrochronological methods (e.g., Bunn 2008; Brewer 2014; Brewer and Guiterman 2016). The \texttt{R} environment enables automation of analyses, allowing input/output processes to become routine, and empowering batch processing of large multi-site projects and sensitivity analyses. It also facilitates additional statistical analyses, such as spectral analyses and superposed epoch analyses (e.g., Malevich, Guiterman, and Margolis 2018), with easy transfer from \texttt{dfoliatR} and \texttt{dplR} to other libraries in \texttt{R}. Source code for \texttt{dfoliatR} is available in the Comprehensive R Archive Network (CRAN) and GitHub \url{https://github.com/chguiterman/dfoliatR} with updated descriptions and helpful vignettes on the package website \url{https://chguiterman.github.io/dfoliatR/}. Researchers wishing to contribute to further development of \texttt{dfoliatR} are encouraged to do so via the GitHub repository.
 
 \hypertarget{acknowledgments}{%
 \section*{Acknowledgments}\label{acknowledgments}}
 \addcontentsline{toc}{section}{Acknowledgments}
 
-We are grateful to late Richard Holmes of the Laboratory of Tree-Ring Research (LTRR) for his achievements in developing OUTBREAK and many other tree-ring software programs, and we thank Thomas Swetnam for his insights and encouragement. The \texttt{dfoliatR} project was supported by the Agnes Haury Visiting Scholars Fellowship at the LTRR and by the University of California Berkeley. Additional support was provided by the LTTR and the United States Forest Service Rocky Mountain Research Station. Any use of trade, firm, or product names is for descriptive purposes only and does not imply endorsement by the U.S. Government.
+We are grateful to late Richard Holmes of the Laboratory of Tree-Ring Research (LTRR) for his achievements in developing OUTBREAK and many other tree-ring software programs, and we thank Thomas Swetnam for his insights and encouragement. The \texttt{dfoliatR} project was supported by the Agnes Haury Visiting Scholars Fellowship at the LTRR, the University of California Berkeley, and the Western Wildlands Environmental Threat Center (WWETAC). Additional support was provided by the LTRR and the United States Forest Service Rocky Mountain Research Station. Any use of trade, firm, or product names is for descriptive purposes only and does not imply endorsement by the U.S. Government.
 
 \hypertarget{references}{%
 \section*{References}\label{references}}
@@ -402,76 +406,106 @@ We are grateful to late Richard Holmes of the Laboratory of Tree-Ring Research (
 
 \hypertarget{refs}{}
 \leavevmode\hypertarget{ref-Altman2014}{}%
-Altman, J., Fibich, P., Dolezal, J., Aakala, T., 2014. TRADER: A package for Tree Ring Analysis of Disturbance Events in R. Dendrochronologia 32, 107--112. doi:\href{https://doi.org/10.1016/j.dendro.2014.01.004}{10.1016/j.dendro.2014.01.004}
+Altman, J., P. Fibich, J. Dolezal, and T. Aakala. 2014. ``TRADER: A package for Tree Ring Analysis of Disturbance Events in R.'' \emph{Dendrochronologia} 32: 107--12. \url{https://doi.org/10.1016/j.dendro.2014.01.004}.
+
+\leavevmode\hypertarget{ref-Blais1954}{}%
+Blais, JR. 1954. ``The Recurrence of Spruce Budworm Infestations in the Past Century in the Lac Seul Area of Northwestern Ontario.'' \emph{Ecology} 35 (1): 62--71.
+
+\leavevmode\hypertarget{ref-Brewer2014}{}%
+Brewer, Peter W. 2014. ``Data Management in Dendroarchaeology Using Tellervo.'' \emph{Radiocarbon} 56 (4): S79--S83. \url{https://doi.org/10.2458/azu_rc.56.18320}.
+
+\leavevmode\hypertarget{ref-Brewer2016}{}%
+Brewer, Peter W., and Christopher H. Guiterman. 2016. ``A New Digital Field Data Collection System for Dendrochronology.'' \emph{Dendrochronologia} 38: 131--35. \url{https://doi.org/10.1016/j.dendro.2016.04.005}.
+
+\leavevmode\hypertarget{ref-Brookes1987}{}%
+Brookes, M. H., Robert W. Campbell, J. J. Colbert, R. G. Mitchell, and R. W. Stark (Technical Coordinators). 1982. ``Western Spruce Budworm.'' USDA Forest Service, Cooperative State Research Service, Technical Bulletin No. 1694. 198 p., Washington D.C.
 
 \leavevmode\hypertarget{ref-Bunn2008}{}%
-Bunn, A.G., 2008. A dendrochronology program library in R (dplR). Dendrochronologia 26, 115--124. doi:\href{https://doi.org/10.1016/j.dendro.2008.01.002}{10.1016/j.dendro.2008.01.002}
+Bunn, Andrew G. 2008. ``A dendrochronology program library in R (dplR).'' \emph{Dendrochronologia} 26: 115--24. \url{https://doi.org/10.1016/j.dendro.2008.01.002}.
 
 \leavevmode\hypertarget{ref-Bunn2010}{}%
-Bunn, A.G., 2010. Statistical and visual crossdating in R using the dplR library. Dendrochronologia 28, 251--258. doi:\href{https://doi.org/10.1016/j.dendro.2009.12.001}{10.1016/j.dendro.2009.12.001}
+---------. 2010. ``Statistical and visual crossdating in R using the dplR library.'' \emph{Dendrochronologia} 28: 251--58. \url{https://doi.org/10.1016/j.dendro.2009.12.001}.
+
+\leavevmode\hypertarget{ref-Campelo2016}{}%
+Campelo, Filipe, Cristina Nabais, Ana Carvalho, and Joana Vieira. 2016. ``tracheideR--An R package to standardize tracheidograms.'' \emph{Dendrochronologia} 37: 64--68. \url{https://doi.org/10.1016/j.dendro.2015.12.006}.
+
+\leavevmode\hypertarget{ref-Carus2004}{}%
+Carus, Serdar. 2004. ``Impact of defoliation by the pine processionary moth (\emph{Thaumetopoea pityocampa}) on radial, height and volume growth of Calabrian pine (\emph{Pinus brutia}) trees in Turkey.'' \emph{Phytoparasitica} 32 (5): 459--69.
+
+\leavevmode\hypertarget{ref-Carus2009}{}%
+---------. 2009. ``Effects of Defoliation Caused by the Processionary Moth on Growth of Crimean Pines in Western Turkey.'' \emph{Phytoparasitica} 37 (2): 105--14.
 
 \leavevmode\hypertarget{ref-arstan}{}%
-Cook, E.R., Holmes, R.L., 1996. Guide for computer program arstan, The international tree-ring data bank program library version.
+Cook, Edward R, and Richard L Holmes. 1996. ``Guide for computer program ARSTAN.'' \emph{The International Tree-Ring Data Bank Program Library Version 2}, 75--87.
 
 \leavevmode\hypertarget{ref-Cook2004}{}%
-Cook, E.R., Krusic, P.J., 2004. The North American Drought Atlas.
+Cook, Edward R., and Paul J. Krusic. 2004. \emph{The North American Drought Atlas}. (Lamont- Doherty Earth Observatory; the National Science Foundation: New York) Available at https://www.ncdc.noaa.gov/data-access/paleoclimatology-data/datasets/tree-ring/drought-variability {[}Last accessed May 2020{]}.
 
 \leavevmode\hypertarget{ref-dfoliatR}{}%
-Guiterman, C., Lynch, A., Axelson, J., 2020. DfoliatR: Detection and analysis of insect defoliation signals in tree rings.
+Guiterman, Christopher, Ann Lynch, and Jodi Axelson. 2020. \emph{DfoliatR: Detection and Analysis of Insect Defoliation Signals in Tree Rings}. R package version 0.1.0. \url{https://doi.org/10.5281/zenodo.3698163}.
 
 \leavevmode\hypertarget{ref-outbreak}{}%
-Holmes, R.L., Swetnam, T.W., 1986. Dendroecology program library: Program outbreak user's manual. Laboratory of Tree-Ring Research, University of Arizona, Tucson.
+Holmes, Richard L, and Thomas W Swetnam. 1986. ``Dendroecology program library: program OUTBREAK user's manual.'' \emph{Laboratory of Tree-Ring Research, University of Arizona, Tucson}.
 
 \leavevmode\hypertarget{ref-Jevsenak2018}{}%
-Jevšenak, J., Levanič, T., 2018. dendroTools: R package for studying linear and nonlinear responses between tree-rings and daily environmental data. Dendrochronologia 48, 32--39. doi:\href{https://doi.org/10.1016/j.dendro.2018.01.005}{10.1016/j.dendro.2018.01.005}
+Jevšenak, Jernej, and Tom Levanič. 2018. ``dendroTools: R package for studying linear and nonlinear responses between tree-rings and daily environmental data.'' \emph{Dendrochronologia} 48: 32--39. \url{https://doi.org/10.1016/j.dendro.2018.01.005}.
 
 \leavevmode\hypertarget{ref-Lara2015}{}%
-Lara, W., Bravo, F., Sierra, C.A., 2015. MeasuRing: An R package to measure tree-ring widths from scanned images. Dendrochronologia 34, 43--50. doi:\href{https://doi.org/10.1016/j.dendro.2015.04.002}{10.1016/j.dendro.2015.04.002}
+Lara, W., F. Bravo, and C. A. Sierra. 2015. ``MeasuRing: An R package to measure tree-ring widths from scanned images.'' \emph{Dendrochronologia} 34: 43--50. \url{https://doi.org/10.1016/j.dendro.2015.04.002}.
 
 \leavevmode\hypertarget{ref-Lynch2012}{}%
-Lynch, A.M., 2012. What Tree-Ring Reconstruction Tells Us about Conifer Defoliator Outbreaks, in: Barbosa, P., Letourneau, D.K., Agrawal, A.A. (Eds.), Insect Outbreaks Revisited. Blackwell Publishing Ltd, pp. 126--154. doi:\href{https://doi.org/10.1002/9781118295205.ch7}{10.1002/9781118295205.ch7}
-
-\leavevmode\hypertarget{ref-VanderMaaten-Theunissen2015}{}%
-Maaten-Theunissen, M. van der, Maaten, E. van der, Bouriaud, O., 2015. PointRes: An R package to analyze pointer years and components of resilience. Dendrochronologia 35, 34--38. doi:\href{https://doi.org/10.1016/j.dendro.2015.05.006}{10.1016/j.dendro.2015.05.006}
+Lynch, Ann M. 2012. ``What Tree-Ring Reconstruction Tells Us about Conifer Defoliator Outbreaks.'' In \emph{Insect Outbreaks Revisited}, edited by Pedro Barbosa, Deborah K. Letourneau, and Anurag A. Agrawal, 126--54. Blackwell Publishing Ltd. \url{https://doi.org/10.1002/9781118295205.ch7}.
 
 \leavevmode\hypertarget{ref-Malevich2018}{}%
-Malevich, S.B., Guiterman, C.H., Margolis, E.Q., 2018. burnr: Fire history analysis and graphics in R. Dendrochronologia 49, 9--15. doi:\href{https://doi.org/10.1016/j.dendro.2018.02.005}{10.1016/j.dendro.2018.02.005}
+Malevich, Steven B., Christopher H. Guiterman, and Ellis Q. Margolis. 2018. ``burnr: Fire history analysis and graphics in R.'' \emph{Dendrochronologia} 49: 9--15. \url{https://doi.org/10.1016/j.dendro.2018.02.005}.
+
+\leavevmode\hypertarget{ref-Rathgeber2011}{}%
+Rathgeber, Cyrille B. K., Fleur Longuetaud, Frédéric Mothe, Henri Cuny, and Gilles Le Moguédec. 2011. ``Phenology of wood formation: Data processing, analysis and visualisation using R (package CAVIAR).'' \emph{Dendrochronologia} 29 (3): 139--49. \url{https://doi.org/10.1016/j.dendro.2011.01.004}.
 
 \leavevmode\hypertarget{ref-RCore}{}%
-R Core Team, 2019. R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria.
+R Core Team. 2019. \emph{R: A Language and Environment for Statistical Computing}. Vienna, Austria: R Foundation for Statistical Computing. \url{https://www.R-project.org/}.
 
 \leavevmode\hypertarget{ref-Ryerson2003}{}%
-Ryerson, D.E., Swetnam, T.W., Lynch, A.M., 2003. A tree-ring reconstruction of western spruce budworm outbreaks in the San Juan Mountains, Colorado, U.S.A. Canadian Journal of Forest Research 33, 1010--1028. doi:\href{https://doi.org/10.1139/X03-026}{10.1139/X03-026}
+Ryerson, Daniel E, Thomas W Swetnam, and Ann M Lynch. 2003. ``A tree-ring reconstruction of western spruce budworm outbreaks in the San Juan Mountains, Colorado, U.S.A.'' \emph{Canadian Journal of Forest Research} 33: 1010--28. \url{https://doi.org/10.1139/X03-026}.
+
+\leavevmode\hypertarget{ref-Sanders1985}{}%
+Sanders, C. J., R. W. Stark, E. J. Mullins, and J. Murphy (eds). 1985. ``Recent Advances in Spruce Budworms Research.'' In \emph{Proceedings of the CANUSA Spruce Budworms Research Symposium, 16-20 September 1984, Bangor, Maine. Canadian Forestry Service, Ottawa, Ontario. 527p.}
+
+\leavevmode\hypertarget{ref-Schmitt1984}{}%
+Schmitt, D. M., D. G. Grimble, and JL Searcy. 1984. \emph{Managing the spruce budworm in eastern North America}. USDA Forest Service, Cooperative State Research Service, Agriculture Handbook No. 620. 192p., Washington D.C.
 
 \leavevmode\hypertarget{ref-Shi2019}{}%
-Shi, J., Xiang, W., 2019. MtreeRing: A shiny application for automatic measurements of tree-ring widths on digital images.
+Shi, Jingning, Wei Xiang, Qijing Liu, and Sher Shah. 2019. ``MtreeRing: An R Package with Graphical User Interface for Automatic Measurement of Tree Ring Widths Using Image Processing Techniques.'' \emph{Dendrochronologia} 58: 125644. \url{https://doi.org/10.1016/j.dendro.2019.125644}.
 
 \leavevmode\hypertarget{ref-Speer2010}{}%
-Speer, J.H., 2010. Fundamentals of tree-ring research. The University of Arizona Press.
-
-\leavevmode\hypertarget{ref-Swetnam1999}{}%
-Swetnam, T., Allen, C., Betancourt, J., 1999. Applied historical ecology: using the past to manage for the future. Ecological applications 9, 1189--1206.
+Speer, James H. 2010. \emph{Fundamentals of Tree-Ring Research}. The University of Arizona Press.
 
 \leavevmode\hypertarget{ref-Swetnam1989}{}%
-Swetnam, T.W., Lynch, A.M., 1989. A tree-ring reconstruction of western spruce budworm history in the southern Rocky Mountains. Forest Science 35, 962--986. doi:\href{https://doi.org/10.1093/forestscience/35.4.962}{10.1093/forestscience/35.4.962}
+Swetnam, Thomas W., and Ann M. Lynch. 1989. ``A tree-ring reconstruction of western spruce budworm history in the southern Rocky Mountains.'' \emph{Forest Science} 35 (4): 962--86. \url{https://doi.org/10.1093/forestscience/35.4.962}.
 
 \leavevmode\hypertarget{ref-Swetnam1993}{}%
-Swetnam, T.W., Lynch, A.M., 1993. Multicentury, Regional-Scale Patterns of Western Spruce Budworm Outbreaks. Ecological Monographs 63, 399--424.
+---------. 1993. ``Multicentury, Regional-Scale Patterns of Western Spruce Budworm Outbreaks.'' \emph{Ecological Monographs} 63 (4): 399--424. \url{https://doi.org/10.2307/2937153}.
 
 \leavevmode\hypertarget{ref-Swetnam1985}{}%
-Swetnam, T.W., Thompson, M.A., Sutherland, E.K., 1985. Using dendrochronology to measure radial growth of defoliated trees.
+Swetnam, Thomas W., Marna A. Thompson, and Elaine K. Sutherland. 1985. \emph{Using dendrochronology to measure radial growth of defoliated trees}. Vol. 639. United States Department of Agriculture handbook No. 639. 38 p., Washington D.C. \url{www.fs.usda.gov/treesearch/pubs/40898}.
+
+\leavevmode\hypertarget{ref-Swetnam1999}{}%
+Swetnam, TW, CD Allen, and JL Betancourt. 1999. ``Applied historical ecology: using the past to manage for the future.'' \emph{Ecological Applications} 9 (4): 1189--1206. \url{https://doi.org/10.1890/1051-0761(1999)009\%5B1189:AHEUTP\%5D2.0.CO;2}.
+
+\leavevmode\hypertarget{ref-VanderMaaten-Theunissen2015}{}%
+van der Maaten-Theunissen, Marieke, Ernst van der Maaten, and Olivier Bouriaud. 2015. ``PointRes: An R package to analyze pointer years and components of resilience.'' \emph{Dendrochronologia} 35: 34--38. \url{https://doi.org/10.1016/j.dendro.2015.05.006}.
 
 \leavevmode\hypertarget{ref-wickham2016ggplot2}{}%
-Wickham, H., 2016. Ggplot2: Elegant graphics for data analysis. Springer.
+Wickham, Hadley. 2016. \emph{ggplot2: Elegant Graphics for Data Analysis}. Second edition. Springer-Verlag, New York. \url{https://ggplot2-book.org/}.
 
 \leavevmode\hypertarget{ref-Wickham2019}{}%
-Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L., François, R., Grolemund, G., Hayes, A., Henry, L., Hester, J., Kuhn, M., Pedersen, T., Miller, E., Bache, S., Müller, K., Ooms, J., Robinson, D., Seidel, D., Spinu, V., Takahashi, K., Vaughan, D., Wilke, C., Woo, K., Yutani, H., 2019. Welcome to the tidyverse. Journal of Open Source Software 4, 1686. doi:\href{https://doi.org/10.21105/joss.01686}{10.21105/joss.01686}
+Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy McGowan, Romain François, Garrett Grolemund, et al. 2019. ``Welcome to the Tidyverse.'' \emph{Journal of Open Source Software} 4 (43): 1686. \url{https://doi.org/10.21105/joss.01686}.
 
 \leavevmode\hypertarget{ref-Wickham2020dplyr}{}%
-Wickham, H., François, R., Henry, L., Müller, K., 2020. Dplyr: A grammar of data manipulation.
+Wickham, Hadley, Romain François, Lionel Henry, and Kirill Müller. 2020. \emph{Dplyr: A Grammar of Data Manipulation}. R package version 0.8.4. \url{https://CRAN.R-project.org/package=dplyr}.
 
 \leavevmode\hypertarget{ref-Zang2015}{}%
-Zang, C., Biondi, F., 2015. Treeclim: An R package for the numerical calibration of proxy-climate relationships. Ecography 38, 431--436. doi:\href{https://doi.org/10.1111/ecog.01335}{10.1111/ecog.01335}
+Zang, Christian, and Franco Biondi. 2015. ``Treeclim: An R package for the numerical calibration of proxy-climate relationships.'' \emph{Ecography} 38 (4): 431--36. \url{https://doi.org/10.1111/ecog.01335}.
 
 \newpage
 
@@ -548,7 +582,13 @@ start & end & duration & num\_trees\_start & perc\_trees\_start & peak\_outbreak
 \begin{figure}
 \centering
 \includegraphics{../paper_elsevier/Output/plot-trees-df-obr.pdf}
-\caption{\label{fig:df-obr-1-1}Comparison of disturbance indices between dfoliatR and OUTBREAK. Diagonal 1:1 lines show equal values.}
+\caption{\label{fig:df-obr-1-1}Comparison of disturbance indices between dfoliatR and OUTBREAK. Diagonal lines show equal values (1:1).}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{../paper_elsevier/Output/plot-sites-df-obr.pdf}
+\caption{\label{fig:df-obr-site}Comparison of reconstructed western spruce budworm outbreaks computed by dfoliatR and OUTBREAK. Input parameters were identical between programs.}
 \end{figure}
 
 
