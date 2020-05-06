@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.26)  5 MAY 2020 14:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.26)  6 MAY 2020 10:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -736,73 +736,72 @@ LaTeX Info: Redefining \nameref on input line 129.
 \@outlinefile=\write5
 \openout5 = `paper_elsevier.out'.
 
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
+46.
 
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
+(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Underfull \hbox (badness 10000) in paragraph at lines 145--148
 
  []
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-52.
+51.
 
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-52.
+51.
 
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-152.
+151.
 
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.f
 d
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-152.
+151.
 
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.f
 d
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 152.
+(Font)              <8> on input line 151.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 152.
+(Font)              <6> on input line 151.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 152.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 152
+(Font)              <5> on input line 151.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 151
 .
 
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/ums
 a.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 152
+LaTeX Font Info:    Trying to load font information for U+msb on input line 151
 .
 
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/ums
 b.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-52.
-
-(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
-52.
+51.
 
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 152.
+(Font)              <10> on input line 151.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 152.
+(Font)              <7> on input line 151.
 
 Overfull \vbox (23.5848pt too high) has occurred while \output is active []
 
@@ -812,158 +811,158 @@ Overfull \vbox (23.5848pt too high) has occurred while \output is active []
 {c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap
 /pdftex.map}] [2] [3]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-75.
+74.
 
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Overfull \hbox (25.23497pt too wide) in paragraph at lines 182--183
+Overfull \hbox (25.23497pt too wide) in paragraph at lines 181--182
 []\T1/lmr/m/n/10 At the heart of \T1/lmtt/m/n/10 dfoliatR \T1/lmr/m/n/10 lies t
 wo func-tions: \T1/lmtt/m/n/10 defoliate_trees() \T1/lmr/m/n/10 and \T1/lmtt/m/
 n/10 outbreak()\T1/lmr/m/n/10 .
  []
 
 [4] [5] [6] [7] [8]
-Overfull \hbox (54.07948pt too wide) in paragraph at lines 225--227
+Overfull \hbox (54.07948pt too wide) in paragraph at lines 224--226
 \T1/lmr/m/n/10 this op-tion is con-trolled by the ``se-ries_end_events'' pa-ram
 -e-ter to \T1/lmtt/m/n/10 defoliate_trees()\T1/lmr/m/n/10 .
  []
 
 [9]
 
-Package xcolor Warning: Incompatible color definition on input line 245.
+Package xcolor Warning: Incompatible color definition on input line 244.
 
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 247.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 246.
 
-Package xcolor Warning: Incompatible color definition on input line 249.
-
-
-Package xcolor Warning: Incompatible color definition on input line 249.
+Package xcolor Warning: Incompatible color definition on input line 248.
 
 
-Package xcolor Warning: Incompatible color definition on input line 253.
+Package xcolor Warning: Incompatible color definition on input line 248.
+
+
+Package xcolor Warning: Incompatible color definition on input line 252.
 
 [10]
 
-Package xcolor Warning: Incompatible color definition on input line 257.
+Package xcolor Warning: Incompatible color definition on input line 256.
 
 
-Package xcolor Warning: Incompatible color definition on input line 257.
+Package xcolor Warning: Incompatible color definition on input line 256.
 
 
-Package xcolor Warning: Incompatible color definition on input line 261.
+Package xcolor Warning: Incompatible color definition on input line 260.
 
 
-Package xcolor Warning: Incompatible color definition on input line 265.
+Package xcolor Warning: Incompatible color definition on input line 264.
 
 
-Package xcolor Warning: Incompatible color definition on input line 265.
+Package xcolor Warning: Incompatible color definition on input line 264.
 
 [11]
 
-Package xcolor Warning: Incompatible color definition on input line 283.
+Package xcolor Warning: Incompatible color definition on input line 282.
 
 
-Package xcolor Warning: Incompatible color definition on input line 303.
+Package xcolor Warning: Incompatible color definition on input line 302.
 
 
-Package xcolor Warning: Incompatible color definition on input line 303.
+Package xcolor Warning: Incompatible color definition on input line 302.
 
 [12]
 
-Package xcolor Warning: Incompatible color definition on input line 311.
+Package xcolor Warning: Incompatible color definition on input line 310.
 
 
-Package xcolor Warning: Incompatible color definition on input line 316.
+Package xcolor Warning: Incompatible color definition on input line 315.
 
 
-Package xcolor Warning: Incompatible color definition on input line 316.
+Package xcolor Warning: Incompatible color definition on input line 315.
 
 
-Package xcolor Warning: Incompatible color definition on input line 320.
+Package xcolor Warning: Incompatible color definition on input line 319.
 
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-328.
+327.
 
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.f
 d
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
-Package xcolor Warning: Incompatible color definition on input line 336.
+Package xcolor Warning: Incompatible color definition on input line 335.
 
 
-Package xcolor Warning: Incompatible color definition on input line 336.
+Package xcolor Warning: Incompatible color definition on input line 335.
 
 
-Package xcolor Warning: Incompatible color definition on input line 336.
+Package xcolor Warning: Incompatible color definition on input line 335.
 
 [13]
 
-Package xcolor Warning: Incompatible color definition on input line 336.
+Package xcolor Warning: Incompatible color definition on input line 335.
 
 
-Package xcolor Warning: Incompatible color definition on input line 336.
+Package xcolor Warning: Incompatible color definition on input line 335.
 
 
-Package xcolor Warning: Incompatible color definition on input line 345.
+Package xcolor Warning: Incompatible color definition on input line 344.
 
 
-Package xcolor Warning: Incompatible color definition on input line 353.
+Package xcolor Warning: Incompatible color definition on input line 352.
 
 
-Package xcolor Warning: Incompatible color definition on input line 353.
+Package xcolor Warning: Incompatible color definition on input line 352.
 
 
-Overfull \hbox (36.89342pt too wide) in paragraph at lines 355--356
+Overfull \hbox (36.89342pt too wide) in paragraph at lines 354--355
 \T1/lmr/m/n/10 eight vari-ables: ``year'', ``num_defol'', ``per-cent_defol'', `
 `num_max_defol'', ``mean_gsi'',
  []
 
 
-Overfull \hbox (4.5079pt too wide) in paragraph at lines 355--356
+Overfull \hbox (4.5079pt too wide) in paragraph at lines 354--355
 \T1/lmr/m/n/10 ing their max-i-mum de-fo-li-a-tion in a given year. The ``mean_
 gsi'' and ``mean_ngsi''
  []
 
 [14]
 
-Package xcolor Warning: Incompatible color definition on input line 359.
+Package xcolor Warning: Incompatible color definition on input line 358.
 
 
-Package xcolor Warning: Incompatible color definition on input line 363.
+Package xcolor Warning: Incompatible color definition on input line 362.
 
 
-Package xcolor Warning: Incompatible color definition on input line 363.
+Package xcolor Warning: Incompatible color definition on input line 362.
 
 
-Overfull \hbox (44.86041pt too wide) in paragraph at lines 367--368
+Overfull \hbox (44.86041pt too wide) in paragraph at lines 366--367
 []\T1/lmr/m/n/10 A sum-mary ta-ble of the in-ferred out-break events is gen-er-
 ated by the \T1/lmtt/m/n/10 outbreak_stats()
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 369.
+Package xcolor Warning: Incompatible color definition on input line 368.
 
 
-Package xcolor Warning: Incompatible color definition on input line 374.
+Package xcolor Warning: Incompatible color definition on input line 373.
 
 
-Package xcolor Warning: Incompatible color definition on input line 374.
+Package xcolor Warning: Incompatible color definition on input line 373.
 
 
-Package xcolor Warning: Incompatible color definition on input line 378.
+Package xcolor Warning: Incompatible color definition on input line 377.
 
 [15]
 
-Package xcolor Warning: Incompatible color definition on input line 384.
+Package xcolor Warning: Incompatible color definition on input line 383.
 
 
-Package xcolor Warning: Incompatible color definition on input line 384.
+Package xcolor Warning: Incompatible color definition on input line 383.
 
 [16] [17] [18]
-Overfull \hbox (12.69463pt too wide) in paragraph at lines 441--443
+Overfull \hbox (12.69463pt too wide) in paragraph at lines 440--442
 \T1/lmr/m/n/10 New York) Avail-able at https://www.ncdc.noaa.gov/data-access/pa
 leoclimatology-
  []
@@ -973,9 +972,9 @@ name{table.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.548 \begin{landscape}
+l.547 \begin{landscape}
                        \begin{table}]
-Overfull \hbox (26.34344pt too wide) in paragraph at lines 553--567
+Overfull \hbox (26.34344pt too wide) in paragraph at lines 552--566
  [][] 
  []
 
@@ -984,76 +983,76 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.568 \end{landscape}
+l.567 \end{landscape}
                      ]
 <../paper_elsevier/Output/tree-plot-default.pdf, id=310, 415.5525pt x 417.56pt>
 
 File: ../paper_elsevier/Output/tree-plot-default.pdf Graphic file (type pdf)
 <use ../paper_elsevier/Output/tree-plot-default.pdf>
 Package pdftex.def Info: ../paper_elsevier/Output/tree-plot-default.pdf  used o
-n input line 572.
+n input line 571.
 (pdftex.def)             Requested size: 345.0pt x 346.68301pt.
 <../paper_elsevier/Output/site-plot.pdf, id=311, 415.5525pt x 417.56pt>
 File: ../paper_elsevier/Output/site-plot.pdf Graphic file (type pdf)
 <use ../paper_elsevier/Output/site-plot.pdf>
 Package pdftex.def Info: ../paper_elsevier/Output/site-plot.pdf  used on input 
-line 578.
+line 577.
 (pdftex.def)             Requested size: 345.0pt x 346.68301pt.
 <../paper_elsevier/Output/plot-trees-df-obr.pdf, id=312, 415.5525pt x 417.56pt>
 
 File: ../paper_elsevier/Output/plot-trees-df-obr.pdf Graphic file (type pdf)
 <use ../paper_elsevier/Output/plot-trees-df-obr.pdf>
 Package pdftex.def Info: ../paper_elsevier/Output/plot-trees-df-obr.pdf  used o
-n input line 584.
+n input line 583.
 (pdftex.def)             Requested size: 345.0pt x 346.68301pt.
 <../paper_elsevier/Output/plot-sites-df-obr.pdf, id=313, 415.5525pt x 417.56pt>
 
 File: ../paper_elsevier/Output/plot-sites-df-obr.pdf Graphic file (type pdf)
 <use ../paper_elsevier/Output/plot-sites-df-obr.pdf>
 Package pdftex.def Info: ../paper_elsevier/Output/plot-sites-df-obr.pdf  used o
-n input line 590.
+n input line 589.
 (pdftex.def)             Requested size: 345.0pt x 346.68301pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 595.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 594.
 [24pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.595 \end{document}
+l.594 \end{document}
                      <../paper_elsevier/Output/tree-plot-default.pdf>] [25pdfTe
 X warning (ext4): destination with the same identifier (name{figure.2}) has bee
 n already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.595 \end{document}
+l.594 \end{document}
                      <../paper_elsevier/Output/site-plot.pdf>] [26pdfTeX warnin
 g (ext4): destination with the same identifier (name{figure.3}) has been alread
 y used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.595 \end{document}
+l.594 \end{document}
                      <../paper_elsevier/Output/plot-trees-df-obr.pdf>] [27pdfTe
 X warning (ext4): destination with the same identifier (name{figure.4}) has bee
 n already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.595 \end{document}
+l.594 \end{document}
                      <../paper_elsevier/Output/plot-sites-df-obr.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 595.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 594.
 (./paper_elsevier.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 595.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 595.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 594.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 594.
 Package rerunfilecheck Info: File `paper_elsevier.out' has not changed.
 (rerunfilecheck)             Checksum: 55FB7245B086746F564528B56547D85B;2084.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 595.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 594.
  ) 
 Here is how much of TeX's memory you used:
  13005 strings out of 482913
  188979 string characters out of 5957126
- 439649 words of memory out of 5000000
+ 438649 words of memory out of 5000000
  27877 multiletter control sequences out of 15000+600000
  596885 words of font info for 72 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1089,7 +1088,7 @@ pfb><c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public
 /lm/lmtt10.pfb><c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/fonts/t
 ype1/public/lm/lmtt8.pfb><c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-di
 st/fonts/type1/public/lm/lmtti10.pfb>
-Output written on paper_elsevier.pdf (27 pages, 2769133 bytes).
+Output written on paper_elsevier.pdf (27 pages, 2769277 bytes).
 PDF statistics:
  455 PDF objects out of 1000 (max. 8388607)
  393 compressed objects within 4 object streams
