@@ -49,48 +49,39 @@ df_defol <- df_run %>%
 
 # Selected bridge example -------------------------------------------------
 
-fnl04 <- df_defol %>% 
-  filter(series == "FNL04",
-         year %in% 1881:1925)
+# fnl04 <- df_defol %>% 
+#   filter(series == "FNL04",
+#          year %in% 1881:1925)
 efk22 <- df_defol %>% 
   filter(series == "EFK22",
-         year %in% 1940:1975)
+         year > 1850)
 dmj26 <- df_defol %>% 
   filter(series == "DMJ26",
-        year %in% 1850:1875)
+        year %in% 1750:1950)
 
-comps <- rbind(fnl04, efk22, dmj26)
+# comps <- rbind(fnl04, efk22, dmj26)
+comps <- rbind(efk22, dmj26)
 
 obr_events <- comps %>% 
-  filter(obr_type != "nd")
+  mutate(ngsi = replace(ngsi, obr_type == "nd", 0))
 df_events <- comps %>% 
-  filter(defol_status != "nd")
+  mutate(ngsi = replace(ngsi, defol_status == "nd", 0))
 
-cols <- dichromat::colorschemes$SteppedSequential.5[c(3, 8, 18)]
+# cols <- dichromat::colorschemes$SteppedSequential.5[c(3, 8, 18)]
 
+## COLOR
 ggplot(comps, aes(x=year)) +
   # scale_x_continuous(limits=c(1881, 1950)) +
   geom_hline(yintercept = 0, color = "grey80") +
-  geom_line(aes(y=ngsi), size=1.25) +
-  facet_wrap(~ series, scales = "free", ncol = 1) +
-  geom_segment(data = df_events,
-               aes(x=year, xend=year,
-                   y=0, yend=ngsi,
-                   color = stage(start = defol_status,
-                                 after_scale = clr_lighten(color, 0.25, space="combined"))),
-               size=2.5) +
-  geom_segment(data = obr_events,
-               aes(x=year, xend=year,
-                   y=0, yend=ngsi,
-                   color = stage(start = obr_type,
-                                 after_scale = clr_darken(color, 0.2))
-                   ),
-               size=2.5) +
+  facet_wrap(~ series, scales = "free_x", ncol = 1, strip.position = "right") +
+  geom_area(data=df_events, aes(x = year, y = ngsi, fill = "dfoliatR")) +
+  geom_area(data=obr_events, aes(x = year, y = ngsi, fill = "OUTBREAK & dfoliatR")) +
+  geom_line(aes(y=ngsi)) +
+  scale_fill_manual(values = c("grey60", "#1C86EE"), breaks = c("OUTBREAK & dfoliatR", "dfoliatR")) +
+  guides(fill = guide_legend(title = "Identified defoliation events: ")) +
   ylab("NGSI") + xlab("Year") +
-  scale_color_paletteer_d("awtools::mpalette", direction = 1) +
-  # scale_color_manual(values = cols) +
   ggpubr::theme_pubr() +
   theme(legend.position = "bottom",
-        strip.text = element_text(face="bold", hjust = 0, size=16),
-        axis.title = element_text(face="bold", size = 14))
-ggsave(here("paper_elsevier", "Output", "bridging.pdf"), width = 5.75)
+        strip.text = element_text(face="bold", size=12),
+        axis.title = element_text(face="bold", size = 12))
+ggsave(here("paper_elsevier", "Output", "bridging_color.pdf"), width = 5.75)

@@ -1,5 +1,6 @@
 ## Create tables and graphics for dfoliatR manuscript
 
+devtools::install_github("chguiterman/dfoliatR@dev", force=TRUE)
 library(dfoliatR)
 library(ggplot2)
 library(patchwork)
@@ -45,7 +46,7 @@ dmj_obr <- outbreak(dmj_defol,
                     filter_min_defol = 1,
                     filter_perc = 25)
 
-plot_outbreak(dmj_obr, disp_index = "mean_gsi")
+plot_outbreak(dmj_obr, disp_index = "GSI")
 ggsave(paste0(out_pth, "site-plot.pdf"), width=5.75, dpi=300, units="in")
 
 dmj_obr_stats <- outbreak_stats(dmj_obr)

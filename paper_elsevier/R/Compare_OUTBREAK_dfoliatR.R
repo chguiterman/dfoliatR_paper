@@ -152,17 +152,13 @@ site_perc <- outbr_obr %>%
           select(site, year, perc_defol, software))
 
 ggplot(site_perc, aes(x = year, y = perc_defol)) +
-  geom_line(aes(color = software)) +
+  geom_line(aes(color = software, linetype = software)) +
+  scale_linetype_manual(values = c("solid", "longdash")) +
   ylab("Percent trees defoliated") +
   xlab("Year") +
   facet_wrap(~site, nrow = 4) +
-  # labs(tag = c("OUTBREAK", "dfoliatR")) +
-  # # coord_cartesian(clip = "off") +
-  # scale_color_identity(guide = "legend", name = "Software",
-  #                      # values = c("orange", "blue"),
-  #                      labels = c("OUTBREAK", "dfoliatR")) +
   theme_bw() +
-  # guides(color = guide_legend(nrow = 1)) +
+
   theme(legend.position = c(0.5, 1.1),
         legend.direction = "horizontal",
         legend.background = element_blank(),
