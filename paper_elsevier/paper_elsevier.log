@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.26)  14 MAY 2020 16:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.26)  19 MAY 2020 10:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -848,188 +848,184 @@ has been already used, duplicate ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.214 
-       <d:/Dropbox/dfoliatR_paper/paper_elsevier/Output/site-plot.pdf>] [8] [9]
-<D:/Dropbox/dfoliatR_paper/paper_elsevier/Output/bridging_color.pdf, id=148, 41
+       <d:/Dropbox/dfoliatR_paper/paper_elsevier/Output/site-plot.pdf>] [8]
+<D:/Dropbox/dfoliatR_paper/paper_elsevier/Output/bridging_color.pdf, id=144, 41
 5.5525pt x 417.56pt>
 File: D:/Dropbox/dfoliatR_paper/paper_elsevier/Output/bridging_color.pdf Graphi
 c file (type pdf)
 <use D:/Dropbox/dfoliatR_paper/paper_elsevier/Output/bridging_color.pdf>
 Package pdftex.def Info: D:/Dropbox/dfoliatR_paper/paper_elsevier/Output/bridgi
-ng_color.pdf  used on input line 227.
+ng_color.pdf  used on input line 225.
 (pdftex.def)             Requested size: 345.0pt x 346.68301pt.
-[10] [11pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.3}) has been already used, duplicate ignored
+[9] [10pdfTeX warning (ext4): destination with the same identifier (name{figure
+.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.243 
-       <d:/Dropbox/dfoliatR_paper/paper_elsevier/Output/bridging_color.pdf>]
-Overfull \hbox (54.07948pt too wide) in paragraph at lines 255--257
+l.233 
+       <d:/Dropbox/dfoliatR_paper/paper_elsevier/Output/bridging_color.pdf>] [1
+1]
+Overfull \hbox (54.07948pt too wide) in paragraph at lines 253--255
 \T1/lmr/m/n/10 this op-tion is con-trolled by the ``se-ries_end_events'' pa-ram
 -e-ter to \T1/lmtt/m/n/10 defoliate_trees()\T1/lmr/m/n/10 .
  []
 
 [12]
-Overfull \hbox (4.47197pt too wide) in paragraph at lines 257--259
+Overfull \hbox (4.47197pt too wide) in paragraph at lines 255--257
 []\T1/lmr/m/it/10 Sequential events \T1/lmr/m/n/10 (36%) in which OUT-BREAK omi
 t-ted back-to-back events
  []
 
 [13]
-<D:/Dropbox/dfoliatR_paper/paper_elsevier/Output/plot-sites-df-obr.pdf, id=182,
+<D:/Dropbox/dfoliatR_paper/paper_elsevier/Output/plot-sites-df-obr.pdf, id=183,
  415.5525pt x 417.56pt>
 File: D:/Dropbox/dfoliatR_paper/paper_elsevier/Output/plot-sites-df-obr.pdf Gra
 phic file (type pdf)
 <use D:/Dropbox/dfoliatR_paper/paper_elsevier/Output/plot-sites-df-obr.pdf>
 Package pdftex.def Info: D:/Dropbox/dfoliatR_paper/paper_elsevier/Output/plot-s
-ites-df-obr.pdf  used on input line 271.
+ites-df-obr.pdf  used on input line 269.
 (pdftex.def)             Requested size: 345.0pt x 346.68301pt.
 
-Package xcolor Warning: Incompatible color definition on input line 282.
+Package xcolor Warning: Incompatible color definition on input line 280.
 
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 284.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 282.
 
-Package xcolor Warning: Incompatible color definition on input line 286.
-
-
-Package xcolor Warning: Incompatible color definition on input line 286.
+Package xcolor Warning: Incompatible color definition on input line 284.
 
 
-Package xcolor Warning: Incompatible color definition on input line 290.
+Package xcolor Warning: Incompatible color definition on input line 284.
+
+
+Package xcolor Warning: Incompatible color definition on input line 288.
+
+
+Package xcolor Warning: Incompatible color definition on input line 292.
+
+
+Package xcolor Warning: Incompatible color definition on input line 292.
+
+
+Package xcolor Warning: Incompatible color definition on input line 296.
+
+
+Package xcolor Warning: Incompatible color definition on input line 300.
+
+
+Package xcolor Warning: Incompatible color definition on input line 300.
 
 [14] [15pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.294 \end{Shaded}
-                   <d:/Dropbox/dfoliatR_paper/paper_elsevier/Output/plot-sites-
-df-obr.pdf>]
+l.305 ...tion{Example Usage}\label{example-usage}}
+                                                   <d:/Dropbox/dfoliatR_paper/p
+aper_elsevier/Output/plot-sites-df-obr.pdf>] [16]
 
-Package xcolor Warning: Incompatible color definition on input line 294.
-
-
-Package xcolor Warning: Incompatible color definition on input line 294.
+Package xcolor Warning: Incompatible color definition on input line 318.
 
 
-Package xcolor Warning: Incompatible color definition on input line 298.
+Package xcolor Warning: Incompatible color definition on input line 338.
 
 
-Package xcolor Warning: Incompatible color definition on input line 302.
-
-
-Package xcolor Warning: Incompatible color definition on input line 302.
-
-[16]
-
-Package xcolor Warning: Incompatible color definition on input line 320.
-
-
-Package xcolor Warning: Incompatible color definition on input line 340.
-
-
-Package xcolor Warning: Incompatible color definition on input line 340.
-
-
-Package xcolor Warning: Incompatible color definition on input line 340.
+Package xcolor Warning: Incompatible color definition on input line 338.
 
 [17]
 
-Package xcolor Warning: Incompatible color definition on input line 340.
+Package xcolor Warning: Incompatible color definition on input line 346.
 
 
-Package xcolor Warning: Incompatible color definition on input line 340.
+Package xcolor Warning: Incompatible color definition on input line 351.
 
 
-Package xcolor Warning: Incompatible color definition on input line 348.
-
-
-Package xcolor Warning: Incompatible color definition on input line 353.
-
-
-Package xcolor Warning: Incompatible color definition on input line 353.
+Package xcolor Warning: Incompatible color definition on input line 351.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[18]
 
-Package xcolor Warning: Incompatible color definition on input line 391.
+Package xcolor Warning: Incompatible color definition on input line 389.
 
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-399.
+397.
 
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.f
 d
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [19pdfTeX warning (ext4): destination with the same identifier (name{table.1}
-) has been already used, duplicate ignored
+)
+
+Package xcolor Warning: Incompatible color definition on input line 405.
+
+
+Package xcolor Warning: Incompatible color definition on input line 405.
+
+
+Package xcolor Warning: Incompatible color definition on input line 405.
+
+[18]
+
+Package xcolor Warning: Incompatible color definition on input line 405.
+
+
+Package xcolor Warning: Incompatible color definition on input line 405.
+
+[19pdfTeX warning (ext4): destination with the same identifier (name{table.1}) 
+has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.407 \end{Shaded}
-                  ]
+l.408 
+      ]
 
-Package xcolor Warning: Incompatible color definition on input line 407.
-
-
-Package xcolor Warning: Incompatible color definition on input line 407.
+Package xcolor Warning: Incompatible color definition on input line 414.
 
 
-Package xcolor Warning: Incompatible color definition on input line 416.
+Package xcolor Warning: Incompatible color definition on input line 422.
 
 
-Package xcolor Warning: Incompatible color definition on input line 424.
+Package xcolor Warning: Incompatible color definition on input line 422.
 
 
-Package xcolor Warning: Incompatible color definition on input line 424.
-
-
-Overfull \hbox (36.89342pt too wide) in paragraph at lines 426--427
+Overfull \hbox (36.89342pt too wide) in paragraph at lines 424--425
 \T1/lmr/m/n/10 eight vari-ables: ``year'', ``num_defol'', ``per-cent_defol'', `
 `num_max_defol'', ``mean_gsi'',
  []
 
 
-Overfull \hbox (4.5079pt too wide) in paragraph at lines 426--427
-\T1/lmr/m/n/10 ing their max-i-mum de-fo-li-a-tion in a given year. The ``mean_
-gsi'' and ``mean_ngsi''
- []
-
-[20]
-Overfull \hbox (45.49054pt too wide) in paragraph at lines 428--429
+Overfull \hbox (45.49054pt too wide) in paragraph at lines 426--427
 []\T1/lmr/m/n/10 The de-fault plot-ting func-tion to vi-su-al-ize re-sults from
  \T1/lmtt/m/n/10 outbreak() \T1/lmr/m/n/10 is \T1/lmtt/m/n/10 plot_outbreak()\T
 1/lmr/m/n/10 .
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 430.
+Package xcolor Warning: Incompatible color definition on input line 428.
+
+[20]
+
+Package xcolor Warning: Incompatible color definition on input line 432.
 
 
-Package xcolor Warning: Incompatible color definition on input line 434.
+Package xcolor Warning: Incompatible color definition on input line 432.
 
 
-Package xcolor Warning: Incompatible color definition on input line 434.
-
-
-Overfull \hbox (44.86041pt too wide) in paragraph at lines 438--439
+Overfull \hbox (44.86041pt too wide) in paragraph at lines 436--437
 []\T1/lmr/m/n/10 A sum-mary ta-ble of the in-ferred out-break events is gen-er-
 ated by the \T1/lmtt/m/n/10 outbreak_stats()
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 440.
+Package xcolor Warning: Incompatible color definition on input line 438.
 
 
-Package xcolor Warning: Incompatible color definition on input line 445.
+Package xcolor Warning: Incompatible color definition on input line 443.
 
 
-Package xcolor Warning: Incompatible color definition on input line 445.
+Package xcolor Warning: Incompatible color definition on input line 443.
 
 [21]
-Overfull \hbox (26.34344pt too wide) in paragraph at lines 454--468
+Overfull \hbox (21.06598pt too wide) in paragraph at lines 452--466
  [][] 
  []
 
@@ -1038,106 +1034,106 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.469 \end{landscape}
+l.467 \end{landscape}
                      ]
 
-Package xcolor Warning: Incompatible color definition on input line 475.
+Package xcolor Warning: Incompatible color definition on input line 473.
 
 
-Package xcolor Warning: Incompatible color definition on input line 481.
+Package xcolor Warning: Incompatible color definition on input line 479.
 
 
-Package xcolor Warning: Incompatible color definition on input line 481.
+Package xcolor Warning: Incompatible color definition on input line 479.
 
 [23
 
 
 ] [24] [25]
-Overfull \hbox (81.79546pt too wide) in paragraph at lines 517--519
+Overfull \hbox (81.79546pt too wide) in paragraph at lines 515--517
 \T1/lmr/m/n/10 Columbia, Canada. For-est Ecol-ogy and Man-age-ment 335, 235--48
 , doi:[]10.1016/j.foreco.2014.10.002[]. 
  []
 
 
-Overfull \hbox (19.63829pt too wide) in paragraph at lines 523--525
+Overfull \hbox (19.63829pt too wide) in paragraph at lines 521--523
 \T1/lmr/m/n/10 Ra-dio-car-bon Cam-bridge Uni-ver-sity Press 56, S79--S83, doi:[
 ]10.2458/azu_rc.56.18320[]. 
  []
 
 
-Overfull \hbox (52.32333pt too wide) in paragraph at lines 526--528
+Overfull \hbox (52.32333pt too wide) in paragraph at lines 524--526
 \T1/lmr/m/n/10 tem for den-drochronol-ogy. Den-drochronolo-gia 38, 131--35, doi
 :[]10.1016/j.dendro.2016.04.005[]. 
  []
 
 [26]
-Overfull \hbox (6.20317pt too wide) in paragraph at lines 553--555
+Overfull \hbox (6.20317pt too wide) in paragraph at lines 551--553
 [][]\T1/lmr/m/n/10 Cook, E.R., Kru-sic, P.J., 2004. The North Amer-i-can Drough
 t At-las. (Lamont-
  []
 
 
-Overfull \hbox (27.80608pt too wide) in paragraph at lines 553--555
+Overfull \hbox (27.80608pt too wide) in paragraph at lines 551--553
 \T1/lmr/m/n/10 able at https://www.ncdc.noaa.gov/data-access/paleoclimatology-d
 ata/datasets/tree-
  []
 
 
-Overfull \hbox (77.06464pt too wide) in paragraph at lines 571--573
+Overfull \hbox (77.06464pt too wide) in paragraph at lines 569--571
 \T1/lmr/m/n/10 In-sect out-breaks re-vis-ited. Black-well Pub-lish-ing Ltd, pp.
  126--54, doi:[]10.1002/9781118295205.ch7[]. 
  []
 
 
-Overfull \hbox (41.83261pt too wide) in paragraph at lines 574--576
+Overfull \hbox (41.83261pt too wide) in paragraph at lines 572--574
 \T1/lmr/m/n/10 anal-y-sis and graph-ics in R. Den-drochronolo-gia 49, 9--15, do
 i:[]10.1016/j.dendro.2018.02.005[]. 
  []
 
 
-Overfull \hbox (51.24854pt too wide) in paragraph at lines 580--582
+Overfull \hbox (51.24854pt too wide) in paragraph at lines 578--580
 \T1/lmr/m/n/10 us-ing R (pack-age \T1/lmtt/m/n/10 CAVIAR\T1/lmr/m/n/10 ). Den-d
 rochronolo-gia 29, 139--49, doi:[]10.1016/j.dendro.2011.01.004[]. 
  []
 
 [27]
-Overfull \hbox (5.47176pt too wide) in paragraph at lines 586--588
+Overfull \hbox (5.47176pt too wide) in paragraph at lines 584--586
 \T1/lmr/m/n/10 orado, U.S.A. Cana-dian Jour-nal of For-est Re-search 33, 1010--
 28, doi:[]10.1139/X03-
  []
 
 
-Overfull \hbox (54.10182pt too wide) in paragraph at lines 595--597
+Overfull \hbox (54.10182pt too wide) in paragraph at lines 593--595
 \T1/lmr/m/n/10 age pro-cess-ing tech-niques. Den-drochronolo-gia 58, 125644, do
 i:[]10.1016/j.dendro.2019.125644[]. 
  []
 
 [28]
-Overfull \hbox (0.6896pt too wide) in paragraph at lines 616--618
+Overfull \hbox (0.6896pt too wide) in paragraph at lines 614--616
 [][]\T1/lmr/m/n/10 Wickham, H., 2016. \T1/lmtt/m/n/10 ggplot2\T1/lmr/m/n/10 : E
 l-e-gant Graph-ics for Data Anal-y-sis. Springer-
  []
 
 
-Overfull \hbox (25.43527pt too wide) in paragraph at lines 628--630
+Overfull \hbox (25.43527pt too wide) in paragraph at lines 626--628
 \T1/lmr/m/n/10 bra-tion of proxy-climate re-la-tion-ships. Ecog-ra-phy 38, 431-
 -36, doi:[]10.1111/ecog.01335[]. 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 632.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 630.
 [29]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 632.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 630.
 (./paper_elsevier.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 632.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 632.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 630.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 630.
 Package rerunfilecheck Info: File `paper_elsevier.out' has not changed.
 (rerunfilecheck)             Checksum: C88DB8B6D522F0EA8266AA6ADCA28B09;1950.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 632.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 630.
  ) 
 Here is how much of TeX's memory you used:
  13011 strings out of 482913
  189519 string characters out of 5957126
- 442484 words of memory out of 5000000
+ 442549 words of memory out of 5000000
  27875 multiletter control sequences out of 15000+600000
  592941 words of font info for 72 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1173,7 +1169,7 @@ pfb><c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public
 /lm/lmtt12.pfb><c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/fonts/t
 ype1/public/lm/lmtt8.pfb><c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-di
 st/fonts/type1/public/lm/lmtti10.pfb>
-Output written on paper_elsevier.pdf (29 pages, 476332 bytes).
+Output written on paper_elsevier.pdf (29 pages, 475457 bytes).
 PDF statistics:
  460 PDF objects out of 1000 (max. 8388607)
  396 compressed objects within 4 object streams
