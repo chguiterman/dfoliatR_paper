@@ -6,15 +6,14 @@ library(dplyr)
 library(purrr)
 library(tibble)
 library(tidyr)
+library(here)
 library(ggplot2)
 library(cowplot)
 # Load read_OUTBREAK function
 devtools::source_gist("https://gist.github.com/chguiterman/c88e9601dd085eb4215f0dc133a0e21c", sha1 = "fdb3cfefcd7e6ed3f7df3e20057c815bbd91dd0c")
 
-data_pth <- "paper_elsevier/Data/"
-
 ## Master metadata file
-meta_in <- read.csv(paste0(data_pth, "Meta.csv"))
+meta_in <- read.csv(here("Data", "Meta.csv"))
 
 ## Helper function
 rm_sample_depth <- function(x){
@@ -29,10 +28,10 @@ rm_sample_depth <- function(x){
 
 outbr_results <- meta_in %>% 
   transmute(site, 
-            outbr_cor = map(outbr_corrected, ~ read.compact(paste0(data_pth, .))),
-            outbr_col = map(outbr_site, ~ read.delim(paste0(data_pth, .))),
+            outbr_cor = map(outbr_corrected, ~ read.compact(here("Data", .))),
+            outbr_col = map(outbr_site, ~ read.delim(here("Data", .))),
             outbr_out = map2(outbr_file, insect_code, 
-                             ~ read_OUTREAK(fname = paste0(data_pth, .x),
+                             ~ read_OUTREAK(fname = here("Data", .x),
                                             level = "tree",
                                             insect_code = .y)))
 
@@ -71,8 +70,8 @@ outbr_obr <- outbr_results %>%
 
 df_run <- meta_in %>% 
   transmute(site,
-            host = map(host_file, ~ read.compact(paste0(data_pth, .))),
-            nonhost = map(nonhost_file, ~ read.crn(paste0(data_pth, .)) %>% 
+            host = map(host_file, ~ read.compact(here("Data", .))),
+            nonhost = map(nonhost_file, ~ read.crn(here("Data", .)) %>% 
                             rm_sample_depth()),
             defol = pmap(list(host, nonhost, ongoing_defol),
                          ~ defoliate_trees(host_tree = ..1, 
@@ -110,7 +109,7 @@ ggplot(tree_data, aes(x = ncor, y = ngsi, group = series)) +
   ylab("dfoliatR NGSI") +
   theme_bw() +
   theme(legend.position = "none")
-ggsave("paper_elsevier/Output/plot-trees-df-obr.pdf", width=5.75, dpi=300, units="in")  
+ggsave(here("Output", "plot-trees-df-obr.pdf"), width=5.75, dpi=300, units="in")  
   
 ## Compare events
 events_list <- levels(dfoliatR::dmj_defol$defol_status)[2:5] 
@@ -139,8 +138,8 @@ diff_tbl <- comps_diff %>%
             df_defol = any(defol_status %in% events_list),
             obr_defol = any(obr_type %in% events_list)
   )
-write.csv(diff_tbl, "paper_elsevier/Output/OBR-DF_DiffTbl.csv")
-write.csv(tree_comps, "paper_elsevier/Output/Tree-comps-data.csv")
+write.csv(diff_tbl, here("Output", "OBR-DF_DiffTbl.csv"))
+write.csv(tree_comps, here("Output", "Tree-comps-data.csv"))
 
 # Compare site-level results ----------------------------------------------
 
@@ -166,6 +165,6 @@ ggplot(site_perc, aes(x = year, y = perc_defol)) +
         legend.title = element_blank(),
         plot.margin = unit(c(30, 5, 5, 5), units = "points"),
         plot.background = element_blank())
-ggsave("paper_elsevier/Output/plot-sites-df-obr.pdf", width=5.75, dpi=300, units='in')  
+ggsave(here("Output", "plot-sites-df-obr.pdf"), width=5.75, dpi=300, units='in')  
 
 

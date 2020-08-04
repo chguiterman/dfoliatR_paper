@@ -26,6 +26,9 @@ rm_sample_depth <- function(x){
   return(df)
 }
 
+
+# Perform reconstructions -------------------------------------------------
+
 df_run <- meta_in %>% 
   transmute(site,
             host = map(host_file, ~ read.compact(here("paper_elsevier", "Data", .))),
