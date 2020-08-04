@@ -13,9 +13,9 @@ library(paletteer)
 library(here)
 
 ## Master metadata file
-meta_in <- read.csv(here("paper_elsevier", "Data", "Meta.csv"))
+meta_in <- read.csv(here("Data", "Meta.csv"))
 # file of output from the comparison -- has the OBR results
-obr_results <- read.csv(here("paper_elsevier", "Output", "Tree-comps-data.csv")) %>% 
+obr_results <- read.csv(here("Output", "Tree-comps-data.csv")) %>% 
   select(site, year, series, obr_type)
 
 ## Helper function
@@ -31,8 +31,8 @@ rm_sample_depth <- function(x){
 
 df_run <- meta_in %>% 
   transmute(site,
-            host = map(host_file, ~ read.compact(here("paper_elsevier", "Data", .))),
-            nonhost = map(nonhost_file, ~ read.crn(here("paper_elsevier", "Data", .)) %>% 
+            host = map(host_file, ~ read.compact(here("Data", .))),
+            nonhost = map(nonhost_file, ~ read.crn(here("Data", .)) %>% 
                             rm_sample_depth()),
             defol = pmap(list(host, nonhost, ongoing_defol),
                          ~ defoliate_trees(host_tree = ..1, 
@@ -80,7 +80,8 @@ ggplot(comps, aes(x=year)) +
   geom_area(data=df_events, aes(x = year, y = ngsi, fill = "dfoliatR")) +
   geom_area(data=obr_events, aes(x = year, y = ngsi, fill = "OUTBREAK & dfoliatR")) +
   geom_line(aes(y=ngsi)) +
-  scale_fill_manual(values = c("grey60", "#1C86EE"), breaks = c("OUTBREAK & dfoliatR", "dfoliatR")) +
+  scale_fill_manual(values = c("grey60", "#1C86EE"), 
+                    breaks = c("OUTBREAK & dfoliatR", "dfoliatR")) +
   guides(fill = guide_legend(title = "Identified defoliation events: ")) +
   ylab("NGSI") + xlab("Year") +
   ggpubr::theme_pubr() +
