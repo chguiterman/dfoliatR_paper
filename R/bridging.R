@@ -88,4 +88,5 @@ ggplot(comps, aes(x=year)) +
   theme(legend.position = "bottom",
         strip.text = element_text(face="bold", size=12),
         axis.title = element_text(face="bold", size = 12))
-ggsave(here("paper_elsevier", "Output", "bridging_color.pdf"), width = 5.75)
+ggsave(here("Output", "bridging_color.pdf"), width = 5.75)
+ggsave(here("Output", "bridging_color.tiff"), width = 5.75)

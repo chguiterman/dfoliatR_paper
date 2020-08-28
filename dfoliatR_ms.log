@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.26)  6 AUG 2020 10:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.8.12)  24 AUG 2020 10:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **dfoliatR_ms.tex
 (./dfoliatR_ms.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-02-25> (./elsarticle.cls
+L3 programming layer <2020-08-07> (./elsarticle.cls
 Document Class: elsarticle 2008/05/22, 1.0.1: Elsevier Science
 \@bls=\dimen134
 
@@ -17,14 +17,14 @@ Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
 clo
 File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
-\c@part=\count167
-\c@section=\count168
-\c@subsection=\count169
-\c@subsubsection=\count170
-\c@paragraph=\count171
-\c@subparagraph=\count172
-\c@figure=\count173
-\c@table=\count174
+\c@part=\count168
+\c@section=\count169
+\c@subsection=\count170
+\c@subsubsection=\count171
+\c@paragraph=\count172
+\c@subparagraph=\count173
+\c@figure=\count174
+\c@table=\count175
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen135
@@ -61,7 +61,7 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 )
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/pifon
 t.sty
-Package: pifont 2005/04/12 PSNFSS-v9.2a Pi font support (SPQR) 
+Package: pifont 2020/03/25 PSNFSS-v9.3 Pi font support (SPQR) 
 LaTeX Font Info:    Trying to load font information for U+pzd on input line 63.
 
 
@@ -76,13 +76,13 @@ LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
 fd
 File: upsy.fd 2001/06/04 font definitions for U/psy.
 ))
-\c@tnote=\count175
-\c@fnote=\count176
-\c@cnote=\count177
-\c@ead=\count178
-\c@author=\count179
+\c@tnote=\count176
+\c@fnote=\count177
+\c@cnote=\count178
+\c@ead=\count179
+\c@author=\count180
 \@eadauthor=\toks16
-\c@affn=\count180
+\c@affn=\count181
 \absbox=\box45
 \keybox=\box46
 \Columnwidth=\dimen138
@@ -100,7 +100,7 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip51
 \bibsep=\skip52
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count181
+\c@NAT@ctr=\count182
 )
 \splwrite=\write3
 \openout3 = `dfoliatR_ms.spl'.
@@ -113,16 +113,16 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lineno/linen
 o.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count182
+\linenopenalty=\count183
 \output=\toks18
-\linenoprevgraf=\count183
+\linenoprevgraf=\count184
 \linenumbersep=\dimen141
 \linenumberwidth=\dimen142
-\c@linenumber=\count184
-\c@pagewiselinenumber=\count185
-\c@LN@truepage=\count186
-\c@internallinenumber=\count187
-\c@internallinenumbers=\count188
+\c@linenumber=\count185
+\c@pagewiselinenumber=\count186
+\c@LN@truepage=\count187
+\c@internallinenumber=\count188
+\c@internallinenumbers=\count189
 \quotelinenumbersep=\dimen143
 \bframerule=\dimen144
 \bframesep=\dimen145
@@ -142,12 +142,12 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen153
 \cmidrulekern=\dimen154
 \defaultaddspace=\dimen155
-\@cmidla=\count189
-\@cmidlb=\count190
+\@cmidla=\count190
+\@cmidlb=\count191
 \@aboverulesep=\dimen156
 \@belowrulesep=\dimen157
-\@thisruleclass=\count191
-\@lastruleclass=\count192
+\@thisruleclass=\count192
+\@lastruleclass=\count193
 \@thisrulewidth=\dimen158
 )
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc
@@ -229,13 +229,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 pn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count193
+\inf@bad=\count194
 LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count194
-\leftroot@=\count195
+\uproot@=\count195
+\leftroot@=\count196
 LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count196
-\DOTSCASE@=\count197
+\classnum@=\count197
+\DOTSCASE@=\count198
 LaTeX Info: Redefining \ldots on input line 486.
 LaTeX Info: Redefining \dots on input line 489.
 LaTeX Info: Redefining \cdots on input line 610.
@@ -244,15 +244,15 @@ LaTeX Info: Redefining \cdots on input line 610.
 \big@size=\dimen161
 LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count198
-\c@MaxMatrixCols=\count199
+\macc@depth=\count199
+\c@MaxMatrixCols=\count266
 \dotsspace@=\muskip17
-\c@parentequation=\count266
-\dspbrk@lvl=\count267
+\c@parentequation=\count267
+\dspbrk@lvl=\count268
 \tag@help=\toks21
-\row@=\count268
-\column@=\count269
-\maxfields@=\count270
+\row@=\count269
+\column@=\count270
+\maxfields@=\count271
 \andhelp@=\toks22
 \eqnshift@=\dimen162
 \alignsep@=\dimen163
@@ -273,7 +273,7 @@ Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifte
 x.sty
-Package: iftex 2019/11/07 v1.0c TeX engine tests
+Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/iflu
 atex.sty
@@ -305,6 +305,30 @@ Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks25
 \inpenc@posthook=\toks26
 )
+(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mi
+crotype.sty
+Package: microtype 2019/11/18 v2.7d Micro-typographical refinements (RS)
+\MT@toks=\toks27
+\MT@count=\count272
+LaTeX Info: Redefining \textls on input line 790.
+\MT@outer@kern=\dimen168
+LaTeX Info: Redefining \textmicrotypecontext on input line 1354.
+\MT@listname@count=\count273
+
+(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mi
+crotype-pdftex.def
+File: microtype-pdftex.def 2019/11/18 v2.7d Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 914.
+LaTeX Info: Redefining \lslig on input line 914.
+\MT@outer@space=\skip56
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mi
+crotype.cfg
+File: microtype.cfg 2019/11/18 v2.7d microtype main configuration file (RS)
+))
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/col
 or.sty
 Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
@@ -317,53 +341,53 @@ Package color Info: Driver file: pdftex.def on input line 147.
 )
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyvrb/fan
 cyvrb.sty
-Package: fancyvrb 2020/01/13 v3.5 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count271
+Package: fancyvrb 2020/05/03 v3.6 verbatim text (tvz,hv)
+\FV@CodeLineNo=\count274
 \FV@InFile=\read2
 \FV@TabBox=\box52
-\c@FancyVerbLine=\count272
-\FV@StepNumber=\count273
+\c@FancyVerbLine=\count275
+\FV@StepNumber=\count276
 \FV@OutFile=\write4
 )
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/framed/frame
 d.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip56
-\fb@frw=\dimen168
-\fb@frh=\dimen169
-\FrameRule=\dimen170
-\FrameSep=\dimen171
+\OuterFrameSep=\skip57
+\fb@frw=\dimen169
+\fb@frh=\dimen170
+\FrameRule=\dimen171
+\FrameSep=\dimen172
 )
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/longta
 ble.sty
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
-\LTleft=\skip57
-\LTright=\skip58
-\LTpre=\skip59
-\LTpost=\skip60
-\LTchunksize=\count274
-\LTcapwidth=\dimen172
+\LTleft=\skip58
+\LTright=\skip59
+\LTpre=\skip60
+\LTpost=\skip61
+\LTchunksize=\count277
+\LTcapwidth=\dimen173
 \LT@head=\box53
 \LT@firsthead=\box54
 \LT@foot=\box55
 \LT@lastfoot=\box56
-\LT@cols=\count275
-\LT@rows=\count276
-\c@LT@tables=\count277
-\c@LT@chunks=\count278
-\LT@p@ftn=\toks27
+\LT@cols=\count278
+\LT@rows=\count279
+\c@LT@tables=\count280
+\c@LT@chunks=\count281
+\LT@p@ftn=\toks28
 )
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyp
 erref.sty
-Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
+Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
 
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ltxcmds/lt
 xcmds.sty
 Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
 )
-(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdftexcmds/p
-dftexcmds.sty
-Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdftexcmds
+/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/infwarerr/
@@ -382,9 +406,9 @@ Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 ys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/oberdiek/p
-dfescape.sty
-Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdfescape/
+pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 )
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hycolor/hyco
 lor.sty
@@ -402,13 +426,13 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 options.sty
 Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 )
-\@linkdim=\dimen173
-\Hy@linkcounter=\count279
-\Hy@pagecounter=\count280
+\@linkdim=\dimen174
+\Hy@linkcounter=\count282
+\Hy@pagecounter=\count283
 
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1
 enc.def
-File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
@@ -420,31 +444,25 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 texcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count281
-\pdfmajorversion=\count282
-
-(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/
-hyperref.cfg
-File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
-)
-Package hyperref Info: Option `unicode' set `true' on input line 4421.
+\Hy@SavedSpaceFactor=\count284
+Package hyperref Info: Option `unicode' set `true' on input line 4338.
 
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pue
 nc.def
-File: puenc.def 2020/01/14 v7.00d Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2020-05-15 v7.00e Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Hyper figures OFF on input line 4547.
-Package hyperref Info: Link nesting OFF on input line 4552.
-Package hyperref Info: Hyper index ON on input line 4555.
-Package hyperref Info: Plain pages OFF on input line 4562.
-Package hyperref Info: Backreferencing OFF on input line 4567.
+Package hyperref Info: Hyper figures OFF on input line 4464.
+Package hyperref Info: Link nesting OFF on input line 4469.
+Package hyperref Info: Hyper index ON on input line 4472.
+Package hyperref Info: Plain pages OFF on input line 4479.
+Package hyperref Info: Backreferencing OFF on input line 4484.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4800.
-\c@Hy@tempcnt=\count283
-LaTeX Info: Redefining \url on input line 5159.
-\XeTeXLinkMargin=\dimen174
+Package hyperref Info: Bookmarks ON on input line 4717.
+\c@Hy@tempcnt=\count285
+LaTeX Info: Redefining \url on input line 5076.
+\XeTeXLinkMargin=\dimen175
 
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bit
 set.sty
@@ -455,53 +473,53 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count284
-\Field@Width=\dimen175
-\Fld@charsize=\dimen176
-Package hyperref Info: Hyper figures OFF on input line 6430.
-Package hyperref Info: Link nesting OFF on input line 6435.
-Package hyperref Info: Hyper index ON on input line 6438.
-Package hyperref Info: backreferencing OFF on input line 6445.
-Package hyperref Info: Link coloring OFF on input line 6450.
-Package hyperref Info: Link coloring with OCG OFF on input line 6455.
-Package hyperref Info: PDF/A mode OFF on input line 6460.
-LaTeX Info: Redefining \ref on input line 6500.
-LaTeX Info: Redefining \pageref on input line 6504.
+\Fld@menulength=\count286
+\Field@Width=\dimen176
+\Fld@charsize=\dimen177
+Package hyperref Info: Hyper figures OFF on input line 6347.
+Package hyperref Info: Link nesting OFF on input line 6352.
+Package hyperref Info: Hyper index ON on input line 6355.
+Package hyperref Info: backreferencing OFF on input line 6362.
+Package hyperref Info: Link coloring OFF on input line 6367.
+Package hyperref Info: Link coloring with OCG OFF on input line 6372.
+Package hyperref Info: PDF/A mode OFF on input line 6377.
+LaTeX Info: Redefining \ref on input line 6417.
+LaTeX Info: Redefining \pageref on input line 6421.
 
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/atbegshi/a
 tbegshi.sty
 Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
 )
-\Hy@abspage=\count285
-\c@Item=\count286
-\c@Hfootnote=\count287
+\Hy@abspage=\count287
+\c@Item=\count288
+\c@Hfootnote=\count289
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hpd
 ftex.def
-File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
+File: hpdftex.def 2020-05-15 v7.00e Hyperref driver for pdfTeX
 
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/atveryend/at
 veryend.sty
 Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
 Package atveryend Info: \enddocument detected (standard20110627).
 )
-\Fld@listcount=\count288
-\c@bookmark@seq@number=\count289
+\Fld@listcount=\count290
+\c@bookmark@seq@number=\count291
 
-(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/oberdiek/rer
-unfilecheck.sty
-Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfileche
+ck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
 
-(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/oberdiek/u
-niquecounter.sty
-Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/uniquecoun
+ter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-82.
+86.
 )
-\Hy@SectionHShift=\skip61
+\Hy@SectionHShift=\skip62
 )
 Package hyperref Info: Option `breaklinks' set `true' on input line 101.
 
@@ -513,57 +531,53 @@ Package hyperref Info: Option `colorlinks' set `false' on input line 101.
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.
 sty
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen177
+\col@sep=\dimen178
 \ar@mcellbox=\box57
-\extrarowheight=\dimen178
-\NC@list=\toks28
-\extratabsurround=\skip62
-\backup@length=\skip63
+\extrarowheight=\dimen179
+\NC@list=\toks29
+\extratabsurround=\skip63
+\backup@length=\skip64
 \ar@cellbox=\box58
 )
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/mul
 tirow.sty
-Package: multirow 2019/01/01 v2.4 Span multiple rows of a table
-\multirow@colwidth=\skip64
-\multirow@cntb=\count290
-\multirow@dima=\skip65
-\bigstrutjot=\dimen179
+Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+\multirow@colwidth=\skip65
+\multirow@cntb=\count292
+\multirow@dima=\skip66
+\bigstrutjot=\dimen180
 )
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/wrapfig/wrap
 fig.sty
-\wrapoverhang=\dimen180
-\WF@size=\dimen181
-\c@WF@wrappedlines=\count291
+\wrapoverhang=\dimen181
+\WF@size=\dimen182
+\c@WF@wrappedlines=\count293
 \WF@box=\box59
-\WF@everypar=\toks29
+\WF@everypar=\toks30
 Package: wrapfig 2003/01/31  v 3.6
 )
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/float/float.
 sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count292
-\float@exts=\toks30
+\c@float@type=\count294
+\float@exts=\toks31
 \float@box=\box60
-\@float@everytoks=\toks31
+\@float@everytoks=\toks32
 \@floatcapt=\box61
 )
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/colortbl/col
 ortbl.sty
-Package: colortbl 2018/12/12 v1.0d Color table columns (DPC)
-\everycr=\toks32
-\minrowclearance=\skip66
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
+\everycr=\toks33
+\minrowclearance=\skip67
 )
-(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/oberdiek/pdf
-lscape.sty
-Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdflscape/pd
+flscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
 
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/lsc
 ape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
-)
-(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifpd
-f.sty
-Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
@@ -575,32 +589,32 @@ Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
 width.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box62
-\sift@deathcycles=\count293
-\@vwid@loff=\dimen182
-\@vwid@roff=\dimen183
+\sift@deathcycles=\count295
+\@vwid@loff=\dimen183
+\@vwid@roff=\dimen184
 )
-\c@taburow=\count294
-\tabu@nbcols=\count295
-\tabu@cnt=\count296
-\tabu@Xcol=\count297
-\tabu@alloc=\count298
-\tabu@nested=\count299
-\tabu@target=\dimen184
-\tabu@spreadtarget=\dimen185
-\tabu@naturalX=\dimen186
-\tabucolX=\dimen187
-\tabu@Xsum=\dimen188
-\extrarowdepth=\dimen189
-\abovetabulinesep=\dimen190
-\belowtabulinesep=\dimen191
-\tabustrutrule=\dimen192
-\tabu@thebody=\toks33
-\tabu@footnotes=\toks34
+\c@taburow=\count296
+\tabu@nbcols=\count297
+\tabu@cnt=\count298
+\tabu@Xcol=\count299
+\tabu@alloc=\count300
+\tabu@nested=\count301
+\tabu@target=\dimen185
+\tabu@spreadtarget=\dimen186
+\tabu@naturalX=\dimen187
+\tabucolX=\dimen188
+\tabu@Xsum=\dimen189
+\extrarowdepth=\dimen190
+\abovetabulinesep=\dimen191
+\belowtabulinesep=\dimen192
+\tabustrutrule=\dimen193
+\tabu@thebody=\toks34
+\tabu@footnotes=\toks35
 \tabu@box=\box63
 \tabu@arstrutbox=\box64
 \tabu@hleads=\box65
 \tabu@vleads=\box66
-\tabu@cellskip=\skip67
+\tabu@cellskip=\skip68
 )
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttab
 le/threeparttable.sty
@@ -619,27 +633,27 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
 rimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
-\TPTL@width=\skip68
+\TPTL@width=\skip69
 )
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ulem/ulem.
 sty
 \UL@box=\box68
 \UL@hyphenbox=\box69
-\UL@skip=\skip69
-\UL@hook=\toks35
-\UL@height=\dimen193
-\UL@pe=\count300
-\UL@pixel=\dimen194
+\UL@skip=\skip70
+\UL@hook=\toks36
+\UL@height=\dimen194
+\UL@pe=\count302
+\UL@pixel=\dimen195
 \ULC@box=\box70
-Package: ulem 2012/05/18
-\ULdepth=\dimen195
+Package: ulem 2019/11/18
+\ULdepth=\dimen196
 )
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/makecell/mak
 ecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen196
-\c@nlinenum=\count301
-\TeXr@lab=\toks36
+\rotheadsize=\dimen197
+\c@nlinenum=\count303
+\TeXr@lab=\toks37
 )
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/xcolo
 r.sty
@@ -663,8 +677,8 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3
 backend-pdfmode.def
-File: l3backend-pdfmode.def 2020-02-23 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count302
+File: l3backend-pdfmode.def 2020-08-07 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count304
 \l__pdf_internal_box=\box71
 ) (./dfoliatR_ms.aux)
 \openout1 = `dfoliatR_ms.aux'.
@@ -692,26 +706,34 @@ LaTeX Font Info:    Trying to load font information for T1+lmr on input line 13
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/oberdiek/eps
-topdf-base.sty
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
-
-(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/grfext/grfex
-t.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-)
+(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg
+/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
+85.
 
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/
 epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+LaTeX Info: Redefining \microtypecontext on input line 136.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `basictext'.
+LaTeX Info: Redefining \showhyphens on input line 136.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+
+(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt
+-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
 \AtBeginShipoutBox=\box72
 Package hyperref Info: Link coloring OFF on input line 136.
 
@@ -719,15 +741,15 @@ Package hyperref Info: Link coloring OFF on input line 136.
 eref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
-(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/oberdiek/ref
+(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/refcount/ref
 count.sty
-Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/gettitlest
 ring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count303
+\c@section@level=\count305
 )
 LaTeX Info: Redefining \ref on input line 136.
 LaTeX Info: Redefining \pageref on input line 136.
@@ -742,6 +764,10 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
 56.
 
@@ -781,6 +807,10 @@ LaTeX Font Info:    Trying to load font information for U+msa on input line 156
 a.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
+(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt
+-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
 LaTeX Font Info:    Trying to load font information for U+msb on input line 156
 .
 
@@ -788,12 +818,20 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 156
 b.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+(c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt
+-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
 56.
 
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmss' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 156.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -812,13 +850,7 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
 (c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [4]
-Overfull \hbox (25.23497pt too wide) in paragraph at lines 186--187
-[]\T1/lmr/m/n/10 At the heart of \T1/lmtt/m/n/10 dfoliatR \T1/lmr/m/n/10 lies t
-wo func-tions: \T1/lmtt/m/n/10 defoliate_trees() \T1/lmr/m/n/10 and \T1/lmtt/m/
-n/10 outbreak()\T1/lmr/m/n/10 .
- []
-
-<D:/Dropbox/dfoliatR_paper/Output/tree-plot-default.pdf, id=103, 415.5525pt x 4
+<D:/Dropbox/dfoliatR_paper/Output/tree-plot-default.pdf, id=107, 415.5525pt x 4
 17.56pt>
 File: D:/Dropbox/dfoliatR_paper/Output/tree-plot-default.pdf Graphic file (type
  pdf)
@@ -826,19 +858,13 @@ File: D:/Dropbox/dfoliatR_paper/Output/tree-plot-default.pdf Graphic file (type
 Package pdftex.def Info: D:/Dropbox/dfoliatR_paper/Output/tree-plot-default.pdf
   used on input line 192.
 (pdftex.def)             Requested size: 345.0pt x 346.68301pt.
-<D:/Dropbox/dfoliatR_paper/Output/site-plot.pdf, id=104, 415.5525pt x 417.56pt>
+<D:/Dropbox/dfoliatR_paper/Output/site-plot.pdf, id=108, 415.5525pt x 417.56pt>
 
 File: D:/Dropbox/dfoliatR_paper/Output/site-plot.pdf Graphic file (type pdf)
 <use D:/Dropbox/dfoliatR_paper/Output/site-plot.pdf>
 Package pdftex.def Info: D:/Dropbox/dfoliatR_paper/Output/site-plot.pdf  used o
 n input line 200.
 (pdftex.def)             Requested size: 345.0pt x 346.68301pt.
-
-Underfull \hbox (badness 1043) in paragraph at lines 201--201
-[]\T1/lmr/m/n/8 Figure 2: [][]Default \T1/lmtt/m/n/8 dfoliatR \T1/lmr/m/n/8 gra
-phic for site-level out-break events, pro-duced by the
- []
-
 [5] [6pdfTeX warning (ext4): destination with the same identifier (name{figure.
 1}) has been already used, duplicate ignored
 
@@ -853,7 +879,7 @@ dy used, duplicate ignored
                                                   \fi \fi 
 l.214 
        <d:/Dropbox/dfoliatR_paper/Output/site-plot.pdf>] [8]
-<D:/Dropbox/dfoliatR_paper/Output/bridging_color.pdf, id=145, 415.5525pt x 417.
+<D:/Dropbox/dfoliatR_paper/Output/bridging_color.pdf, id=149, 415.5525pt x 417.
 56pt>
 File: D:/Dropbox/dfoliatR_paper/Output/bridging_color.pdf Graphic file (type pd
 f)
@@ -867,20 +893,8 @@ sed on input line 225.
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.233 
-       <d:/Dropbox/dfoliatR_paper/Output/bridging_color.pdf>] [11]
-Overfull \hbox (54.07948pt too wide) in paragraph at lines 253--255
-\T1/lmr/m/n/10 this op-tion is con-trolled by the ``se-ries_end_events'' pa-ram
--e-ter to \T1/lmtt/m/n/10 defoliate_trees()\T1/lmr/m/n/10 .
- []
-
-[12]
-Overfull \hbox (4.47197pt too wide) in paragraph at lines 255--257
-[]\T1/lmr/m/it/10 Sequential events \T1/lmr/m/n/10 (36%) in which OUT-BREAK omi
-t-ted back-to-back events
- []
-
-[13]
-<D:/Dropbox/dfoliatR_paper/Output/plot-sites-df-obr.pdf, id=184, 415.5525pt x 4
+       <d:/Dropbox/dfoliatR_paper/Output/bridging_color.pdf>] [11] [12] [13]
+<D:/Dropbox/dfoliatR_paper/Output/plot-sites-df-obr.pdf, id=188, 415.5525pt x 4
 17.56pt>
 File: D:/Dropbox/dfoliatR_paper/Output/plot-sites-df-obr.pdf Graphic file (type
  pdf)
@@ -911,20 +925,19 @@ Package xcolor Warning: Incompatible color definition on input line 292.
 
 Package xcolor Warning: Incompatible color definition on input line 296.
 
+
+Package xcolor Warning: Incompatible color definition on input line 300.
+
+
+Package xcolor Warning: Incompatible color definition on input line 300.
+
 [14] [15pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.300 \end{Shaded}
-                   <d:/Dropbox/dfoliatR_paper/Output/plot-sites-df-obr.pdf>]
-
-Package xcolor Warning: Incompatible color definition on input line 300.
-
-
-Package xcolor Warning: Incompatible color definition on input line 300.
-
-[16]
+l.303 
+       <d:/Dropbox/dfoliatR_paper/Output/plot-sites-df-obr.pdf>] [16]
 
 Package xcolor Warning: Incompatible color definition on input line 318.
 
@@ -950,7 +963,6 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 Package xcolor Warning: Incompatible color definition on input line 389.
 
-[18]
 LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
 397.
 
@@ -958,6 +970,23 @@ LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line
 d
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: TS1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+Package microtype Info: Character `texttrademark ' is missing
+(microtype)             in font `TS1/lmtt/m/it/10'.
+(microtype)             Ignoring protrusion settings for this character.
+
+Package xcolor Warning: Incompatible color definition on input line 405.
+
+
+Package xcolor Warning: Incompatible color definition on input line 405.
+
+
+Package xcolor Warning: Incompatible color definition on input line 405.
+
+[18]
 
 Package xcolor Warning: Incompatible color definition on input line 405.
 
@@ -997,17 +1026,11 @@ Package xcolor Warning: Incompatible color definition on input line 422.
 
 Package xcolor Warning: Incompatible color definition on input line 422.
 
-
-Overfull \hbox (36.89342pt too wide) in paragraph at lines 424--425
-\T1/lmr/m/n/10 eight vari-ables: ``year'', ``num_defol'', ``per-cent_defol'', `
-`num_max_defol'', ``mean_gsi'',
- []
-
 [20]
-Overfull \hbox (45.49054pt too wide) in paragraph at lines 426--427
-[]\T1/lmr/m/n/10 The de-fault plot-ting func-tion to vi-su-al-ize re-sults from
- \T1/lmtt/m/n/10 outbreak() \T1/lmr/m/n/10 is \T1/lmtt/m/n/10 plot_outbreak()\T
-1/lmr/m/n/10 .
+Overfull \hbox (39.11162pt too wide) in paragraph at lines 426--427
+[]\T1/lmr/m/n/10 (-20) The de-fault plot-ting func-tion to vi-su-al-ize re-sult
+s from \T1/lmtt/m/n/10 outbreak() \T1/lmr/m/n/10 (-20) is \T1/lmtt/m/n/10 plot_
+outbreak()\T1/lmr/m/n/10 (-20) .
  []
 
 
@@ -1020,9 +1043,9 @@ Package xcolor Warning: Incompatible color definition on input line 432.
 Package xcolor Warning: Incompatible color definition on input line 432.
 
 
-Overfull \hbox (44.86041pt too wide) in paragraph at lines 436--437
-[]\T1/lmr/m/n/10 A sum-mary ta-ble of the in-ferred out-break events is gen-er-
-ated by the \T1/lmtt/m/n/10 outbreak_stats()
+Overfull \hbox (38.50984pt too wide) in paragraph at lines 436--437
+[]\T1/lmr/m/n/10 (-20) A sum-mary ta-ble of the in-ferred out-break events is g
+en-er-ated by the \T1/lmtt/m/n/10 outbreak_stats()
  []
 
 
@@ -1054,75 +1077,57 @@ Package xcolor Warning: Incompatible color definition on input line 477.
 
 
 ] [24] [25]
-Overfull \hbox (81.79546pt too wide) in paragraph at lines 513--515
-\T1/lmr/m/n/10 Columbia, Canada. For-est Ecol-ogy and Man-age-ment 335, 235--48
-, doi:[]10.1016/j.foreco.2014.10.002[]. 
+Overfull \hbox (25.43153pt too wide) in paragraph at lines 513--515
+\T1/lmr/m/n/10 (-20) Canada. For-est Ecol-ogy and Man-age-ment 335, 235--48, do
+i:[]10.1016/j.foreco.2014.10.002[]. 
  []
 
 
-Overfull \hbox (19.63829pt too wide) in paragraph at lines 519--521
-\T1/lmr/m/n/10 Ra-dio-car-bon Cam-bridge Uni-ver-sity Press 56, S79--S83, doi:[
-]10.2458/azu_rc.56.18320[]. 
+Overfull \hbox (10.67532pt too wide) in paragraph at lines 519--521
+\T1/lmr/m/n/10 (-20) Ra-dio-car-bon Cam-bridge Uni-ver-sity Press 56, S79--S83,
+ doi:[]10.2458/azu_rc.56.18320[]. 
  []
 
 
-Overfull \hbox (52.32333pt too wide) in paragraph at lines 522--524
-\T1/lmr/m/n/10 tem for den-drochronol-ogy. Den-drochronolo-gia 38, 131--35, doi
-:[]10.1016/j.dendro.2016.04.005[]. 
+Overfull \hbox (42.73248pt too wide) in paragraph at lines 522--524
+\T1/lmr/m/n/10 (-20) tem for den-drochronol-ogy. Den-drochronolo-gia 38, 131--3
+5, doi:[]10.1016/j.dendro.2016.04.005[]. 
  []
 
 [26]
-Overfull \hbox (6.20317pt too wide) in paragraph at lines 549--551
-[][]\T1/lmr/m/n/10 Cook, E.R., Kru-sic, P.J., 2004. The North Amer-i-can Drough
-t At-las. (Lamont-
+Overfull \hbox (18.76321pt too wide) in paragraph at lines 549--551
+\T1/lmr/m/n/10 (-20) able at https://www.ncdc.noaa.gov/data-access/paleoclimato
+logy-data/datasets/tree-
  []
 
 
-Overfull \hbox (27.80608pt too wide) in paragraph at lines 549--551
-\T1/lmr/m/n/10 able at https://www.ncdc.noaa.gov/data-access/paleoclimatology-d
-ata/datasets/tree-
+Overfull \hbox (67.10498pt too wide) in paragraph at lines 567--569
+\T1/lmr/m/n/10 (-20) In-sect out-breaks re-vis-ited. Black-well Pub-lish-ing Lt
+d, pp. 126--54, doi:[]10.1002/9781118295205.ch7[]. 
  []
 
 
-Overfull \hbox (77.06464pt too wide) in paragraph at lines 567--569
-\T1/lmr/m/n/10 In-sect out-breaks re-vis-ited. Black-well Pub-lish-ing Ltd, pp.
- 126--54, doi:[]10.1002/9781118295205.ch7[]. 
+Overfull \hbox (32.5201pt too wide) in paragraph at lines 570--572
+\T1/lmr/m/n/10 (-20) anal-y-sis and graph-ics in R. Den-drochronolo-gia 49, 9--
+15, doi:[]10.1016/j.dendro.2018.02.005[]. 
  []
 
 
-Overfull \hbox (41.83261pt too wide) in paragraph at lines 570--572
-\T1/lmr/m/n/10 anal-y-sis and graph-ics in R. Den-drochronolo-gia 49, 9--15, do
-i:[]10.1016/j.dendro.2018.02.005[]. 
- []
-
-
-Overfull \hbox (51.24854pt too wide) in paragraph at lines 576--578
-\T1/lmr/m/n/10 us-ing R (pack-age \T1/lmtt/m/n/10 CAVIAR\T1/lmr/m/n/10 ). Den-d
-rochronolo-gia 29, 139--49, doi:[]10.1016/j.dendro.2011.01.004[]. 
+Overfull \hbox (42.32771pt too wide) in paragraph at lines 576--578
+\T1/lmr/m/n/10 (-20) us-ing R (pack-age \T1/lmtt/m/n/10 CAVIAR\T1/lmr/m/n/10 (-
+20) ). Den-drochronolo-gia 29, 139--49, doi:[]10.1016/j.dendro.2011.01.004[]. 
  []
 
 [27]
-Overfull \hbox (5.47176pt too wide) in paragraph at lines 582--584
-\T1/lmr/m/n/10 orado, U.S.A. Cana-dian Jour-nal of For-est Re-search 33, 1010--
-28, doi:[]10.1139/X03-
- []
-
-
-Overfull \hbox (54.10182pt too wide) in paragraph at lines 591--593
-\T1/lmr/m/n/10 age pro-cess-ing tech-niques. Den-drochronolo-gia 58, 125644, do
-i:[]10.1016/j.dendro.2019.125644[]. 
+Overfull \hbox (44.49211pt too wide) in paragraph at lines 591--593
+\T1/lmr/m/n/10 (-20) age pro-cess-ing tech-niques. Den-drochronolo-gia 58, 1256
+44, doi:[]10.1016/j.dendro.2019.125644[]. 
  []
 
 [28]
-Overfull \hbox (0.6896pt too wide) in paragraph at lines 612--614
-[][]\T1/lmr/m/n/10 Wickham, H., 2016. \T1/lmtt/m/n/10 ggplot2\T1/lmr/m/n/10 : E
-l-e-gant Graph-ics for Data Anal-y-sis. Springer-
- []
-
-
-Overfull \hbox (25.43527pt too wide) in paragraph at lines 624--626
-\T1/lmr/m/n/10 bra-tion of proxy-climate re-la-tion-ships. Ecog-ra-phy 38, 431-
--36, doi:[]10.1111/ecog.01335[]. 
+Overfull \hbox (2.24956pt too wide) in paragraph at lines 624--626
+\T1/lmr/m/n/10 (-20) tion of proxy-climate re-la-tion-ships. Ecog-ra-phy 38, 43
+1--36, doi:[]10.1111/ecog.01335[]. 
  []
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 628.
@@ -1136,13 +1141,13 @@ Package rerunfilecheck Info: File `dfoliatR_ms.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 628.
  ) 
 Here is how much of TeX's memory you used:
- 13011 strings out of 482913
- 189150 string characters out of 5957126
- 443017 words of memory out of 5000000
- 27875 multiletter control sequences out of 15000+600000
- 592941 words of font info for 72 fonts, out of 8000000 for 9000
+ 14668 strings out of 482816
+ 219341 string characters out of 5953312
+ 510352 words of memory out of 5000000
+ 29459 multiletter control sequences out of 15000+600000
+ 602643 words of font info for 151 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 38i,12n,37p,2279b,499s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,12n,42p,2284b,509s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/l
 m-ts1.enc}{c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dv
 ips/lm/lm-ec.enc}{c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/fonts
@@ -1174,10 +1179,10 @@ pfb><c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public
 /lm/lmtt12.pfb><c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-dist/fonts/t
 ype1/public/lm/lmtt8.pfb><c:/Users/chguiterman/AppData/Roaming/TinyTeX/texmf-di
 st/fonts/type1/public/lm/lmtti10.pfb>
-Output written on dfoliatR_ms.pdf (29 pages, 478049 bytes).
+Output written on dfoliatR_ms.pdf (29 pages, 483511 bytes).
 PDF statistics:
  462 PDF objects out of 1000 (max. 8388607)
  397 compressed objects within 4 object streams
  113 named destinations out of 1000 (max. 500000)
- 133 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21125 words of extra memory for PDF output out of 24883 (max. 10000000)
 

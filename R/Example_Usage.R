@@ -23,6 +23,8 @@ write.csv(dmj_stats, here("Output", "defol-stats.csv"), row.names = FALSE)
 
 plot_defol(dmj_defol)
 ggsave(here("Output", "tree-plot-default.pdf"), width=5.75, dpi=300, units="in")
+ggsave(here("Output", "tree-plot-default.tiff"), width=5.75, dpi=300, units="in")
+ggsave(here("Output", "tree-plot-default.eps"), width=5.75, dpi=300, units="in")
 
 plot_defol(dmj_defol) +
   scale_color_manual(values = c("red", "orange", "purple")) 
@@ -36,6 +38,7 @@ dmj_obr <- outbreak(dmj_defol,
 
 plot_outbreak(dmj_obr, disp_index = "GSI")
 ggsave(here("Output", "site-plot.pdf"), width=5.75, dpi=300, units="in")
+ggsave(here("Output", "site-plot.tiff"), width=5.75, dpi=300, units="in")
 
 dmj_obr_stats <- outbreak_stats(dmj_obr)
 write.csv(dmj_obr_stats, here("Output", "obr-stats.csv"), row.names = FALSE)

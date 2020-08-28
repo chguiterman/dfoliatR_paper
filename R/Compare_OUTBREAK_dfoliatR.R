@@ -166,5 +166,6 @@ ggplot(site_perc, aes(x = year, y = perc_defol)) +
         plot.margin = unit(c(30, 5, 5, 5), units = "points"),
         plot.background = element_blank())
 ggsave(here("Output", "plot-sites-df-obr.pdf"), width=5.75, dpi=300, units='in')  
+ggsave(here("Output", "plot-sites-df-obr.tiff"), width=5.75, dpi=300, units='in')  
 
 
