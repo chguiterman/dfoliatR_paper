@@ -75,15 +75,6 @@
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable}
 \usepackage{graphicx}
-% We will generate all images so they have a width \maxwidth. This means
-% that they will get their normal width if they fit onto the page, but
-% are scaled down if they would overflow the margins.
-\makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
-\else\Gin@nat@width\fi}
-\makeatother
-\let\Oldincludegraphics\includegraphics
-\renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=\maxwidth]{#1}}
 \ifxetex
   \usepackage[setpagesize=false, % page size defined by xetex
               unicode=false, % unicode breaks when used with xetex
@@ -155,6 +146,11 @@
    \begin{keyword} Dendroecology, dendroentomology, OUTBREAK, western spruce budworm, defoliator regimes, insect outbreak reconstruction\end{keyword}
  \end{frontmatter}
 
+\begin{quote}
+This article is published: Guiterman, CH, AM Lynch, and JN Axelson (2020) \texttt{dfoliatR}: An R package for detection and analysis of insect defoliation signals in tree rings. \emph{Dendrochronologia}. DOI: 10.1016/j.dendro.2020.125750.
+Available Open Access from \url{https://authors.elsevier.com/sd/article/S1125786520300898}
+\end{quote}
+
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
@@ -189,7 +185,7 @@ At the heart of \texttt{dfoliatR} lies two functions: \texttt{defoliate\_trees()
 
 \begin{figure}
 \centering
-\includegraphics{D:/Dropbox/dfoliatR_paper/Output/tree-plot-default.pdf}
+\includegraphics{C:/Users/chris/Dropbox/dfoliatR_paper/Output/tree-plot-default.pdf}
 \caption{\label{fig:fig-defol}Default \texttt{dfoliatR} graphic for individual trees, produced by the \texttt{plot\_defol()} function. The series names from the DMJ site (Ryerson et al., 2003) are listed on the Y-axis, dotted lines represent the series length for each tree, and colored segments show periods of defoliation. The colors of defoliation segments represent its severity, for which users can define cut-off values to determine severe--moderate--minor defoliation intensities. The default break points for severity classes are the mean and first quartile for event NGSI values. Colors and other features of the graphic can be adjusted using \texttt{ggplot2} parameters, as shown below.}
 \end{figure}
 
@@ -197,7 +193,7 @@ At the heart of \texttt{dfoliatR} lies two functions: \texttt{defoliate\_trees()
 
 \begin{figure}
 \centering
-\includegraphics{D:/Dropbox/dfoliatR_paper/Output/site-plot.pdf}
+\includegraphics{C:/Users/chris/Dropbox/dfoliatR_paper/Output/site-plot.pdf}
 \caption{\label{fig:fig-obr}Default \texttt{dfoliatR} graphic for site-level outbreak events, produced by the \texttt{plot\_outbreak()} function. These plots summarize the data in Figure \ref{fig:fig-defol} for the DMJ site. Top panel shows the sample depth, the middle panel shows the mean GSI with inferred outbreak events filled, and the bottom panel shows the percent of trees defoliated, used to identify time periods of inferred outbreaks.}
 \end{figure}
 
@@ -222,7 +218,7 @@ Diverging from OUTBREAK, \texttt{dfoliatR} includes an option allowing users to 
 
 \begin{figure}
 \centering
-\includegraphics{D:/Dropbox/dfoliatR_paper/Output/bridging_color.pdf}
+\includegraphics{C:/Users/chris/Dropbox/dfoliatR_paper/Output/bridging_color.pdf}
 \caption{\label{fig:fig-bridge}Examples of identified defoliation events on individual trees. For each tree (DMJ26 and EFK22), OUTBREAK and \texttt{dfoliatR} identify most of the same events, but there is one added event (in blue) that was omitted by OUTBREAK. These were omitted because they were separated by a single year of positive normalized growth suppression index (NGSI) and OUTBREAK selected the one event with the lowest maximum departure value. \texttt{dfoliatR} provides an option to bridge these sequential events into single long events that may better represent the duration of defoliation given the insect and sites under consideration.}
 \end{figure}
 
@@ -266,7 +262,7 @@ there was low sample depth.
 
 \begin{figure}
 \centering
-\includegraphics{D:/Dropbox/dfoliatR_paper/Output/plot-sites-df-obr.pdf}
+\includegraphics{C:/Users/chris/Dropbox/dfoliatR_paper/Output/plot-sites-df-obr.pdf}
 \caption{\label{fig:fig-df-obr}Comparison of reconstructed western spruce budworm outbreaks computed by \texttt{dfoliatR} and OUTBREAK. Input parameters were identical between programs. Differences arise because \texttt{dfoliatR} will identify and record more defoliation events on individual trees.}
 \end{figure}
 

@@ -8,11 +8,9 @@ author:
   - name: Ann M. Lynch
     email: ann.m.lynch@usda.gov
     affiliation: a,c
-    # footnote: [2, 3]
   - name: Jodi N. Axelson
     email: jodi.axelson@berkeley.edu
     affiliation: d
-    # footnote: 4
 address:
   - code: a
     address: "Laboratory of Tree-Ring Research, University of Arizona, 1215 E Lowell St. Box 210045, Tucson, AZ, 85721"
@@ -31,23 +29,12 @@ abstract: |
 keywords: |
   Dendroecology, dendroentomology, OUTBREAK, western spruce budworm, defoliator regimes, insect outbreak reconstruction
   <!-- \newpage -->
-# journal: "Dendrochronologia"
-# date: "`r Sys.Date()`"
 bibliography: References.bib
 linenumbers: true
-#numbersections: true
 csl: dendrochronologia.csl
-# output: rticles::elsevier_article
 output:
   bookdown::pdf_book:
       base_format: rticles::elsevier_article
-# bookdown::word_document2:
-#     reference_docx: "../common/word-styles-reference-01.docx"
-#     toc: false
-# #     toc_depth: 2
-#     fig_caption: yes
-#     df_print: kable
-# always_allow_html: true
 layout: review
 preamble: |
   \usepackage{amsmath}
@@ -75,6 +62,9 @@ library(kableExtra)
 # # knit_hooks$set(document = function(x) {sub('\\usepackage[]{color}', `\\usepackage[table]{xcolor}', x, fixed = TRUE)})`)})
 # knit_hooks$set(document = function(x) {sub('\\usepackage[]{color}', '\\usepackage{xcolor}', x, fixed = TRUE)})
 ```
+> This article is published: Guiterman, CH, AM Lynch, and JN Axelson (2020) `dfoliatR`: An R package for detection and analysis of insect defoliation signals in tree rings. _Dendrochronologia_. DOI: 10.1016/j.dendro.2020.125750.
+> Available Open Access from [https://authors.elsevier.com/sd/article/S1125786520300898](https://authors.elsevier.com/sd/article/S1125786520300898)
+
 Introduction
 ==========================
 
