@@ -8,11 +8,9 @@ author:
   - name: Ann M. Lynch
     email: ann.m.lynch@usda.gov
     affiliation: a,c
-    # footnote: [2, 3]
   - name: Jodi N. Axelson
     email: jodi.axelson@berkeley.edu
     affiliation: d
-    # footnote: 4
 address:
   - code: a
     address: "Laboratory of Tree-Ring Research, University of Arizona, 1215 E Lowell St. Box 210045, Tucson, AZ, 85721"
@@ -31,23 +29,12 @@ abstract: |
 keywords: |
   Dendroecology, dendroentomology, OUTBREAK, western spruce budworm, defoliator regimes, insect outbreak reconstruction
   <!-- \newpage -->
-# journal: "Dendrochronologia"
-# date: "`r Sys.Date()`"
 bibliography: References.bib
 linenumbers: true
-#numbersections: true
 csl: dendrochronologia.csl
-# output: rticles::elsevier_article
 output:
   bookdown::pdf_book:
       base_format: rticles::elsevier_article
-# bookdown::word_document2:
-#     reference_docx: "../common/word-styles-reference-01.docx"
-#     toc: false
-# #     toc_depth: 2
-#     fig_caption: yes
-#     df_print: kable
-# always_allow_html: true
 layout: review
 preamble: |
   \usepackage{amsmath}
@@ -75,6 +62,8 @@ library(kableExtra)
 # # knit_hooks$set(document = function(x) {sub('\\usepackage[]{color}', `\\usepackage[table]{xcolor}', x, fixed = TRUE)})`)})
 # knit_hooks$set(document = function(x) {sub('\\usepackage[]{color}', '\\usepackage{xcolor}', x, fixed = TRUE)})
 ```
+> This article is published as: Guiterman, CH, AM Lynch, and JN Axelson (2020) `dfoliatR`: An R package for detection and analysis of insect defoliation signals in tree rings. _Dendrochronologia_. DOI: 10.1016/j.dendro.2020.125750. Available for free [(link)](https://authors.elsevier.com/sd/article/S1125786520300898)
+
 Introduction
 ==========================
 
@@ -239,7 +228,7 @@ The results of running `defoliate_trees()` can be assessed through graphical and
 
 ```{r echo=TRUE, eval=FALSE}
 dmj_defol_stats <- defol_stats(dmj_defol)
-View(dmj_defol_stats)
+View(dmj_defol_stats) # Table 1
 ```
 
 (ref:tbl-defolCap) Tree-level tabular output provided by the `defol_stats()` function for the DMJ example site. Note that these calculations exclude the ongoing "series-end" events as selected in `defoliate_trees()`.
@@ -254,7 +243,7 @@ kable(tree_dat, caption = "(ref:tbl-defolCap)", booktabs = TRUE) %>%
 The `plot_defol()` function produces a "ggplot" graphics object with line segments showing the measured sequence of each series and a filled segment for each identified defoliation event (Figure \@ref(fig:fig-defol)). The defoliation segments are colored by their relative severity based on their average NGSI value. By default, `plot_defol()` will calculate the average NGSI for all identified events, and assign severity based on the mean and first quartile of the averages. "Severe" events have a mean NGSI above the overall average event-period NGSI. "Moderate" events fall between the mean and first quartile. "Minor" events fall below the first quartile. Users can re-define the breaks to suit their needs via the "breaks" parameter in `plot_defol()`. 
 
 ```{r echo=TRUE, eval=FALSE}
-plot_defol(dmj_defol)
+plot_defol(dmj_defol) # Fig. 1
 ## This creates a ggplot object. Additions can 
 ## be made to adjust plotting themes and
 ## aesthetics, like color.   
@@ -266,7 +255,8 @@ plot_defol(dmj_defol)
 ## event.
 library(ggplot2)
 plot_defol(dmj_defol) +
-  scale_color_manual(values = c("red", "orange", "purple"))
+  scale_color_manual(values = c("red", "orange", 
+                                "purple"))
 ```
 
 These output functions aid in assessing the sensitivity of input parameters to `defoliate_trees()`, including the duration and magnitude thresholds for identifying defoliation events. Using `plot_defol()` also provides a direct assessment of the between-tree variability in defoliation. 
@@ -283,12 +273,12 @@ dmj_obr <- outbreak(dmj_defol,
                     filter_perc = 25)
 ```
 
-Input parameters to `outbreak()` include "filter_min_series" to control the chronology cut-off points with regard to sample depth, "filter_min_defol" and "filter_perc" to control the minimum number and percent of trees recording a defoliation event in a given year. `outbreak()` produces a new data frame with eight variables: "year", "num_defol", "percent_defol", "num_max_defol", "mean_gsi", "mean_ngsi", and "outbreak_status." All of these variables are populated regardless of an inferred outbreak event, providing a continuous outbreak reconstruction. The "num_max_defol" variable counts the number of trees recording their maximum defoliation in a given year. The "mean_gsi" and "mean_ngsi" variables provide averages of these indices across all available trees. Finally, the "outbreak_status" column shows whether an outbreak event is inferred ("outbreak") or not ("not_obr"). 
+Input parameters to `outbreak()` include "filter_min_series" to control the chronology cut-off points with regard to sample depth, "filter_min_defol" and "filter_perc" to control the minimum number and percent of trees recording a defoliation event in a given year. `outbreak()` produces a new data frame with eight variables: "year", "num_defol", "percent_defol", "num_max_defol", "mean_gsi", "mean_ngsi", and "outbreak_status." All of these variables are populated regardless of an inferred outbreak event, providing a continuous outbreak reconstruction. The "num_max_defol" variable counts the number of trees recording their maximum defoliation in a given year. The "mean_gsi" and "mean_ngsi" variables provide averages of these indices across all available trees. Finally, the "outbreak_status" column shows if an outbreak event is inferred ("outbreak") or not ("not_obr"), and whether it represents an ongoing series-end event ("se_outbreak"). 
 
 The default plotting function to visualize results from `outbreak()` is `plot_outbreak()`. It creates a three-panel graph showing the sample depth, mean site-level chronology, and percent of trees recording a defoliation over time (Figure \@ref(fig:fig-obr)). 
 
 ```{r echo=TRUE, eval=FALSE}
-plot_outbreak(dmj_obr, disp_index = "GSI")
+plot_outbreak(dmj_obr, disp_index = "GSI") # Fig. 2
 ```
 
 Inferred outbreak events are shown in the middle panel of Figure \@ref(fig:fig-obr) as the filled-in spaces. Users can change the time series in this panel with the "disp_index" parameter, choosing between the mean NGSI (the default) or GSI.
@@ -297,7 +287,7 @@ A summary table of the inferred outbreak events is generated by the `outbreak_st
 
 ```{r echo=TRUE, eval=FALSE}
 dmj_obr_stats <- outbreak_stats(dmj_obr)
-View(dmj_obr_stats)
+View(dmj_obr_stats) # Table 2
 ```
 
 (ref:tbl-obrCap) Site-level summary statistics for inferred outbreak events as generated by the `outbreak_stats()` function for the DMJ example site. Note that missing ("NA") values ocurr for certain statistics because the last outbreak event was defined earlier as ongoing (i.e. we set `series_end_event = TRUE` in the call to `defoliate_trees()`).
@@ -312,7 +302,8 @@ kable(obr_dat, format = "latex", caption = "(ref:tbl-obrCap)", booktabs = TRUE) 
 Saving the results of `outbreak_stats()` (the `dmj_obr_stats` object above) provides an array of options for assessing metrics of the insect outbreak regime. For example, taking the first year of each outbreak event, we can calculate the duration of years between outbreaks, via the `diff()` function in `R`. The average of those differences, calculated via `mean()` is the mean return interval of reconstructed outbreak events at the DMJ site.
 
 ```{r echo=TRUE, eval=FALSE}
-## calculate mean return interval for outbreak start years
+## calculate mean return interval for outbreak 
+## start years
 intervals <- diff(dmj_obr_stats$start)
 mean(intervals) ## 51.2 year mean return interval
 ```

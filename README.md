@@ -7,8 +7,17 @@
 
 <!-- badges: end -->
 
-A repository for the initial descriptive paper of the
-[`dfoliatR`](https://chguiterman.github.io/dfoliatR/) package in R. The
-paper is currently being prepared for submission to *Dendrochronologia*.
+This repository includes the code and text to generate a preprint
+version of the published paper:
 
-Please contact Chris Guiterman with questions or comments.
+> Guiterman, CH, AM Lynch, and JN Axelson (2020) [`dfoliatR`: An R
+> package for detection and analysis of insect defoliation signals in
+> tree
+> rings.](https://authors.elsevier.com/sd/article/S1125786520300898)
+> *Dendrochronologia*. DOI: 10.1016/j.dendro.2020.125750.
+
+The paper provides an overview of the `dfoliatR` R package. More
+information on using the software is availabe from
+<https://chguiterman.github.io/dfoliatR/>.
+
+Please contact @chguiterman with questions or comments.
