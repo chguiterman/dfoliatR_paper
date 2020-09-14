@@ -104,6 +104,11 @@
 \setcounter{secnumdepth}{5}
 % Pandoc toggle for numbering sections (defaults to be off)
 
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{cslreferences}%
+  {}%
+  {\par}
 
 % Pandoc header
 \usepackage{booktabs}
@@ -299,7 +304,7 @@ Development versions of \texttt{dfoliatR} are available on GitHub and installed 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{devtools}\OperatorTok{::}\KeywordTok{install_github}\NormalTok{(}\StringTok{"chguiterman/dfoliatR"}\NormalTok{)}
+\NormalTok{devtools}\OperatorTok{::}\KeywordTok{install\_github}\NormalTok{(}\StringTok{"chguiterman/dfoliatR"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -321,23 +326,23 @@ The function \texttt{defoliate\_trees()} performs the GSI indexing procedure on 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{## Load the package}
+\CommentTok{\#\# Load the package}
 \KeywordTok{library}\NormalTok{(dfoliatR)}
 
-\CommentTok{## Load data}
-\KeywordTok{data}\NormalTok{(}\StringTok{"dmj_h"}\NormalTok{) }\CommentTok{# host tree series}
-\KeywordTok{data}\NormalTok{(}\StringTok{"dmj_nh"}\NormalTok{) }\CommentTok{# non-host chronology}
-\CommentTok{# View data structure for any data object via }
-\CommentTok{# "View(dmj_h)" or "head(dmj_h)"}
+\CommentTok{\#\# Load data}
+\KeywordTok{data}\NormalTok{(}\StringTok{"dmj\_h"}\NormalTok{) }\CommentTok{\# host tree series}
+\KeywordTok{data}\NormalTok{(}\StringTok{"dmj\_nh"}\NormalTok{) }\CommentTok{\# non{-}host chronology}
+\CommentTok{\# View data structure for any data object via }
+\CommentTok{\# "View(dmj\_h)" or "head(dmj\_h)"}
 
-\CommentTok{## Calculate indices, identify defoliation events}
-\NormalTok{dmj_defol <-}\StringTok{ }\KeywordTok{defoliate_trees}\NormalTok{(}\DataTypeTok{host_tree =}\NormalTok{ dmj_h,}
-                             \DataTypeTok{nonhost_chron =}\NormalTok{ dmj_nh,}
-                             \DataTypeTok{duration_years =} \DecValTok{8}\NormalTok{,  }
-                             \DataTypeTok{max_reduction =} \FloatTok{-1.28}\NormalTok{, }
-                             \DataTypeTok{bridge_events =} \OtherTok{TRUE}\NormalTok{, }
-                             \DataTypeTok{series_end_event =} \OtherTok{TRUE}\NormalTok{, }
-                             \DataTypeTok{list_output =} \OtherTok{FALSE}\NormalTok{) }
+\CommentTok{\#\# Calculate indices, identify defoliation events}
+\NormalTok{dmj\_defol \textless{}{-}}\StringTok{ }\KeywordTok{defoliate\_trees}\NormalTok{(}\DataTypeTok{host\_tree =}\NormalTok{ dmj\_h,}
+                             \DataTypeTok{nonhost\_chron =}\NormalTok{ dmj\_nh,}
+                             \DataTypeTok{duration\_years =} \DecValTok{8}\NormalTok{,  }
+                             \DataTypeTok{max\_reduction =} \FloatTok{{-}1.28}\NormalTok{, }
+                             \DataTypeTok{bridge\_events =} \OtherTok{TRUE}\NormalTok{, }
+                             \DataTypeTok{series\_end\_event =} \OtherTok{TRUE}\NormalTok{, }
+                             \DataTypeTok{list\_output =} \OtherTok{FALSE}\NormalTok{) }
 \end{Highlighting}
 \end{Shaded}
 
@@ -349,8 +354,8 @@ The results of running \texttt{defoliate\_trees()} can be assessed through graph
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dmj_defol_stats <-}\StringTok{ }\KeywordTok{defol_stats}\NormalTok{(dmj_defol)}
-\KeywordTok{View}\NormalTok{(dmj_defol_stats) }\CommentTok{# Table 1}
+\NormalTok{dmj\_defol\_stats \textless{}{-}}\StringTok{ }\KeywordTok{defol\_stats}\NormalTok{(dmj\_defol)}
+\KeywordTok{View}\NormalTok{(dmj\_defol\_stats) }\CommentTok{\# Table 1}
 \end{Highlighting}
 \end{Shaded}
 
@@ -392,19 +397,19 @@ The \texttt{plot\_defol()} function produces a ``ggplot'' graphics object with l
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{plot_defol}\NormalTok{(dmj_defol) }\CommentTok{# Fig. 1}
-\CommentTok{## This creates a ggplot object. Additions can }
-\CommentTok{## be made to adjust plotting themes and}
-\CommentTok{## aesthetics, like color.   }
-\CommentTok{## For more on the features of ggplot see}
-\CommentTok{## https://ggplot2.tidyverse.org/}
-\CommentTok{## Adding 'scale_color_manual()' will}
-\CommentTok{## change the colors that denote }
-\CommentTok{## the average NGSI value for each defoliation}
-\CommentTok{## event.}
+\KeywordTok{plot\_defol}\NormalTok{(dmj\_defol) }\CommentTok{\# Fig. 1}
+\CommentTok{\#\# This creates a ggplot object. Additions can }
+\CommentTok{\#\# be made to adjust plotting themes and}
+\CommentTok{\#\# aesthetics, like color.   }
+\CommentTok{\#\# For more on the features of ggplot see}
+\CommentTok{\#\# https://ggplot2.tidyverse.org/}
+\CommentTok{\#\# Adding \textquotesingle{}scale\_color\_manual()\textquotesingle{} will}
+\CommentTok{\#\# change the colors that denote }
+\CommentTok{\#\# the average NGSI value for each defoliation}
+\CommentTok{\#\# event.}
 \KeywordTok{library}\NormalTok{(ggplot2)}
-\KeywordTok{plot_defol}\NormalTok{(dmj_defol) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{scale_color_manual}\NormalTok{(}\DataTypeTok{values =} \KeywordTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{, }\StringTok{"orange"}\NormalTok{, }
+\KeywordTok{plot\_defol}\NormalTok{(dmj\_defol) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{scale\_color\_manual}\NormalTok{(}\DataTypeTok{values =} \KeywordTok{c}\NormalTok{(}\StringTok{"red"}\NormalTok{, }\StringTok{"orange"}\NormalTok{, }
                                 \StringTok{"purple"}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
@@ -418,11 +423,11 @@ To infer outbreak events at the site level, the function \texttt{outbreak()} com
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{## Use the defol object "dmj_defol" created above}
-\NormalTok{dmj_obr <-}\StringTok{ }\KeywordTok{outbreak}\NormalTok{(dmj_defol,}
-                    \DataTypeTok{filter_min_series =} \DecValTok{3}\NormalTok{,}
-                    \DataTypeTok{filter_min_defol =} \DecValTok{1}\NormalTok{,}
-                    \DataTypeTok{filter_perc =} \DecValTok{25}\NormalTok{)}
+\CommentTok{\#\# Use the defol object "dmj\_defol" created above}
+\NormalTok{dmj\_obr \textless{}{-}}\StringTok{ }\KeywordTok{outbreak}\NormalTok{(dmj\_defol,}
+                    \DataTypeTok{filter\_min\_series =} \DecValTok{3}\NormalTok{,}
+                    \DataTypeTok{filter\_min\_defol =} \DecValTok{1}\NormalTok{,}
+                    \DataTypeTok{filter\_perc =} \DecValTok{25}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -432,7 +437,7 @@ The default plotting function to visualize results from \texttt{outbreak()} is \
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{plot_outbreak}\NormalTok{(dmj_obr, }\DataTypeTok{disp_index =} \StringTok{"GSI"}\NormalTok{) }\CommentTok{# Fig. 2}
+\KeywordTok{plot\_outbreak}\NormalTok{(dmj\_obr, }\DataTypeTok{disp\_index =} \StringTok{"GSI"}\NormalTok{) }\CommentTok{\# Fig. 2}
 \end{Highlighting}
 \end{Shaded}
 
@@ -442,8 +447,8 @@ A summary table of the inferred outbreak events is generated by the \texttt{outb
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dmj_obr_stats <-}\StringTok{ }\KeywordTok{outbreak_stats}\NormalTok{(dmj_obr)}
-\KeywordTok{View}\NormalTok{(dmj_obr_stats) }\CommentTok{# Table 2}
+\NormalTok{dmj\_obr\_stats \textless{}{-}}\StringTok{ }\KeywordTok{outbreak\_stats}\NormalTok{(dmj\_obr)}
+\KeywordTok{View}\NormalTok{(dmj\_obr\_stats) }\CommentTok{\# Table 2}
 \end{Highlighting}
 \end{Shaded}
 
@@ -475,10 +480,10 @@ Saving the results of \texttt{outbreak\_stats()} (the \texttt{dmj\_obr\_stats} o
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{## calculate mean return interval for outbreak }
-\CommentTok{## start years}
-\NormalTok{intervals <-}\StringTok{ }\KeywordTok{diff}\NormalTok{(dmj_obr_stats}\OperatorTok{$}\NormalTok{start)}
-\KeywordTok{mean}\NormalTok{(intervals) }\CommentTok{## 51.2 year mean return interval}
+\CommentTok{\#\# calculate mean return interval for outbreak }
+\CommentTok{\#\# start years}
+\NormalTok{intervals \textless{}{-}}\StringTok{ }\KeywordTok{diff}\NormalTok{(dmj\_obr\_stats}\OperatorTok{$}\NormalTok{start)}
+\KeywordTok{mean}\NormalTok{(intervals) }\CommentTok{\#\# 51.2 year mean return interval}
 \end{Highlighting}
 \end{Shaded}
 
@@ -504,6 +509,7 @@ We are grateful to late Richard Holmes of the Laboratory of Tree-Ring Research (
 \addcontentsline{toc}{section}{References}
 
 \hypertarget{refs}{}
+\begin{cslreferences}
 \leavevmode\hypertarget{ref-Alfaro1982}{}%
 Alfaro, R., Sickle, G. van, Thomson, A., Wegwitz, E., 1982. Tree mortality and radial growth losses caused by the western spruce budworm in a Douglas-fir stand in British Columbia. Canadian Journal of Forest Research 12, 780--87.
 
@@ -629,8 +635,8 @@ Wickman, B.E., 1986. Radial growth of grand fir and douglas-fir 10 years after d
 
 \leavevmode\hypertarget{ref-Zang2015}{}%
 Zang, C., Biondi, F., 2015. \texttt{treeclim}: An R package for the numerical calibration of proxy-climate relationships. Ecography 38, 431--36, doi:\href{https://doi.org/10.1111/ecog.01335}{10.1111/ecog.01335}.
+\end{cslreferences}
 
 
 \end{document}
-
 
